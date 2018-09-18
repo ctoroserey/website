@@ -5,7 +5,7 @@
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
 baseurl = "/"
 
-# Title of your site
+# Title of your site (change)
 title = "The Tiny Little Website that Could"
 
 # Your copyright notice - appears in site footer.
@@ -183,9 +183,9 @@ enableGitInfo = false
   ]
 
   # Configuration of talk pages.
-  [params.talks]
-    # Show talk time?
-    time = true
+  #[params.talks]
+  #  # Show talk time
+  #  time = true
 
   # Configuration of publication pages.
   [params.publications]
