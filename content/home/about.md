@@ -11,8 +11,9 @@ weight = 5
 [interests]
   interests = [
     "Decision Making",
-    "Brain Networks",
-    "Human Functional Neuroimaging"
+    "Brain Networks and Graph Theory",
+    "Human Functional Neuroimaging",
+    "Open Science"
   ]
 
 # List your qualifications (such as academic degrees).
@@ -30,4 +31,4 @@ weight = 5
 
 # About me
 
-I am a Ph.D. student in the Cognition and Decision Lab at Boston University. My main academic interests lie in exploring the value-modulatory effects of effort and delay, and the brain networks that underlie these processes. Accessory to these goals is my interest in using graph theoretical tools to compute subject-specific functional brain networks.
+I am a Ph.D. student in the Cognition and Decision Lab at Boston University. My main academic interests lie in exploring the value-modulatory effects of effort and delay, and the brain networks that underlie these processes. Accessory to these goals is my interest in using graph theoretical tools to compute subject-specific functional brain networks. {{% staticref "files/cv.pdf" %}}You can get a copy of my CV here{{% /staticref %}}.

@@ -74,7 +74,7 @@ enableGitInfo = false
   keybase = ""
 
   # Discussion link (e.g. link to a forum, mailing list, or chat).
-  #   Uncomment line below to use.
+  #   Uncomment line below to use. 
   #   discussion = { name = "Discuss", url = "https://discourse.gohugo.io" }
 
   # Diplay a logo in navigation bar rather than title (optional).
@@ -119,7 +119,7 @@ enableGitInfo = false
 
   # Enable global LaTeX math rendering?
   #   If false, you can enable it locally on a per page basis.
-  math = false
+  math = true
 
   # Highlight.js options
   #   highlight
@@ -242,6 +242,16 @@ enableGitInfo = false
     icon = "github"
     icon_pack = "fa"
     link = "//github.com/ctoroserey"
+    
+  [[params.social]]
+    icon = "orcid"
+    icon_pack = "ai"
+    link = "https://orcid.org/0000-0002-5273-2276"
+    
+  [[params.social]]
+    icon = "osf"
+    icon_pack = "ai"
+    link = "https://osf.io/w82sb"    
 
 
 # Navigation Links
