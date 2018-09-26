@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on The Tiny Little Website that Could</title>
+    <title>Publications on Claudio Toro-Serey</title>
     <link>/publication/</link>
-    <description>Recent content in Publications on The Tiny Little Website that Could</description>
+    <description>Recent content in Publications on Claudio Toro-Serey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
@@ -14,22 +14,20 @@
     
     <item>
       <title>Characterizing information flux within the distributed pediatric expressive language network: a core region mapped through fMRI-constrained MEG effective connectivity analyses</title>
-      <link>/publication/clothing-search/</link>
+      <link>/publication/kadis/</link>
       <pubDate>Fri, 01 Jul 2016 00:00:00 -0400</pubDate>
       
-      <guid>/publication/clothing-search/</guid>
-      <description>+++ title = &amp;ldquo;Increased Resting-State Functional Connectivity in the Cingulo-Opercular Cognitive-Control Network after Intervention in Children with Reading Difficulties&amp;rdquo; date = 2015-07-01T00:00:00
-Authors. Comma separated list, e.g. [&amp;quot;Bob Smith&amp;quot;, &amp;quot;David Jones&amp;quot;]. authors = [&amp;ldquo;T Horowitz-Kraus&amp;rdquo;, &amp;ldquo;C Toro-Serey&amp;rdquo;, &amp;ldquo;M DiFrancesco&amp;rdquo;]
-Publication type. Legend: 0 = Uncategorized 1 = Conference proceedings 2 = Journal 3 = Work in progress 4 = Technical report 5 = Book 6 = Book chapter publication_types = [&amp;ldquo;2&amp;rdquo;]</description>
+      <guid>/publication/kadis/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>/publication/person-re-identification/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 -0400</pubDate>
+      <title>Increased Resting-State Functional Connectivity in the Cingulo-Opercular Cognitive-Control Network after Intervention in Children with Reading Difficulties</title>
+      <link>/publication/horowitzkraus/</link>
+      <pubDate>Wed, 01 Jul 2015 00:00:00 -0400</pubDate>
       
-      <guid>/publication/person-re-identification/</guid>
-      <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
+      <guid>/publication/horowitzkraus/</guid>
+      <description></description>
     </item>
     
   </channel>

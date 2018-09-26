@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>The Tiny Little Website that Could on The Tiny Little Website that Could</title>
+    <title>Claudio Toro-Serey on Claudio Toro-Serey</title>
     <link>/</link>
-    <description>Recent content in The Tiny Little Website that Could on The Tiny Little Website that Could</description>
+    <description>Recent content in Claudio Toro-Serey on Claudio Toro-Serey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
@@ -11,114 +11,12 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Example Talk</title>
-      <link>/talk/example-talk/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
-      
-      <guid>/talk/example-talk/</guid>
-      <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://sourcethemes.com/academic/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Characterizing information flux within the distributed pediatric expressive language network: a core region mapped through fMRI-constrained MEG effective connectivity analyses</title>
-      <link>/publication/clothing-search/</link>
+      <link>/publication/kadis/</link>
       <pubDate>Fri, 01 Jul 2016 00:00:00 -0400</pubDate>
       
-      <guid>/publication/clothing-search/</guid>
-      <description>
-
-&lt;p&gt;+++
-title = &amp;ldquo;Increased Resting-State Functional Connectivity in the Cingulo-Opercular Cognitive-Control Network after Intervention in Children with Reading Difficulties&amp;rdquo;
-date = 2015-07-01T00:00:00&lt;/p&gt;
-
-&lt;h1 id=&#34;authors-comma-separated-list-e-g-bob-smith-david-jones&#34;&gt;Authors. Comma separated list, e.g. &lt;code&gt;[&amp;quot;Bob Smith&amp;quot;, &amp;quot;David Jones&amp;quot;]&lt;/code&gt;.&lt;/h1&gt;
-
-&lt;p&gt;authors = [&amp;ldquo;T Horowitz-Kraus&amp;rdquo;, &amp;ldquo;C Toro-Serey&amp;rdquo;, &amp;ldquo;M DiFrancesco&amp;rdquo;]&lt;/p&gt;
-
-&lt;h1 id=&#34;publication-type&#34;&gt;Publication type.&lt;/h1&gt;
-
-&lt;h1 id=&#34;legend&#34;&gt;Legend:&lt;/h1&gt;
-
-&lt;h1 id=&#34;0-uncategorized&#34;&gt;0 = Uncategorized&lt;/h1&gt;
-
-&lt;h1 id=&#34;1-conference-proceedings&#34;&gt;1 = Conference proceedings&lt;/h1&gt;
-
-&lt;h1 id=&#34;2-journal&#34;&gt;2 = Journal&lt;/h1&gt;
-
-&lt;h1 id=&#34;3-work-in-progress&#34;&gt;3 = Work in progress&lt;/h1&gt;
-
-&lt;h1 id=&#34;4-technical-report&#34;&gt;4 = Technical report&lt;/h1&gt;
-
-&lt;h1 id=&#34;5-book&#34;&gt;5 = Book&lt;/h1&gt;
-
-&lt;h1 id=&#34;6-book-chapter&#34;&gt;6 = Book chapter&lt;/h1&gt;
-
-&lt;p&gt;publication_types = [&amp;ldquo;2&amp;rdquo;]&lt;/p&gt;
-
-&lt;h1 id=&#34;publication-name-and-optional-abbreviated-version&#34;&gt;Publication name and optional abbreviated version.&lt;/h1&gt;
-
-&lt;p&gt;publication = &amp;ldquo;&amp;rdquo;
-publication_short = &amp;ldquo;In &lt;em&gt;PLoS One&lt;/em&gt;&amp;ldquo;&lt;/p&gt;
-
-&lt;h1 id=&#34;abstract-and-optional-shortened-version&#34;&gt;Abstract and optional shortened version.&lt;/h1&gt;
-
-&lt;p&gt;abstract = &amp;ldquo;&amp;rdquo;&lt;/p&gt;
-
-&lt;h1 id=&#34;featured-image-thumbnail-optional&#34;&gt;Featured image thumbnail (optional)&lt;/h1&gt;
-
-&lt;p&gt;image_preview = &amp;ldquo;&amp;rdquo;&lt;/p&gt;
-
-&lt;h1 id=&#34;is-this-a-selected-publication-true-false&#34;&gt;Is this a selected publication? (true/false)&lt;/h1&gt;
-
-&lt;p&gt;selected = true&lt;/p&gt;
-
-&lt;h1 id=&#34;projects-optional&#34;&gt;Projects (optional).&lt;/h1&gt;
-
-&lt;h1 id=&#34;associate-this-publication-with-one-or-more-of-your-projects&#34;&gt;Associate this publication with one or more of your projects.&lt;/h1&gt;
-
-&lt;h1 id=&#34;simply-enter-the-filename-excluding-md-of-your-project-file-in-content-project&#34;&gt;Simply enter the filename (excluding &amp;lsquo;.md&amp;rsquo;) of your project file in &lt;code&gt;content/project/&lt;/code&gt;.&lt;/h1&gt;
-
-&lt;p&gt;projects = [&amp;ldquo;example-external-project&amp;rdquo;]&lt;/p&gt;
-
-&lt;h1 id=&#34;links-optional&#34;&gt;Links (optional).&lt;/h1&gt;
-
-&lt;p&gt;url_pdf = &amp;ldquo;&lt;a href=&#34;http://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0133762&amp;amp;type=printable&amp;quot;&#34; target=&#34;_blank&#34;&gt;http://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0133762&amp;amp;type=printable&amp;quot;&lt;/a&gt;
-url_preprint = &amp;ldquo;&amp;rdquo;
-url_code = &amp;ldquo;&amp;rdquo;
-url_dataset = &amp;ldquo;&amp;rdquo;
-url_project = &amp;ldquo;&amp;rdquo;
-url_slides = &amp;ldquo;&amp;rdquo;
-url_video = &amp;ldquo;&amp;rdquo;
-url_poster = &amp;ldquo;&amp;rdquo;
-url_source = &amp;ldquo;&amp;rdquo;&lt;/p&gt;
-
-&lt;h1 id=&#34;custom-links-optional&#34;&gt;Custom links (optional).&lt;/h1&gt;
-
-&lt;h1 id=&#34;uncomment-line-below-to-enable-for-multiple-links-use-the-form&#34;&gt;Uncomment line below to enable. For multiple links, use the form &lt;code&gt;[{...}, {...}, {...}]&lt;/code&gt;.&lt;/h1&gt;
-
-&lt;p&gt;url_custom = [{name = &amp;ldquo;Custom Link&amp;rdquo;, url = &amp;ldquo;&lt;a href=&#34;http://example.org&amp;quot;}&#34; target=&#34;_blank&#34;&gt;http://example.org&amp;quot;}&lt;/a&gt;]&lt;/p&gt;
-
-&lt;h1 id=&#34;does-the-content-use-math-formatting&#34;&gt;Does the content use math formatting?&lt;/h1&gt;
-
-&lt;p&gt;math = true&lt;/p&gt;
-
-&lt;h1 id=&#34;does-the-content-use-source-code-highlighting&#34;&gt;Does the content use source code highlighting?&lt;/h1&gt;
-
-&lt;p&gt;highlight = true&lt;/p&gt;
-
-&lt;h1 id=&#34;featured-image&#34;&gt;Featured image&lt;/h1&gt;
-
-&lt;h1 id=&#34;place-your-image-in-the-static-img-folder-and-reference-its-filename-below-e-g-image-example-jpg&#34;&gt;Place your image in the &lt;code&gt;static/img/&lt;/code&gt; folder and reference its filename below, e.g. &lt;code&gt;image = &amp;quot;example.jpg&amp;quot;&lt;/code&gt;.&lt;/h1&gt;
-
-&lt;p&gt;[header]
-image = &amp;ldquo;headers/bubbles-wide.jpg&amp;rdquo;
-caption = &amp;ldquo;My caption 😄&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;+++&lt;/p&gt;
-
-&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/publication/kadis/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -149,7 +47,7 @@ caption = &amp;ldquo;My caption 😄&amp;rdquo;&lt;/p&gt;
     </item>
     
     <item>
-      <title>Academic: the website designer for Hugo</title>
+      <title>Use this as a template</title>
       <link>/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
       
@@ -337,61 +235,12 @@ git submodule update --init --recursive
     </item>
     
     <item>
-      <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>/publication/person-re-identification/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 -0400</pubDate>
+      <title>Increased Resting-State Functional Connectivity in the Cingulo-Opercular Cognitive-Control Network after Intervention in Children with Reading Difficulties</title>
+      <link>/publication/horowitzkraus/</link>
+      <pubDate>Wed, 01 Jul 2015 00:00:00 -0400</pubDate>
       
-      <guid>/publication/person-re-identification/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;R Markdown&lt;/h1&gt;
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &amp;lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Including Plots&lt;/h1&gt;
-&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
-  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
-  init.angle = -50, border = NA
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: A fancy pie chart.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <guid>/publication/horowitzkraus/</guid>
+      <description></description>
     </item>
     
   </channel>

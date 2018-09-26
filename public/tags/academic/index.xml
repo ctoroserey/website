@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Content tagged as &#39;Academic&#39; on The Tiny Little Website that Could</title>
+    <title>Content tagged as &#39;Academic&#39; on Claudio Toro-Serey</title>
     <link>/tags/academic/</link>
-    <description>Recent content in Content tagged as &#39;Academic&#39; on The Tiny Little Website that Could</description>
+    <description>Recent content in Content tagged as &#39;Academic&#39; on Claudio Toro-Serey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>Academic: the website designer for Hugo</title>
+      <title>Use this as a template</title>
       <link>/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
       

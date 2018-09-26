@@ -6,7 +6,7 @@
 baseurl = "/"
 
 # Title of your site (change)
-title = "The Tiny Little Website that Could"
+title = "Claudio Toro-Serey"
 
 # Your copyright notice - appears in site footer.
 # To display a copyright symbol, type `&copy;`.
@@ -49,12 +49,12 @@ enableGitInfo = false
   #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, or `1950s`.
   color_theme = "forest"
 
-  # Font style.
+  # Font style. 
   #   Choose from `default`, `classic`, or `playfair`.
   font = "default"
 
   # Your details.
-  name = "Claudio Toro Serey"
+  name = "Claudio Toro-Serey"
   role = "Ph.D. Student, BBC"
 
   # Organizations/Affiliations.
@@ -263,24 +263,10 @@ enableGitInfo = false
   weight = 2
 
 [[menu.main]]
-  name = "Posts"
+  name = "Blog Posts"
   url = "#posts"
   weight = 3
 
-[[menu.main]]
-  name = "Projects"
-  url = "#projects"
-  weight = 4
-
-[[menu.main]]
-  name = "Teaching"
-  url = "#teaching"
-  weight = 5
-
-[[menu.main]]
-  name = "Contact"
-  url = "#contact"
-  weight = 6
 
 # Taxonomies.
 [taxonomies]

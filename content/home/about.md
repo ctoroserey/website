@@ -28,6 +28,6 @@ weight = 5
  
 +++
 
-# Biography
+# About me
 
 I am a Ph.D. student in the Cognition and Decision Lab at Boston University. My main academic interests lie in exploring the value-modulatory effects of effort and delay, and the brain networks that underlie these processes. Accessory to these goals is my interest in using graph theoretical tools to compute subject-specific functional brain networks.

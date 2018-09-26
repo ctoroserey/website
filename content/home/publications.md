@@ -19,7 +19,7 @@ count = 2
 #   1 = Detailed
 #   2 = APA
 #   3 = MLA
-list_format = 2
+list_format = 0
 
 # Filter by publication type.
 # -1: Any

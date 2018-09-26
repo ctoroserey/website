@@ -1,5 +1,5 @@
 +++
-title = "Academic: the website designer for Hugo"
+title = "Use this as a template"
 
 date = 2016-04-20T00:00:00
 lastmod = 2018-01-13T00:00:00
@@ -9,8 +9,8 @@ tags = ["academic"]
 summary = "Create a beautifully simple website or blog in under 10 minutes."
 
 [header]
-image = "headers/getting-started.png"
-caption = "Image credit: [**Academic**](https://github.com/gcushen/hugo-academic/)"
+image = "testFile.png"
+caption = "Any info on the header image goes here."
 
 [[gallery_item]]
 album = "1"
