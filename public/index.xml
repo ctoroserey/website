@@ -12,11 +12,13 @@
     
     <item>
       <title>Cluster comparisons with ARI</title>
-      <link>/post/test-post-pls-ignore/</link>
+      <link>/post/ari/</link>
       <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/test-post-pls-ignore/</guid>
-      <description>&lt;p&gt;Future home of an actual tutorial.&lt;/p&gt;
+      <guid>/post/ari/</guid>
+      <description>&lt;p&gt;A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato &amp;amp; Hric, 2016 for an initial survey), here I’ll focus on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage. Since I’m more familiar with the usage of this measure in networks, I’ll base my examples and terminology on this framework.&lt;/p&gt;
+&lt;p&gt;The original Rand Index was introduced by William Rand in 1975, and it aimed to determine whether two clustering algorithms grouped every pair of nodes in a similar fashion. For example, it could be that nodes 3 and 25 from your network were grouped together in partitions from algorithms A and B, but separately by method C (you can probably already think of uses for this index in regards to examining the effects of experimental network perturbations in their organization). This agreement is computed by the following formula:&lt;/p&gt;
+&lt;p&gt;At this point you might have already thought: why do this instead of directly checking if the node labels are identical across partitions? (i.e. &lt;code&gt;partitionA == partitionB&lt;/code&gt;) That is the exact thought that motivated me to write this post!&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2018-09-26-ARI_files/figure-html/Compute-1.svg&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
 </description>
     </item>

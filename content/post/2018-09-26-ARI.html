@@ -2,7 +2,7 @@
 title: "Cluster comparisons with ARI"
 author: "CTS"
 date: '2018-09-26'
-slug: test-post-pls-ignore
+slug: ARI
 categories: []
 tags: []
 output:
@@ -19,5 +19,7 @@ draft: true
 
 
 
-<p>Future home of an actual tutorial.</p>
+<p>A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato &amp; Hric, 2016 for an initial survey), here I’ll focus on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage. Since I’m more familiar with the usage of this measure in networks, I’ll base my examples and terminology on this framework.</p>
+<p>The original Rand Index was introduced by William Rand in 1975, and it aimed to determine whether two clustering algorithms grouped every pair of nodes in a similar fashion. For example, it could be that nodes 3 and 25 from your network were grouped together in partitions from algorithms A and B, but separately by method C (you can probably already think of uses for this index in regards to examining the effects of experimental network perturbations in their organization). This agreement is computed by the following formula:</p>
+<p>At this point you might have already thought: why do this instead of directly checking if the node labels are identical across partitions? (i.e. <code>partitionA == partitionB</code>) That is the exact thought that motivated me to write this post!</p>
 <p><img src="/post/2018-09-26-ARI_files/figure-html/Compute-1.svg" width="576" /></p>
