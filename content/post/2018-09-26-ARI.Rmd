@@ -1,0 +1,110 @@
+---
+title: "Cluster comparisons with ARI"
+author: "CTS"
+date: '2018-09-26'
+slug: test-post-pls-ignore
+categories: []
+tags: []
+output:
+  blogdown::html_page:
+    toc: true
+    fig_width: 6
+    fig.height: 4
+    dev: "svg"
+header:
+  caption: ''
+  image: ''
+draft: true  
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(mcclust)
+library(reshape2)
+```
+
+``` {r Functions, echo = FALSE, include = FALSE}
+permute <- function(group1 = 1, group2 = 2, statType = mean, nPerms = 5000, paired = FALSE){
+  
+  # prep data
+  summaryPerm <- list()
+  lOne <- length(group1)
+  lTwo <- length(group2)
+  bigSample <- c(group1,group2)  
+  
+  if (paired == FALSE) {
+    
+    
+    for (i in 1:nPerms){
+      
+      # relabel samples
+      tempBig <- sample(bigSample)
+      tempOne <- tempBig[1:lOne]
+      tempTwo <- tempBig[(lOne+1):length(bigSample)]
+      
+      # stats
+      tempDiffs <- statType(tempOne, tempTwo, adjust = T)
+      summaryPerm$jointDist[i] <- tempDiffs # statType(tempDiffs, na.rm = T) 
+      
+    }  
+    
+  } else {
+    
+    for (i in 1:nPerms){
+      
+      # shift labels in a pairwise fashion
+      tempDiffs <- statType((-1)^rbinom(lOne,1,0.5) * (group1 - group2))
+      summaryPerm$jointDist[i] <- tempDiffs
+      
+    }
+    
+  }
+  
+  # get the observed difference
+  diffs <- statType(group1,group2, adjust = T)
+  observedAbs <- abs(diffs) # maybe leave it as means here
+  observed <- diffs
+  summaryPerm$Pval <- 2 * (1 - ecdf(summaryPerm$jointDist)(observedAbs))
+  if (length(unique(abs(summaryPerm$jointDist))) == 1) {summaryPerm$Pval <- 1} # if the difference is always the same, then p = 1
+  summaryPerm$Observed <- observed
+  
+  return(summaryPerm)
+  
+}
+
+```
+
+Future home of an actual tutorial.
+
+```{r Compute, echo = FALSE, include = T}
+v1 <- rbinom(n = 100, size = 1, prob = 0.5)
+
+n <- length(v1)
+
+evals <- data.frame(Diffs = rep(seq(n)),
+                    ARI = rep(0,n),
+                    RI = rep(0,n),
+                    Eq = rep(0,n))
+
+for (i in seq(n)) {
+  
+  ifelse(i < n, v2temp <- c((1 - v1[seq(i)]), v1[(i+1):n]), v2temp <- v1)
+  
+  evals$ARI[i] <- arandi(v1,v2temp)
+  evals$RI[i] <- arandi(v1,v2temp, adjust = F)
+  evals$Eq[i] <- sum(v1==v2temp) / length(v1)
+  #perm <- permute(v1, v2temp, arandi)[[1]]
+  #evals$Z[i] <- ((evals$ARI[i] - mean(perm)) / sd(perm)) / 100
+  
+}
+
+evals <- melt(evals[seq(n-1),], id.vars = "Diffs")
+
+ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) + 
+  geom_line() +
+  #geom_hline(yintercept = 0.02) +
+  theme_classic()
+```
+

@@ -45,8 +45,11 @@ enableGitInfo = false
   smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
 
 [params]
+  # Short description
+  description = "This is Claudio Toro-Serey's website, a grad student blogging about stats, networks, decision making, etc."
+  
   # Color theme.
-  #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, or `1950s`.
+  #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, `1950s`, or `custom`.
   color_theme = "forest"
 
   # Font style. 
@@ -203,7 +206,7 @@ enableGitInfo = false
     #   1 = Detailed
     #   2 = APA
     #   3 = MLA
-    publication_format = 3
+    publication_format = 2
 
   # Social/Academic Networking
   #
@@ -269,7 +272,7 @@ enableGitInfo = false
 
 [[menu.main]]
   name = "Publications"
-  url = "#publications_selected"
+  url = "#publications"
   weight = 2
 
 [[menu.main]]

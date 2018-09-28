@@ -24,7 +24,7 @@ publication_short = "In *Brain Connectivity*"
 abstract = ""
 
 # Featured image thumbnail (optional)
-image_preview = "testFile.png"
+image_preview = ""
 
 # Is this a selected publication? (true/false)
 selected = true
@@ -32,7 +32,7 @@ selected = true
 # Projects (optional).
 #   Associate this publication with one or more of your projects.
 #   Simply enter the filename (excluding '.md') of your project file in `content/project/`.
-projects = ["example-external-project"]
+# projects = []
 
 # Links (optional).
 url_pdf = "https://www.liebertpub.com/doi/pdf/10.1089/brain.2015.0374"
@@ -47,7 +47,7 @@ url_source = ""
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
-url_custom = [{name = "Custom Link", url = "http://example.org"}]
+# url_custom = [{name = "Custom Link", url = "http://example.org"}]
 
 # Does the content use math formatting?
 math = true
