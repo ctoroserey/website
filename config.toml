@@ -3,7 +3,7 @@
 
 # The URL of your website.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
-baseurl = "http://ctoroserey.netlify.com/"
+baseurl = "https://ctoroserey.netlify.com/"
 
 # Title of your site (change)
 title = "Claudio Toro-Serey"
@@ -62,7 +62,7 @@ enableGitInfo = false
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-  organizations = [ { name = "Boston University", url = "http://sites.bu.edu/cdlab/" } ]
+  organizations = [ { name = "Boston University", url = "https://sites.bu.edu/cdlab/" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "avatar1.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
