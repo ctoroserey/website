@@ -276,10 +276,14 @@ enableGitInfo = false
   weight = 2
 
 [[menu.main]]
-  name = "Blog Posts"
-  url = "#posts"
+  name = "OS Contributions"
+  url = "#oscontributions"
   weight = 3
 
+[[menu.main]]
+  name = "Blog Posts"
+  url = "#posts"
+  weight = 4
 
 # Taxonomies.
 [taxonomies]
