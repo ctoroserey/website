@@ -18,7 +18,7 @@
       <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/ari/</guid>
-      <description>A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato &amp;amp; Hric, 2016 for an initial survey), here I’ll focus on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage.</description>
+      <description>A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato &amp;amp; Hric, 2016 for an initial survey), here I’ll give a superficial view on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage.</description>
     </item>
     
     <item>

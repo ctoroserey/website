@@ -23,6 +23,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 library(mcclust)
 library(reshape2)
+library(knitr)
+library(kableExtra)
+library(tidyverse)
 ```
 
 ``` {r Functions, echo = FALSE, include = FALSE}
@@ -76,45 +79,103 @@ permute <- function(group1 = 1, group2 = 2, statType = mean, nPerms = 5000, pair
 
 ```
 
-A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato & Hric, 2016 for an initial survey), here I'll focus on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage. Since I'm more familiar with the usage of this measure in networks, I'll base my examples and terminology on this framework.
+A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato & Hric, 2016 for an initial survey), here I'll give a superficial view on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage. Since I'm more familiar with the usage of this measure in networks, I'll base my examples and terminology on this framework.
 
-The original Rand Index was introduced by William Rand in 1975, and it aimed to determine whether two clustering algorithms grouped every pair of nodes in a similar fashion. For example, it could be that nodes 3 and 25 from your network were grouped together in partitions from algorithms A and B, but separately by method C (you can probably already think of uses for this index in regards to examining the effects of experimental network perturbations in their organization). This agreement is computed by the following formula:
+The original Rand Index (RI) was introduced by William Rand in 1975, and it aimed to determine whether two clustering algorithms grouped every pair of nodes in a similar fashion. For example, it could be that nodes 3 and 25 from your network were grouped together in partitions from algorithms A and B, but separately by method C (you can probably already think of uses for this index in regards to examining the effects of experimental network perturbations in their organization). This agreement is computed by the following simple formula:
 
+$$\frac{a + b}{a + b + c + d}$$
 
+Where $a$ is the number of pairs of nodes that were grouped together in both partitions, $b$ is the number that were grouped separately, and $c$ and $d$ denote the number grouped together (separately) on one partition, but separately (together) in the other. In short, the Rand Index just gives the proportion of nodes equally paired in both partitions.
 
-At this point you might have already thought: why do this instead of directly checking if the node labels are identical across partitions? (i.e. `partitionA == partitionB`) That is the exact thought that motivated me to write this post!  
+At this point you might have already thought: what is the advantage of doing this instead of directly checking if the node labels are identical across partitions? (i.e. `partitionA == partitionB`) That is the exact thought that motivated me to write this post! To begin exploring this, let's look at a toy example of two hypothetical binary clustering algorithms (A and B) applied to a small network:
 
+``` {r table 1, echo = T}
+# Toy clusterings
+table <- data.frame(A = c(1,1,1,0,0),
+                    B = c(0,0,0,1,1))
 
+# Output table
+table %>% 
+  knitr::kable("html") %>%
+  kable_styling(full_width = FALSE)
 
+# Compute agreement
+EQ <- mean(table$A == table$B)
+RI <- arandi(table$A, table$B, adjust = F)
+```
 
+In this case, a simple equivalence would of course yield a value of `r EQ`, as none of the values match. On the other hand, RI yields a value of `r RI`. This is because the relationship among all nodes remains unchanged across partitions. This portrays the first advantage of metrics like RI: they evaluate the underlying relationship among your clustered nodes while being agnostic to the labeling system. 
 
-```{r Compute, echo = FALSE, include = T}
-v1 <- rbinom(n = 100, size = 1, prob = 0.5)
+Now let's tweak the clusters a bit, so that there is one rogue node that switches clusters.
 
-n <- length(v1)
+``` {r table 2, echo = FALSE}
+# Toy clusterings
+table <- data.frame(A = c(0,0,0,1,1),
+                    B = c(0,1,0,1,1))
 
-evals <- data.frame(Diffs = rep(seq(n)),
+# Output table
+table %>% 
+  knitr::kable("html") %>%
+  kable_styling(full_width = FALSE)
+
+# Compute agreement
+EQ <- mean(table$A == table$B)
+RI <- arandi(table$A, table$B, adjust = F)
+```
+
+In this case, checking the equivalence of the vectors yields `r EQ`, while the Rand Index gives `r RI`. This is because RI doubles the dimensionality by considering the underlying interconnectedness of the nodes, such that the total number of pairwise combinations becomes `factorial(5) / (factorial(2) * factorial(5-2))`, or 10. By changing the allegiance of a single node, we basically change the interaction of that node with the other four members, giving us an agreement level between partitions of `6/10` (i.e., the RI value we got). To clarify this idea, let's now suppose that cluster labels can be 0, 1, or 2, with the rogue node now being part of 2:
+
+``` {r table 3, echo = FALSE}
+# Toy clusterings
+table <- data.frame(A = c(0,0,0,1,1),
+                    B = c(0,2,0,1,1))
+
+# Output table
+table %>% 
+  knitr::kable("html") %>%
+  kable_styling(full_width = FALSE)
+
+# Compute agreement
+EQ <- mean(table$A == table$B)
+RI <- arandi(table$A, table$B, adjust = F)
+
+```
+
+In this case, both the vector equivalence (`r EQ`) and RI (`r RI`) give the same value. This is because the rogue node was originally tied to two others in cluster 0, whereas its unrelatedness to cluster 1 remains unchanged (unlike before, where it became part of it). This now gives a ratio of changes of `8/10`. Hopefully this provides a better sense of the advantages of RI over simple equivalence, especially once you increase both the number of nodes and clusters.
+
+So far so good, but an issue with the basic RI is...
+
+```{r Compute, echo = T, include = T}
+# Produce a random vector with 100 binary classification
+n <- 100
+v1 <- rbinom(n = n, size = 1, prob = 0.5)
+
+# Data frame to store evaluations
+evals <- data.frame(Diffs = seq(n),
                     ARI = rep(0,n),
                     RI = rep(0,n),
-                    Eq = rep(0,n))
+                    EQ = rep(0,n))
 
+# Check the degree of agreement per metric for each incremental switch in affiliation
 for (i in seq(n)) {
   
+  # Switch affiliation up to the ith node
   ifelse(i < n, v2temp <- c((1 - v1[seq(i)]), v1[(i+1):n]), v2temp <- v1)
   
+  # Evaluate
   evals$ARI[i] <- arandi(v1,v2temp)
   evals$RI[i] <- arandi(v1,v2temp, adjust = F)
-  evals$Eq[i] <- sum(v1==v2temp) / length(v1)
-  #perm <- permute(v1, v2temp, arandi)[[1]]
-  #evals$Z[i] <- ((evals$ARI[i] - mean(perm)) / sd(perm)) / 100
+  evals$EQ[i] <- mean(v1 == v2temp)
   
 }
 
+# Make the data.frame long instead of wide for ggplot
 evals <- melt(evals[seq(n-1),], id.vars = "Diffs")
 
+# And plot
 ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) + 
   geom_line() +
-  #geom_hline(yintercept = 0.02) +
   theme_classic()
 ```
 
+So, progressively switching affiliations of vector 2 has the expected negative linear trend on Eq, as the vectors become increasingly dissimilar. RI just  compares the overall agreement as we know it (regardless of labels), so it makes sense that it matches Eq at 50 as it’s the point where the pairwise comparisons are equal to chance. ARI adjusts RI in a way that compares it to the expected value of assigning elements to clusters at chance, hence why at 50 it goes down to 0. This adjustment works really well for clustering systems with many partitions, but it steeply penalizes binary classifications like ours. 

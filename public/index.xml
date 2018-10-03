@@ -16,10 +16,224 @@
       <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/ari/</guid>
-      <description>&lt;p&gt;A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato &amp;amp; Hric, 2016 for an initial survey), here I’ll focus on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage. Since I’m more familiar with the usage of this measure in networks, I’ll base my examples and terminology on this framework.&lt;/p&gt;
-&lt;p&gt;The original Rand Index was introduced by William Rand in 1975, and it aimed to determine whether two clustering algorithms grouped every pair of nodes in a similar fashion. For example, it could be that nodes 3 and 25 from your network were grouped together in partitions from algorithms A and B, but separately by method C (you can probably already think of uses for this index in regards to examining the effects of experimental network perturbations in their organization). This agreement is computed by the following formula:&lt;/p&gt;
-&lt;p&gt;At this point you might have already thought: why do this instead of directly checking if the node labels are identical across partitions? (i.e. &lt;code&gt;partitionA == partitionB&lt;/code&gt;) That is the exact thought that motivated me to write this post!&lt;/p&gt;
+      <description>&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato &amp;amp; Hric, 2016 for an initial survey), here I’ll give a superficial view on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage. Since I’m more familiar with the usage of this measure in networks, I’ll base my examples and terminology on this framework.&lt;/p&gt;
+&lt;p&gt;The original Rand Index (RI) was introduced by William Rand in 1975, and it aimed to determine whether two clustering algorithms grouped every pair of nodes in a similar fashion. For example, it could be that nodes 3 and 25 from your network were grouped together in partitions from algorithms A and B, but separately by method C (you can probably already think of uses for this index in regards to examining the effects of experimental network perturbations in their organization). This agreement is computed by the following simple formula:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\frac{a + b}{a + b + c + d}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Where &lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt; is the number of pairs of nodes that were grouped together in both partitions, &lt;span class=&#34;math inline&#34;&gt;\(b\)&lt;/span&gt; is the number that were grouped separately, and &lt;span class=&#34;math inline&#34;&gt;\(c\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; denote the number grouped together (separately) on one partition, but separately (together) in the other. In short, the Rand Index just gives the proportion of nodes equally paired in both partitions.&lt;/p&gt;
+&lt;p&gt;At this point you might have already thought: what is the advantage of doing this instead of directly checking if the node labels are identical across partitions? (i.e. &lt;code&gt;partitionA == partitionB&lt;/code&gt;) That is the exact thought that motivated me to write this post! To begin exploring this, let’s look at a toy example of two hypothetical binary clustering algorithms (A and B) applied to a small network:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Toy clusterings
+table &amp;lt;- data.frame(A = c(1,1,1,0,0),
+                    B = c(0,0,0,1,1))
+
+# Output table
+table %&amp;gt;% 
+  knitr::kable(&amp;quot;html&amp;quot;) %&amp;gt;%
+  kable_styling(full_width = FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+A
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+B
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Compute agreement
+EQ &amp;lt;- mean(table$A == table$B)
+RI &amp;lt;- arandi(table$A, table$B, adjust = F)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this case, a simple equivalence would of course yield a value of 0, as none of the values match. On the other hand, RI yields a value of 1. This is because the relationship among all nodes remains unchanged across partitions. This portrays the first advantage of metrics like RI: they evaluate the underlying relationship among your clustered nodes while being agnostic to the labeling system.&lt;/p&gt;
+&lt;p&gt;Now let’s tweak the clusters a bit, so that there is one rogue node that switches clusters.&lt;/p&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+A
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+B
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;In this case, checking the equivalence of the vectors yields 0.8, while the Rand Index gives 0.6. This is because RI doubles the dimensionality by considering the underlying interconnectedness of the nodes, such that the total number of pairwise combinations becomes &lt;code&gt;factorial(5) / (factorial(2) * factorial(5-2))&lt;/code&gt;, or 10. By changing the allegiance of a single node, we basically change the interaction of that node with the other four members, giving us an agreement level between partitions of &lt;code&gt;6/10&lt;/code&gt; (i.e., the RI value we got). To clarify this idea, let’s now suppose that cluster labels can be 0, 1, or 2, with the rogue node now being part of 2:&lt;/p&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+A
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+B
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;In this case, both the vector equivalence (0.8) and RI (0.8) give the same value. This is because the rogue node was originally tied to two others in cluster 0, whereas its unrelatedness to cluster 1 remains unchanged (unlike before, where it became part of it). This now gives a ratio of changes of &lt;code&gt;8/10&lt;/code&gt;. Hopefully this provides a better sense of the advantages of RI over simple equivalence, especially once you increase both the number of nodes and clusters.&lt;/p&gt;
+&lt;p&gt;So far so good, but an issue with the basic RI is…&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Produce a random vector with 100 binary classification
+n &amp;lt;- 100
+v1 &amp;lt;- rbinom(n = n, size = 1, prob = 0.5)
+
+# Data frame to store evaluations
+evals &amp;lt;- data.frame(Diffs = seq(n),
+                    ARI = rep(0,n),
+                    RI = rep(0,n),
+                    EQ = rep(0,n))
+
+# Check the degree of agreement per metric for each incremental switch in affiliation
+for (i in seq(n)) {
+  
+  # Switch affiliation up to the ith node
+  ifelse(i &amp;lt; n, v2temp &amp;lt;- c((1 - v1[seq(i)]), v1[(i+1):n]), v2temp &amp;lt;- v1)
+  
+  # Evaluate
+  evals$ARI[i] &amp;lt;- arandi(v1,v2temp)
+  evals$RI[i] &amp;lt;- arandi(v1,v2temp, adjust = F)
+  evals$EQ[i] &amp;lt;- mean(v1 == v2temp)
+  
+}
+
+# Make the data.frame long instead of wide for ggplot
+evals &amp;lt;- melt(evals[seq(n-1),], id.vars = &amp;quot;Diffs&amp;quot;)
+
+# And plot
+ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) + 
+  geom_line() +
+  theme_classic()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2018-09-26-ARI_files/figure-html/Compute-1.svg&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;So, progressively switching affiliations of vector 2 has the expected negative linear trend on Eq, as the vectors become increasingly dissimilar. RI just compares the overall agreement as we know it (regardless of labels), so it makes sense that it matches Eq at 50 as it’s the point where the pairwise comparisons are equal to chance. ARI adjusts RI in a way that compares it to the expected value of assigning elements to clusters at chance, hence why at 50 it goes down to 0. This adjustment works really well for clustering systems with many partitions, but it steeply penalizes binary classifications like ours.&lt;/p&gt;
 </description>
     </item>
     
