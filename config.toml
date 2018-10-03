@@ -276,7 +276,7 @@ enableGitInfo = false
   weight = 2
 
 [[menu.main]]
-  name = "OS Contributions"
+  name = "OpenSci Contributions"
   url = "#oscontributions"
   weight = 3
 
