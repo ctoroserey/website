@@ -324,7 +324,7 @@
 <p>The original Rand Index (RI) was introduced by William Rand in 1975, and it aimed to determine whether two clustering algorithms grouped every pair of nodes in a similar fashion. For example, it could be that nodes 3 and 25 from your network were grouped together in partitions from algorithms A and B, but separately by method C (you can probably already think of uses for this index in regards to examining the effects of experimental network perturbations in their organization). This agreement is computed by the following simple formula:</p>
 <p><span class="math display">\[\frac{a + b}{a + b + c + d}\]</span></p>
 <p>Where <span class="math inline">\(a\)</span> is the number of pairs of nodes that were grouped together in both partitions, <span class="math inline">\(b\)</span> is the number that were grouped separately, and <span class="math inline">\(c\)</span> and <span class="math inline">\(d\)</span> denote the number grouped together (separately) in one partition, but separately (together) in the other. In short, the Rand Index just gives the proportion of nodes equally paired in both partitions.</p>
-<p>At this point you might have already thought: what is the advantage of doing this instead of directly checking if the node labels are identical across partitions? (i.e. <code>partitionA == partitionB</code>) For some of us the answer is not quite evident, which is what motivated me to write this post. To begin exploring this, let’s look at a toy example of two hypothetical binary clustering algorithms (A and B) applied to a small network:</p>
+<p>At this point you might have already thought: what is the advantage of doing this instead of directly checking if the node labels are identical across partitions? (i.e. <code>partitionA == partitionB</code>) For some of us the answer is not quite evident, which is what motivated me to write this post. To begin exploring this, let’s look at a toy example of two hypothetical binary clustering algorithms (A and B) applied to a small network (I will mainly focus on this type of classification for simplicity):</p>
 <pre class="r"><code># Toy clusterings
 table &lt;- data.frame(A = c(1,1,1,0,0),
                     B = c(0,0,0,1,1))
@@ -506,8 +506,8 @@ B
 <div id="the-adjusted-rand-index" class="section level2">
 <h2>The Adjusted Rand Index</h2>
 <p>So far so good, but as researchers we always want to control for the possibility that our results are defined by chance! That’s where the adjustment to RI introduced by Hubert &amp; Arabie (1985) comes in. The Adjusted Rand Index controls for the expected distribution of labels given by chance, and compares the original RI to this random model–while still guaranteeing that perfect clustering matches get a value of 1. <a href="https://davetang.org/muse/2017/09/21/adjusted-rand-index/">Others have already done a great job in explaining the mathematical nuances of the ARI</a>, so I will instead focus on understanding how the three metrics (i.e. EQ, RI, and ARI) behave under similar circumstances.</p>
-<p>This time, we have an original vector of 100 nodes classified as part of cluster 1 or 0. I will progressively switch the allegiance of each node, and on each case I will estimate the agreement between the new vector and the original one. In other words, I will check the values given by these metrics as the modified vector slowly becomes more disimilar from the original one. The plot summarizes the results.</p>
-<pre class="r"><code># Produce a random vector with 100 binary classification
+<p>Let’s say we have an original vector of 100 nodes classified as part of either cluster 1 or 0. I will progressively switch the allegiance of each node, and on each case I will estimate the agreement between the new vector and the original one. In other words, I will check the values given by these metrics as the modified vector slowly becomes more disimilar from the original one. The plot summarizes the results.</p>
+<pre class="r"><code># Produce a random vector with 100 binary classifications
 n &lt;- 100
 v1 &lt;- rbinom(n = n, size = 1, prob = 0.5)
 
@@ -543,7 +543,7 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
 </div>
 <div id="closing" class="section level2">
 <h2>Closing</h2>
-<p>As I said in the introduction, I use the ARI to check how similar the distribution of functional brain networks are across individuals. However, you could imagine using this metric as a way to evaluate the accuracy of neural nets as they are being trained (provided that you have the ground truth of what’s being clustered). It is also worth mentioning that the ARI is not the ultimate way to evaluate clusterings. As Fortunato &amp; Hric (2016) discuss, metrics based on mutual information tend to be more robust (i.e. variation of information), and are also included in statistical packages (like mcclust for R, which I use here).</p>
+<p>As I said in the introduction, I use the ARI to check how similar the distribution of functional brain networks is across individuals. However, you could imagine using this metric as a way to evaluate the accuracy of neural nets as they are being trained (provided that you have the ground truth of what’s being clustered). It is also worth mentioning that the ARI is not the ultimate way to evaluate clusterings. As Fortunato &amp; Hric (2016) discuss, metrics based on mutual information tend to be more robust (i.e. variation of information), and are also included in statistical packages (like mcclust for R, which I use here).</p>
 <p>Regardless, I hope this can eventually be as useful for someone to read as it was for me to write it.</p>
 </div>
 <div class="footnotes">
