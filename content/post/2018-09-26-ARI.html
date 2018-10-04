@@ -249,6 +249,7 @@ evals &lt;- melt(evals[seq(n-1),], id.vars = &quot;Diffs&quot;)
 # And plot
 ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) + 
   geom_line() +
+  scale_color_discrete(name = &quot;Method&quot;) +
   theme_classic()</code></pre>
 <p><img src="/post/2018-09-26-ARI_files/figure-html/Compute-1.svg" width="576" /></p>
 <p>So, progressively switching the affiliations of the original vector has the expected negative linear trend on EQ, as the vectors become increasingly dissimilar. On the other hand, RI heavily penalises initial clustering disagreements, but note that once the differences pass 50% the vectors are deemed increasingly similar. This parabolic function is a result of node pairs once again being grouped in the same/different clusters once direct differences pass chance levels. Finally, we can see that ARI drops to 0 when the vector differences reach this chance level. In accord with its definition, positive ARI values thus denote agreements above those expected by chance<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
@@ -256,7 +257,7 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
 <div id="closing" class="section level2">
 <h2>Closing</h2>
 <p>As I said in the introduction, I use the ARI to check how similar the distribution of functional brain networks are across individuals. However, you could imagine using this metric as a way to evaluate the accuracy of neural nets as they are being trained (provided that you have the ground truth of what’s being clustered). It is also worth mentioning that the ARI is not the ultimate way to evaluate clusterings. As Fortunato &amp; Hric (2016) discuss, metrics based on mutual information tend to be more robust (i.e. variation of information), and are also included in statistical packages (like mcclust for R, which I use here).</p>
-<p>Regardless, I hope this post is of use to someone who is beginning to consider these comparisons, or at least motivated them to learn more about them elsewhere.</p>
+<p>Regardless, I hope this can eventually be as useful for someone to read as it was for me to write it.</p>
 </div>
 <div class="footnotes">
 <hr />
