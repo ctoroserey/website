@@ -192,6 +192,6 @@ So, progressively switching the affiliations of the original vector has the expe
 
 ## Closing
 
-As I said in the introduction, I use the ARI to check how similar the distribution of functional brain networks are across individuals. However, you could imagine using this metric as a way to evaluate the accuracy of neural nets as they are being trained (provided that you have the ground truth of what's being clustered). It is also worth mentioning that the ARI is not the ultimate way to evaluate clusterings. As Fortunato & Hric (2016) discuss, metrics based on mutual information tend to be more robust (i.e. variation of information), and are also included in statistical packages (like mcclust for R, which I use here).
+As I said in the introduction, I use the ARI to check how similar the distribution of functional brain networks is across individuals. However, you could imagine using this metric as a way to evaluate the accuracy of neural nets as they are being trained (provided that you have the ground truth of what's being clustered). It is also worth mentioning that the ARI is not the ultimate way to evaluate clusterings. As Fortunato & Hric (2016) discuss, metrics based on mutual information tend to be more robust (i.e. variation of information), and are also included in statistical packages (like mcclust for R, which I use here).
 
 Regardless, I hope this can eventually be as useful for someone to read as it was for me to write it.
