@@ -390,7 +390,7 @@ B
 <pre class="r"><code># Compute agreement (arandi comes from the package &#39;mcclust&#39;)
 EQ &lt;- mean(table$A == table$B)
 RI &lt;- arandi(table$A, table$B, adjust = F)</code></pre>
-<p>In this case, a simple equivalence would of course yield a value of 0, as none of the values match. On the other hand, RI yields a value of 1. This is because the relationship among all nodes remains unchanged across partitions. This portrays the first advantage of metrics like RI: <em>they evaluate the underlying relationship among your clustered nodes while being agnostic to the labeling system.</em></p>
+<p>In this case, a simple equivalence (EQ) would of course yield a value of 0, as none of the values match. On the other hand, RI yields a value of 1. This is because the relationship among all nodes remains unchanged across partitions. This portrays the first advantage of metrics like RI: <em>they evaluate the underlying relationship among your clustered nodes while being agnostic to the labeling system.</em></p>
 <p>Now let’s tweak the clusters a bit, so that there is one rogue node that switches clusters.</p>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -506,7 +506,7 @@ B
 <div id="the-adjusted-rand-index" class="section level2">
 <h2>The Adjusted Rand Index</h2>
 <p>So far so good, but as researchers we always want to control for the possibility that our results are defined by chance! That’s where the adjustment to RI introduced by Hubert &amp; Arabie (1985) comes in. The Adjusted Rand Index controls for the expected distribution of labels given by chance, and compares the original RI to this random model–while still guaranteeing that perfect clustering matches get a value of 1. <a href="https://davetang.org/muse/2017/09/21/adjusted-rand-index/">Others have already done a great job in explaining the mathematical nuances of the ARI</a>, so I will instead focus on understanding how the three metrics (i.e. EQ, RI, and ARI) behave under similar circumstances.</p>
-<p>This time, we have an original vector of 100 nodes classified as part of cluster 1 or 0. I will increasingly switch the allegiance of each node, and on each case I will estimate the agreement between the new vector and the original one. In other words, I will check the values given by these metrics as the modified vector slowly becomes more disimilar from the original one. The plot summarizes the results.</p>
+<p>This time, we have an original vector of 100 nodes classified as part of cluster 1 or 0. I will progressively switch the allegiance of each node, and on each case I will estimate the agreement between the new vector and the original one. In other words, I will check the values given by these metrics as the modified vector slowly becomes more disimilar from the original one. The plot summarizes the results.</p>
 <pre class="r"><code># Produce a random vector with 100 binary classification
 n &lt;- 100
 v1 &lt;- rbinom(n = n, size = 1, prob = 0.5)
@@ -539,7 +539,7 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
   scale_color_discrete(name = &quot;Method&quot;) +
   theme_classic()</code></pre>
 <p><img src="/post/2018-09-26-ARI_files/figure-html/Compute-1.svg" width="576" /></p>
-<p>So, progressively switching the affiliations of the original vector has the expected negative linear trend on EQ, as the vectors become increasingly dissimilar. On the other hand, RI heavily penalises initial clustering disagreements, but note that once the differences pass 50% the vectors are deemed increasingly similar. This parabolic function is a result of node pairs once again being grouped in the same/different clusters once direct differences pass chance levels. Finally, we can see that ARI drops to 0 when the vector differences reach this chance level. In accord with its definition, positive ARI values thus denote agreements above those expected by chance<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
+<p>So, progressively switching the affiliations of the original vector has the expected negative linear trend on EQ, as the vectors become increasingly dissimilar. On the other hand, RI heavily penalises initial clustering disagreements, but notice that once the differences pass 50% the vectors are deemed increasingly similar. This parabolic function is a result of node pairs once again being grouped in the same/different clusters once direct differences pass chance levels (think back to the first example, and how inverting the values still maintains the underlying relationships). Finally, we can see that ARI drops to 0 when the vector differences reach this chance level. In accord with its definition, positive ARI values thus denote agreements above those expected by chance<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
 </div>
 <div id="closing" class="section level2">
 <h2>Closing</h2>
