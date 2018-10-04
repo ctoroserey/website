@@ -30,14 +30,14 @@ draft: false
 
 <div id="a-bit-of-background" class="section level2">
 <h2>A bit of background</h2>
-<p>A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato &amp; Hric, 2016 for an initial survey), here I’ll give a superficial view on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage. Since I’m more familiar with the usage of this measure in networks, I’ll base my examples and terminology on this framework.</p>
+<p>A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato &amp; Hric, 2016 for an initial survey), here I’ll give a superficial view on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage. Since I’m more familiar with the usage of this measure in networks, I’ll base my terminology on this framework.</p>
 </div>
 <div id="the-rand-index" class="section level2">
 <h2>The Rand Index</h2>
 <p>The original Rand Index (RI) was introduced by William Rand in 1975, and it aimed to determine whether two clustering algorithms grouped every pair of nodes in a similar fashion. For example, it could be that nodes 3 and 25 from your network were grouped together in partitions from algorithms A and B, but separately by method C (you can probably already think of uses for this index in regards to examining the effects of experimental network perturbations in their organization). This agreement is computed by the following simple formula:</p>
 <p><span class="math display">\[\frac{a + b}{a + b + c + d}\]</span></p>
-<p>Where <span class="math inline">\(a\)</span> is the number of pairs of nodes that were grouped together in both partitions, <span class="math inline">\(b\)</span> is the number that were grouped separately, and <span class="math inline">\(c\)</span> and <span class="math inline">\(d\)</span> denote the number grouped together (separately) on one partition, but separately (together) in the other. In short, the Rand Index just gives the proportion of nodes equally paired in both partitions.</p>
-<p>At this point you might have already thought: what is the advantage of doing this instead of directly checking if the node labels are identical across partitions? (i.e. <code>partitionA == partitionB</code>) For some of us this is not quite evident, which is what motivated me to write this post. To begin exploring this, let’s look at a toy example of two hypothetical binary clustering algorithms (A and B) applied to a small network:</p>
+<p>Where <span class="math inline">\(a\)</span> is the number of pairs of nodes that were grouped together in both partitions, <span class="math inline">\(b\)</span> is the number that were grouped separately, and <span class="math inline">\(c\)</span> and <span class="math inline">\(d\)</span> denote the number grouped together (separately) in one partition, but separately (together) in the other. In short, the Rand Index just gives the proportion of nodes equally paired in both partitions.</p>
+<p>At this point you might have already thought: what is the advantage of doing this instead of directly checking if the node labels are identical across partitions? (i.e. <code>partitionA == partitionB</code>) For some of us the answer is not quite evident, which is what motivated me to write this post. To begin exploring this, let’s look at a toy example of two hypothetical binary clustering algorithms (A and B) applied to a small network:</p>
 <pre class="r"><code># Toy clusterings
 table &lt;- data.frame(A = c(1,1,1,0,0),
                     B = c(0,0,0,1,1))
@@ -103,7 +103,7 @@ B
 <pre class="r"><code># Compute agreement (arandi comes from the package &#39;mcclust&#39;)
 EQ &lt;- mean(table$A == table$B)
 RI &lt;- arandi(table$A, table$B, adjust = F)</code></pre>
-<p>In this case, a simple equivalence would of course yield a value of 0, as none of the values match. On the other hand, RI yields a value of 1. This is because the relationship among all nodes remains unchanged across partitions. This portrays the first advantage of metrics like RI: they evaluate the underlying relationship among your clustered nodes while being agnostic to the labeling system.</p>
+<p>In this case, a simple equivalence would of course yield a value of 0, as none of the values match. On the other hand, RI yields a value of 1. This is because the relationship among all nodes remains unchanged across partitions. This portrays the first advantage of metrics like RI: <em>they evaluate the underlying relationship among your clustered nodes while being agnostic to the labeling system.</em></p>
 <p>Now let’s tweak the clusters a bit, so that there is one rogue node that switches clusters.</p>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -214,7 +214,7 @@ B
 </tr>
 </tbody>
 </table>
-<p>In this case, both the vector equivalence (0.8) and RI (0.8) give the same value. This is because the rogue node was originally tied to two others in cluster 0, whereas its unrelatedness to cluster 1 remains unchanged (unlike before, where it became part of it). This now gives a ratio of changes of <code>8/10</code>. Hopefully this provides a better sense of the advantages of RI over simple equivalence, especially once you increase both the number of nodes and clusters.</p>
+<p>In this case, both the vector equivalence and RI give the same value (0.8). This is because the rogue node was originally tied to two others in cluster 0, whereas its unrelatedness to cluster 1 remains unchanged (unlike before, where it became part of it). This now gives a ratio of similarities of <code>8/10</code>. Hopefully this provides a better sense of the advantages of RI over simple equivalence, especially once you increase both the number of nodes and clusters.</p>
 </div>
 <div id="the-adjusted-rand-index" class="section level2">
 <h2>The Adjusted Rand Index</h2>

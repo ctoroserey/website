@@ -80,7 +80,7 @@ permute <- function(group1 = 1, group2 = 2, statType = mean, nPerms = 5000, pair
 
 ## A bit of background
 
-A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato & Hric, 2016 for an initial survey), here I'll give a superficial view on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage. Since I'm more familiar with the usage of this measure in networks, I'll base my examples and terminology on this framework.
+A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato & Hric, 2016 for an initial survey), here I'll give a superficial view on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage. Since I'm more familiar with the usage of this measure in networks, I'll base my terminology on this framework.
 
 ## The Rand Index
 
@@ -88,9 +88,9 @@ The original Rand Index (RI) was introduced by William Rand in 1975, and it aime
 
 $$\frac{a + b}{a + b + c + d}$$
 
-Where $a$ is the number of pairs of nodes that were grouped together in both partitions, $b$ is the number that were grouped separately, and $c$ and $d$ denote the number grouped together (separately) on one partition, but separately (together) in the other. In short, the Rand Index just gives the proportion of nodes equally paired in both partitions.
+Where $a$ is the number of pairs of nodes that were grouped together in both partitions, $b$ is the number that were grouped separately, and $c$ and $d$ denote the number grouped together (separately) in one partition, but separately (together) in the other. In short, the Rand Index just gives the proportion of nodes equally paired in both partitions.
 
-At this point you might have already thought: what is the advantage of doing this instead of directly checking if the node labels are identical across partitions? (i.e. `partitionA == partitionB`) For some of us this is not quite evident, which is what motivated me to write this post. To begin exploring this, let's look at a toy example of two hypothetical binary clustering algorithms (A and B) applied to a small network:
+At this point you might have already thought: what is the advantage of doing this instead of directly checking if the node labels are identical across partitions? (i.e. `partitionA == partitionB`) For some of us the answer is not quite evident, which is what motivated me to write this post. To begin exploring this, let's look at a toy example of two hypothetical binary clustering algorithms (A and B) applied to a small network:
 
 ``` {r table 1, echo = T}
 # Toy clusterings
@@ -107,7 +107,7 @@ EQ <- mean(table$A == table$B)
 RI <- arandi(table$A, table$B, adjust = F)
 ```
 
-In this case, a simple equivalence would of course yield a value of `r EQ`, as none of the values match. On the other hand, RI yields a value of `r RI`. This is because the relationship among all nodes remains unchanged across partitions. This portrays the first advantage of metrics like RI: they evaluate the underlying relationship among your clustered nodes while being agnostic to the labeling system. 
+In this case, a simple equivalence would of course yield a value of `r EQ`, as none of the values match. On the other hand, RI yields a value of `r RI`. This is because the relationship among all nodes remains unchanged across partitions. This portrays the first advantage of metrics like RI: *they evaluate the underlying relationship among your clustered nodes while being agnostic to the labeling system.* 
 
 Now let's tweak the clusters a bit, so that there is one rogue node that switches clusters.
 
@@ -144,7 +144,7 @@ RI <- arandi(table$A, table$B, adjust = F)
 
 ```
 
-In this case, both the vector equivalence (`r EQ`) and RI (`r RI`) give the same value. This is because the rogue node was originally tied to two others in cluster 0, whereas its unrelatedness to cluster 1 remains unchanged (unlike before, where it became part of it). This now gives a ratio of changes of `8/10`. Hopefully this provides a better sense of the advantages of RI over simple equivalence, especially once you increase both the number of nodes and clusters.
+In this case, both the vector equivalence and RI give the same value (`r RI`). This is because the rogue node was originally tied to two others in cluster 0, whereas its unrelatedness to cluster 1 remains unchanged (unlike before, where it became part of it). This now gives a ratio of similarities of `8/10`. Hopefully this provides a better sense of the advantages of RI over simple equivalence, especially once you increase both the number of nodes and clusters.
 
 ## The Adjusted Rand Index
 
