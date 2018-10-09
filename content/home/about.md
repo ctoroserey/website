@@ -18,7 +18,7 @@ weight = 5
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD Student in Cognitive Neuroscience"
+  course = "PhD Student in Psychology"
   institution = "Boston University"
   year = ""
 
