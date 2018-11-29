@@ -81,11 +81,11 @@ Finally, if you select `Secret = T` the function won't generate a dataframe. Ins
 
 It might be helfpul to get acquainted with how everything looks before digging into the code. You can go ahead and play with the app if you'd like, or check it out [online](https://ctoroserey.shinyapps.io/SecretSantaGeneratR/).
 
-<iframe width="100%" height=1000 src="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/"></iframe>
+<iframe width="100%" height=900 src="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/"></iframe>
 
 Alright then, how is it made?
 
-The core of a Shiny app is way simpler than I expected. You have three components: a `ui` to dictate the arrangement of elements, a `server` to produce its contents, and a simple `shinyApp` function that brings these two together. This is what the ui portion looks like:
+The core of a Shiny app is way simpler than I expected. You have three components: a `ui` to dictate the arrangement of elements, a `server` to produce its contents, and a simple `shinyApp` function that brings these two together. This is what the `ui` portion looks like:
 
 ``` {r ui, echo = T, include = T}
 # ui <- fluidPage(
