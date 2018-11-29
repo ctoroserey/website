@@ -80,7 +80,10 @@ draft: false
 </div>
 <div id="shiny-implementation" class="section level2">
 <h2>Shiny implementation</h2>
-<p>It might be helfpul to get acquainted with how everything looks before digging into the code: <a href="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/" class="uri">https://ctoroserey.shinyapps.io/SecretSantaGeneratR/</a></p>
+<p>It might be helfpul to get acquainted with how everything looks before digging into the code. You can go ahead and play with the app if you’d like, or check it out <a href="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/">online</a>.</p>
+<iframe width="100%" height="1000" src="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/">
+</iframe>
+<p>Alright then, how is it made?</p>
 <p>The core of a Shiny app is way simpler than I expected. You have three components: a <code>ui</code> to dictate the arrangement of elements, a <code>server</code> to produce its contents, and a simple <code>shinyApp</code> function that brings these two together. This is what the ui portion looks like:</p>
 <pre class="r"><code># ui &lt;- fluidPage(
 #   
@@ -212,11 +215,9 @@ draft: false
 <p>Ok, now that we set up our interacting <code>server</code> and <code>ui</code> we can put them together. All you need to do is run</p>
 <pre class="r"><code># library(shiny)
 # shinyApp(ui = ui, server = server) </code></pre>
-<p>This will open a new window with your app! This will also give you the option to publish you app to <a href="https://www.shinyapps.io">shinyapps.io</a> by clicking ‘publish’ on your pop-up window. Of course this requires registering for an account there, but otherwise Shiny makes it seemless to upload your app so you can share it with everyone!</p>
+<p>This will open a new window with your app! (normally you put all these elements within the same file: app.R) This will also give you the option to publish you app to <a href="https://www.shinyapps.io">shinyapps.io</a> by clicking ‘publish’ on your pop-up window. Of course this requires registering for an account there, but otherwise Shiny makes it seemless to upload your app so you can share it with everyone!</p>
 </div>
 <div id="closing" class="section level2">
 <h2>Closing</h2>
 <p>There are enough great tutorials on how to build Shiny apps, but I hope this will be useful for someone. If anything, there is one thing I would like whoever reads this to know: <em>You don’t need an extravagant project to try something new.</em> If you would like to play with the code, it’s available on <a href="https://github.com/ctoroserey/SS_GeneratR">my GitHub site</a>.</p>
-<iframe width="100%" height="800" src="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/">
-</iframe>
 </div>

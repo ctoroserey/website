@@ -79,7 +79,11 @@ Finally, if you select `Secret = T` the function won't generate a dataframe. Ins
 
 ## Shiny implementation
 
-It might be helfpul to get acquainted with how everything looks before digging into the code: https://ctoroserey.shinyapps.io/SecretSantaGeneratR/
+It might be helfpul to get acquainted with how everything looks before digging into the code. You can go ahead and play with the app if you'd like, or check it out [online](https://ctoroserey.shinyapps.io/SecretSantaGeneratR/).
+
+<iframe width="100%" height=1000 src="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/"></iframe>
+
+Alright then, how is it made?
 
 The core of a Shiny app is way simpler than I expected. You have three components: a `ui` to dictate the arrangement of elements, a `server` to produce its contents, and a simple `shinyApp` function that brings these two together. This is what the ui portion looks like:
 
@@ -227,7 +231,7 @@ Ok, now that we set up our interacting `server` and `ui` we can put them togethe
 # shinyApp(ui = ui, server = server) 
 ```
 
-This will open a new window with your app! This will also give you the option to publish you app to [shinyapps.io](https://www.shinyapps.io) by clicking 'publish' on your pop-up window. Of course this requires registering for an account there, but otherwise Shiny makes it seemless to upload your app so you can share it with everyone!
+This will open a new window with your app! (normally you put all these elements within the same file: app.R) This will also give you the option to publish you app to [shinyapps.io](https://www.shinyapps.io) by clicking 'publish' on your pop-up window. Of course this requires registering for an account there, but otherwise Shiny makes it seemless to upload your app so you can share it with everyone!
 
 ## Closing
 
@@ -236,7 +240,7 @@ There are enough great tutorials on how to build Shiny apps, but I hope this wil
 
 
 
-<iframe width="100%" height=800 src="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/"></iframe>
+
 
 
 

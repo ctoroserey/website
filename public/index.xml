@@ -78,7 +78,10 @@
 &lt;/div&gt;
 &lt;div id=&#34;shiny-implementation&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Shiny implementation&lt;/h2&gt;
-&lt;p&gt;It might be helfpul to get acquainted with how everything looks before digging into the code: &lt;a href=&#34;https://ctoroserey.shinyapps.io/SecretSantaGeneratR/&#34; class=&#34;uri&#34;&gt;https://ctoroserey.shinyapps.io/SecretSantaGeneratR/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It might be helfpul to get acquainted with how everything looks before digging into the code. You can go ahead and play with the app if you’d like, or check it out &lt;a href=&#34;https://ctoroserey.shinyapps.io/SecretSantaGeneratR/&#34;&gt;online&lt;/a&gt;.&lt;/p&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;1000&#34; src=&#34;https://ctoroserey.shinyapps.io/SecretSantaGeneratR/&#34;&gt;
+&lt;/iframe&gt;
+&lt;p&gt;Alright then, how is it made?&lt;/p&gt;
 &lt;p&gt;The core of a Shiny app is way simpler than I expected. You have three components: a &lt;code&gt;ui&lt;/code&gt; to dictate the arrangement of elements, a &lt;code&gt;server&lt;/code&gt; to produce its contents, and a simple &lt;code&gt;shinyApp&lt;/code&gt; function that brings these two together. This is what the ui portion looks like:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ui &amp;lt;- fluidPage(
 #   
@@ -210,13 +213,11 @@
 &lt;p&gt;Ok, now that we set up our interacting &lt;code&gt;server&lt;/code&gt; and &lt;code&gt;ui&lt;/code&gt; we can put them together. All you need to do is run&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# library(shiny)
 # shinyApp(ui = ui, server = server) &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This will open a new window with your app! This will also give you the option to publish you app to &lt;a href=&#34;https://www.shinyapps.io&#34;&gt;shinyapps.io&lt;/a&gt; by clicking ‘publish’ on your pop-up window. Of course this requires registering for an account there, but otherwise Shiny makes it seemless to upload your app so you can share it with everyone!&lt;/p&gt;
+&lt;p&gt;This will open a new window with your app! (normally you put all these elements within the same file: app.R) This will also give you the option to publish you app to &lt;a href=&#34;https://www.shinyapps.io&#34;&gt;shinyapps.io&lt;/a&gt; by clicking ‘publish’ on your pop-up window. Of course this requires registering for an account there, but otherwise Shiny makes it seemless to upload your app so you can share it with everyone!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;closing&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Closing&lt;/h2&gt;
 &lt;p&gt;There are enough great tutorials on how to build Shiny apps, but I hope this will be useful for someone. If anything, there is one thing I would like whoever reads this to know: &lt;em&gt;You don’t need an extravagant project to try something new.&lt;/em&gt; If you would like to play with the code, it’s available on &lt;a href=&#34;https://github.com/ctoroserey/SS_GeneratR&#34;&gt;my GitHub site&lt;/a&gt;.&lt;/p&gt;
-&lt;iframe width=&#34;100%&#34; height=&#34;800&#34; src=&#34;https://ctoroserey.shinyapps.io/SecretSantaGeneratR/&#34;&gt;
-&lt;/iframe&gt;
 &lt;/div&gt;
 </description>
     </item>
