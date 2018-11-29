@@ -81,10 +81,10 @@ draft: false
 <div id="shiny-implementation" class="section level2">
 <h2>Shiny implementation</h2>
 <p>It might be helfpul to get acquainted with how everything looks before digging into the code. You can go ahead and play with the app if you’d like, or check it out <a href="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/">online</a>.</p>
-<iframe width="100%" height="1000" src="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/">
+<iframe width="100%" height="900" src="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/">
 </iframe>
 <p>Alright then, how is it made?</p>
-<p>The core of a Shiny app is way simpler than I expected. You have three components: a <code>ui</code> to dictate the arrangement of elements, a <code>server</code> to produce its contents, and a simple <code>shinyApp</code> function that brings these two together. This is what the ui portion looks like:</p>
+<p>The core of a Shiny app is way simpler than I expected. You have three components: a <code>ui</code> to dictate the arrangement of elements, a <code>server</code> to produce its contents, and a simple <code>shinyApp</code> function that brings these two together. This is what the <code>ui</code> portion looks like:</p>
 <pre class="r"><code># ui &lt;- fluidPage(
 #   
 #   titlePanel(&quot;Secret Santa GeneratR&quot;),

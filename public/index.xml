@@ -79,10 +79,10 @@
 &lt;div id=&#34;shiny-implementation&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Shiny implementation&lt;/h2&gt;
 &lt;p&gt;It might be helfpul to get acquainted with how everything looks before digging into the code. You can go ahead and play with the app if you’d like, or check it out &lt;a href=&#34;https://ctoroserey.shinyapps.io/SecretSantaGeneratR/&#34;&gt;online&lt;/a&gt;.&lt;/p&gt;
-&lt;iframe width=&#34;100%&#34; height=&#34;1000&#34; src=&#34;https://ctoroserey.shinyapps.io/SecretSantaGeneratR/&#34;&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;900&#34; src=&#34;https://ctoroserey.shinyapps.io/SecretSantaGeneratR/&#34;&gt;
 &lt;/iframe&gt;
 &lt;p&gt;Alright then, how is it made?&lt;/p&gt;
-&lt;p&gt;The core of a Shiny app is way simpler than I expected. You have three components: a &lt;code&gt;ui&lt;/code&gt; to dictate the arrangement of elements, a &lt;code&gt;server&lt;/code&gt; to produce its contents, and a simple &lt;code&gt;shinyApp&lt;/code&gt; function that brings these two together. This is what the ui portion looks like:&lt;/p&gt;
+&lt;p&gt;The core of a Shiny app is way simpler than I expected. You have three components: a &lt;code&gt;ui&lt;/code&gt; to dictate the arrangement of elements, a &lt;code&gt;server&lt;/code&gt; to produce its contents, and a simple &lt;code&gt;shinyApp&lt;/code&gt; function that brings these two together. This is what the &lt;code&gt;ui&lt;/code&gt; portion looks like:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ui &amp;lt;- fluidPage(
 #   
 #   titlePanel(&amp;quot;Secret Santa GeneratR&amp;quot;),
