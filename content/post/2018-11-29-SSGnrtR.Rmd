@@ -37,9 +37,11 @@ xmaspairs <- function(Members = 1, Spouses = 1, Secret = T) {
   # If spouse pairing should be avoided..
   if (length(Spouses) == length(Members)) {
     
-    Affiliated <- T
+    # Make sure that a single group isn't more than 50% of the members
+    if(max(table(input$Spouses)) > length(input$Members)/2) {stop("A group can't be more than 50% of the total members...")}
     
     # Iterate over possible pairings until no SOs are paired
+    Affiliated <- T
     while (Affiliated) {
       m <- sample(Members)
       df <- data.frame(Member = m,
@@ -141,7 +143,6 @@ Now what does the `server` look like?
 ``` {r server, echo = T, include = T}
 # server <- function(input, output){
 #   
-#   
 #   # Function that does the pairings
 #   xmaspairs <- function(Members = 1, Spouses = 1, Secret = T) {
 #     
@@ -187,10 +188,15 @@ Now what does the `server` look like?
 #     filename = function() {"SecretSantaPairs.zip"},
 #     
 #     # Prep the zip file 
-#     content = function(file) {    
+#     content = function(file) { 
+#       # Parse the strings
+#       m <- unlist(strsplit(gsub(" ", "", input$Members, fixed=T), ","))
+#       s <- unlist(strsplit(gsub(" ", "", input$Spouses, fixed=T), ","))
+#       # Make sure the groupings don't break the code by having a group be over 50% of members
+#       if(max(table(s)) > length(m)/2) {stop("A group can't be more than 50% of the total members...")}
 #       #Pairing
-#       df <- xmaspairs(Members = unlist(strsplit(gsub(" ", "", input$Members, fixed=T), ",")), 
-#                       Spouses = unlist(strsplit(gsub(" ", "", input$Spouses, fixed=T), ",")))
+#       df <- xmaspairs(Members = m, 
+#                       Spouses = s)
 #       # Write files per person indicating to whom they have to gift
 #       owd <- setwd(tempdir()) # temporary dir to store the files
 #       on.exit(setwd(owd))
@@ -206,18 +212,21 @@ Now what does the `server` look like?
 #   )
 #   
 #   
-# }
-#
-#
 #   # render the resulting table 
 #   output$view <- renderTable({
 #     
+#       # Parse the strings
+#       m <- unlist(strsplit(gsub(" ", "", input$Members, fixed=T), ","))
+#       s <- unlist(strsplit(gsub(" ", "", input$Spouses, fixed=T), ","))
+#       # Make sure the groupings don't break the code by having a group be over 50% of members
+#       if(max(table(s)) > length(m)/2) {stop("A group can't be more than 50% of the total members...")}
 #       # Produce pairings to display
-#       xmaspairs(Members = unlist(strsplit(gsub(" ", "", input$Members, fixed=T), ",")), 
-#                 Spouses = unlist(strsplit(gsub(" ", "", input$Spouses, fixed=T), ",")),
+#       xmaspairs(Members = m, 
+#                 Spouses = m,
 #                 Secret = input$Secret)
 #     
 #   })
+# }
 ```
 
 You probably already saw that the `server` function works with input and output, as we just discussed. The next thing you'll see is a shortened version of the `xmaspairs` function, but without the ability to download files. Why is that? Well, Shiny comes with a handy widget to download files, and this saves us the pain of asking the user to write down a local path that the app might not have access to. The way this works is that you'll store what to return to the `ui` in an `outputs` list. First we define `outputs$download` (this is the "download" that gets passed onto `downloadButton` in the `ui` above). This widget requires you to define the `filename` ("SecretSantaPairs.zip") and the `content`. Within `content` you can write whatever code will generate the information that you want the user to download. All I did here was to run the file-writing part of my original function separately from creating the pairs, storing the files on a temporary directory, and compressing them into a single zip file that will be downloaded (this is because `downloadButton` can only handle one file at a time). Note that `xmaspairs` takes in the `ui` values contained within the `inputs` list (with the IDs that we defined above as the variable names). This is a cleaner way to cue the user to produce a secret listing.

@@ -43,9 +43,11 @@ draft: false
   # If spouse pairing should be avoided..
   if (length(Spouses) == length(Members)) {
     
-    Affiliated &lt;- T
+    # Make sure that a single group isn&#39;t more than 50% of the members
+    if(max(table(input$Spouses)) &gt; length(input$Members)/2) {stop(&quot;A group can&#39;t be more than 50% of the total members...&quot;)}
     
     # Iterate over possible pairings until no SOs are paired
+    Affiliated &lt;- T
     while (Affiliated) {
       m &lt;- sample(Members)
       df &lt;- data.frame(Member = m,
@@ -133,7 +135,6 @@ draft: false
 <p>Now what does the <code>server</code> look like?</p>
 <pre class="r"><code># server &lt;- function(input, output){
 #   
-#   
 #   # Function that does the pairings
 #   xmaspairs &lt;- function(Members = 1, Spouses = 1, Secret = T) {
 #     
@@ -179,10 +180,15 @@ draft: false
 #     filename = function() {&quot;SecretSantaPairs.zip&quot;},
 #     
 #     # Prep the zip file 
-#     content = function(file) {    
+#     content = function(file) { 
+#       # Parse the strings
+#       m &lt;- unlist(strsplit(gsub(&quot; &quot;, &quot;&quot;, input$Members, fixed=T), &quot;,&quot;))
+#       s &lt;- unlist(strsplit(gsub(&quot; &quot;, &quot;&quot;, input$Spouses, fixed=T), &quot;,&quot;))
+#       # Make sure the groupings don&#39;t break the code by having a group be over 50% of members
+#       if(max(table(s)) &gt; length(m)/2) {stop(&quot;A group can&#39;t be more than 50% of the total members...&quot;)}
 #       #Pairing
-#       df &lt;- xmaspairs(Members = unlist(strsplit(gsub(&quot; &quot;, &quot;&quot;, input$Members, fixed=T), &quot;,&quot;)), 
-#                       Spouses = unlist(strsplit(gsub(&quot; &quot;, &quot;&quot;, input$Spouses, fixed=T), &quot;,&quot;)))
+#       df &lt;- xmaspairs(Members = m, 
+#                       Spouses = s)
 #       # Write files per person indicating to whom they have to gift
 #       owd &lt;- setwd(tempdir()) # temporary dir to store the files
 #       on.exit(setwd(owd))
@@ -198,18 +204,21 @@ draft: false
 #   )
 #   
 #   
-# }
-#
-#
 #   # render the resulting table 
 #   output$view &lt;- renderTable({
 #     
+#       # Parse the strings
+#       m &lt;- unlist(strsplit(gsub(&quot; &quot;, &quot;&quot;, input$Members, fixed=T), &quot;,&quot;))
+#       s &lt;- unlist(strsplit(gsub(&quot; &quot;, &quot;&quot;, input$Spouses, fixed=T), &quot;,&quot;))
+#       # Make sure the groupings don&#39;t break the code by having a group be over 50% of members
+#       if(max(table(s)) &gt; length(m)/2) {stop(&quot;A group can&#39;t be more than 50% of the total members...&quot;)}
 #       # Produce pairings to display
-#       xmaspairs(Members = unlist(strsplit(gsub(&quot; &quot;, &quot;&quot;, input$Members, fixed=T), &quot;,&quot;)), 
-#                 Spouses = unlist(strsplit(gsub(&quot; &quot;, &quot;&quot;, input$Spouses, fixed=T), &quot;,&quot;)),
+#       xmaspairs(Members = m, 
+#                 Spouses = m,
 #                 Secret = input$Secret)
 #     
-#   })</code></pre>
+#   })
+# }</code></pre>
 <p>You probably already saw that the <code>server</code> function works with input and output, as we just discussed. The next thing you’ll see is a shortened version of the <code>xmaspairs</code> function, but without the ability to download files. Why is that? Well, Shiny comes with a handy widget to download files, and this saves us the pain of asking the user to write down a local path that the app might not have access to. The way this works is that you’ll store what to return to the <code>ui</code> in an <code>outputs</code> list. First we define <code>outputs$download</code> (this is the “download” that gets passed onto <code>downloadButton</code> in the <code>ui</code> above). This widget requires you to define the <code>filename</code> (“SecretSantaPairs.zip”) and the <code>content</code>. Within <code>content</code> you can write whatever code will generate the information that you want the user to download. All I did here was to run the file-writing part of my original function separately from creating the pairs, storing the files on a temporary directory, and compressing them into a single zip file that will be downloaded (this is because <code>downloadButton</code> can only handle one file at a time). Note that <code>xmaspairs</code> takes in the <code>ui</code> values contained within the <code>inputs</code> list (with the IDs that we defined above as the variable names). This is a cleaner way to cue the user to produce a secret listing.</p>
 <p>At the end of server you’ll find <code>renderTable</code> being stored within <code>output$view</code> (yes, the “view” that’s used in the <code>ui</code>). This will show a table with the pairings according to the conditions specified. This will always appear (even if we click the download button), but note that since pressing the button generates an independent list, the user is still technically blinded from knowing who got who.</p>
 <p>Ok, now that we set up our interacting <code>server</code> and <code>ui</code> we can put them together. All you need to do is run</p>
