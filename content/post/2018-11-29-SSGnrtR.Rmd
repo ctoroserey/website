@@ -236,7 +236,7 @@ There are enough great tutorials on how to build Shiny apps, but I hope this wil
 
 
 
-<iframe src="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/"></iframe>
+<iframe width="100%" height="100%" src="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/"></iframe>
 
 
 
