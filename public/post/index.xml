@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>Secret Santa Generator Shiny App</title>
+      <link>/post/ssgnrtr/</link>
+      <pubDate>Thu, 29 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ssgnrtr/</guid>
+      <description>Why are you doing this, there are enough secret santa services? So, how does it work? Shiny implementation Closing   Why are you doing this, there are enough secret santa services? Last Christmas my wife was left giftless on my side of the family due to a faulty secret santa generator. In trying to earn brownie points the arrogant nerd in me thought he could do better, so I decided to program one in R (I’d rather know exactly what’s going on in the background anyways).</description>
+    </item>
+    
+    <item>
       <title>Cluster comparisons with ARI</title>
       <link>/post/ari/</link>
       <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>

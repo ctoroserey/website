@@ -1,0 +1,222 @@
+---
+title: "Secret Santa Generator Shiny App"
+author: "CTS"
+date: '2018-11-29'
+slug: SSGnrtR
+categories: []
+tags: ['R']
+output:
+  blogdown::html_page:
+    toc: true
+    fig_width: 6
+    fig.height: 4
+    dev: "svg"
+header:
+  caption: ''
+  image: ''
+draft: false 
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#why-are-you-doing-this-there-are-enough-secret-santa-services">Why are you doing this, there are enough secret santa services?</a></li>
+<li><a href="#so-how-does-it-work">So, how does it work?</a></li>
+<li><a href="#shiny-implementation">Shiny implementation</a></li>
+<li><a href="#closing">Closing</a></li>
+</ul>
+</div>
+
+<div id="why-are-you-doing-this-there-are-enough-secret-santa-services" class="section level2">
+<h2>Why are you doing this, there are enough secret santa services?</h2>
+<p>Last Christmas my wife was left giftless on my side of the family due to a faulty secret santa generator. In trying to earn brownie points the arrogant nerd in me thought he could do better, so I decided to program one in R (I’d rather know exactly what’s going on in the background anyways). I also found it hard this year to find a service that prevented specific pairs of people from gifting each other.</p>
+<p>But beyond my petty personal reasons, a friend suggested that this would be a good opportunity to learn how to build Shiny apps. So I’ll use this post to explain the basics of the code, and how you can turn it into a Shiny app (disclaimer: this being my first Shiny app means that the setup is crude, so I definitely recommend checking out the great official examples that Shiny provides).</p>
+</div>
+<div id="so-how-does-it-work" class="section level2">
+<h2>So, how does it work?</h2>
+<p>The setup is simple. Let’s look at the function:</p>
+<pre class="r"><code>xmaspairs &lt;- function(Members = 1, Spouses = 1, Secret = T) {
+  
+  # Make sure that members were provided..
+  if (length(Members) == 1) {stop(&quot;No members indicated...&quot;)}
+  
+  # If spouse pairing should be avoided..
+  if (length(Spouses) == length(Members)) {
+    
+    Affiliated &lt;- T
+    
+    # Iterate over possible pairings until no SOs are paired
+    while (Affiliated) {
+      m &lt;- sample(Members)
+      df &lt;- data.frame(Member = m,
+                       Gift_to = c(tail(m, n = 1), m[seq(length(m)-1)])) # sure there&#39;s a better way to do this..
+      Spouse1 &lt;- Spouses[match(df$Member, Members)]
+      Spouse2 &lt;- Spouses[match(df$Gift_to, Members)]
+      Affiliated &lt;- T %in% (Spouse1 == Spouse2)
+    }
+  # Otherwise just produce whatever pairing comes out from a single sampling  
+  } else { 
+    m &lt;- sample(Members)
+    df &lt;- data.frame(Member = m,
+                     Pair = c(tail(m, n = 1), m[seq(length(m)-1)]))
+  }
+  
+  # If the person running it should be blinded to the pairs, create individual txt files
+  if (Secret) {
+    for (i in seq(nrow(df))) {
+      write.table(paste(&quot;Your secret santa is: &quot;, df[i, 2], &quot;!&quot;, sep = &quot;&quot;), 
+                  file = paste(df[i,1],&quot;.txt&quot;, sep = &quot;&quot;),
+                  row.names = F, 
+                  col.names = F)
+    }
+  # or for groups who don&#39;t care about social subtleties
+  } else {
+    return(df)
+  }
+}</code></pre>
+<p>Basically, the function takes in a mandatory character vector of members, an optional grouping vector (either numeric of string), and the choice of whether to hide the final pairings from everyone. The way it works is simple: shuffle the members, then create a new vector with everyone shifted by 1 position (this is the equivalent of randomly sitting people in a circle and telling them to gift the person to their right).</p>
+<p>Now, if you wanted to prevent 2 members from gifting each other, all you do is feed a grouping vector into Spouses. So, let’s say you have Mom, Dad, Cindy, you, and Dormamu the Destroyer on your members list, and of course you don’t want your parents from gifting each other. Then all you have to do is create a vector like <code>c(Parent, Parent, 1, 2, Inmortal)</code> to feed to the function. This will force the function to iterate through combinations of gifters/receivers until the pairs don’t share the same grouping characteristic. Note that since I use an equivalence, pretty much anything can be used as a grouping variable. If you don’t care about this, just write NA or anything that doesn’t match the length of the members list.</p>
+<p>Finally, if you select <code>Secret = T</code> the function won’t generate a dataframe. Instead, it will download a text file for each member on your current directory, indicating to whom they should gift. I know it would be easier to email people rather than having to send them their text files manually, but I was a bit lazy and didn’t want to deal with SMTP setups.</p>
+</div>
+<div id="shiny-implementation" class="section level2">
+<h2>Shiny implementation</h2>
+<p>It might be helfpul to get acquainted with how everything looks before digging into the code: <a href="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/" class="uri">https://ctoroserey.shinyapps.io/SecretSantaGeneratR/</a></p>
+<p>The core of a Shiny app is way simpler than I expected. You have three components: a <code>ui</code> to dictate the arrangement of elements, a <code>server</code> to produce its contents, and a simple <code>shinyApp</code> function that brings these two together. This is what the ui portion looks like:</p>
+<pre class="r"><code># ui &lt;- fluidPage(
+#   
+#   titlePanel(&quot;Secret Santa GeneratR&quot;),
+# 
+#   p(&quot;Welcome to yet another secret santa generator! The advantage of this one is that it gives you the option to keep the pairings secret or not, as well as avoiding pairs of people who should not gift each other! Perfect if you have inter-dimensional friends that can&#39;t physically interact with each other.&quot;),
+#   
+#   #Sidebar layout with input and output definitions ----
+#   sidebarLayout(
+# 
+#     # Sidebar panel for inputs ----
+#     sidebarPanel(
+# 
+#       # Input: Text for providing a caption ----
+#       textInput(inputId = &quot;Members&quot;,
+#                 label = &quot;Group member names:&quot;,
+#                 value = &quot;A, B, C, D, E, F&quot;),
+#       
+#       # Explanation of spouse matching
+#       p(&quot;If you want to prevent specific pairs of people from gifting each other, write down some characteristic that pairs them below (in the order they&#39;re written above). In the example below, A/B and C/D are part of &#39;Couple&#39; and &#39;Couple2&#39;, respectively, and won&#39;t gift within couples; but E and F have their own group and can give/receive with anyone (note that the number of entries must match the number of members). Write &#39;NA&#39; if you don&#39;t care about this.&quot;),
+#       
+#       # Set pairs to avoid
+#       textInput(inputId = &quot;Spouses&quot;,
+#                 label = &quot;Avoidance list:&quot;,
+#                 value = &quot;Couple, Couple, Couple2, Couple2, S1, S2&quot;),
+#       
+#       # Note on making it secret
+#       p(&quot;If you want to keep it secret, a file for each member will be created telling them who they should gift based on a new, unseen pairing. Just send each person their file!&quot;),
+#       
+#       # and the respective download button for the zip file
+#       downloadButton(&quot;download&quot;, &quot;Make Secret&quot;)
+# 
+#     ),
+# 
+#     # Main panel for displaying outputs ----
+#     mainPanel(
+# 
+#       p(&quot;Here are the current santa pairs. Note that if you click on &#39;Make Secret&#39; a completely new scheme will be produced that you won&#39;t see here.&quot;),
+#       
+#       # Output: HTML table with requested number of observations ----
+#       tableOutput(&quot;view&quot;)
+# 
+#     )
+#   )
+# )</code></pre>
+<p>All we are doing here is defining what goes up top (<code>titlePanel</code> and the first paragraph <code>p</code>), which user inputs to place in the sidebar (<code>sidebarPanel</code> within <code>sidebarLayout</code>), and what goes on the main area of the site (<code>mainPanel</code> within <code>sidebarLayout</code>). Things to note here: functions like <code>textInput</code> ask the user for input, and you give them IDs so you can call the values in the <code>server</code> portion (see next). Here I place default values just to give the user an example. On the other hand, <code>tableOutput</code> and <code>downloadButton</code> seem to be getting input from somewhere (here “view” and “download”). These are output variables generated by the server! So all that’s happening is that the <code>ui</code> passes on inputs that are then processed and returned by the <code>server</code> to be placed on the GUI. That’s it.</p>
+<p>Now what does the <code>server</code> look like?</p>
+<pre class="r"><code># server &lt;- function(input, output){
+#   
+#   
+#   # Function that does the pairings
+#   xmaspairs &lt;- function(Members = 1, Spouses = 1, Secret = T) {
+#     
+#     # This crude function will pair group members for secret santa
+#     # If your family would like to avoid pairing significant others,
+#     # define Spouses to be a vector of groupings (i.e. numeric).
+#     # The script will then iterate over pairings until no SOs are paired.
+#     
+#     # Make sure that members were provided..
+#     if (length(Members) == 1) {stop(&quot;No members indicated...&quot;)}
+#     
+#     # Perform the actual pairing
+#     # If spouse pairing should be avoided..
+#     if (length(Spouses) == length(Members)) {
+#       # Once this turns false, we are in business
+#       Affiliated &lt;- T
+#       # Iterate over possible pairings until no SOs are paired
+#       while (Affiliated) {
+#         m &lt;- sample(Members)
+#         df &lt;- data.frame(Member = m,
+#                          Gift_to = c(tail(m, n = 1), m[seq(length(m)-1)])) # sure there&#39;s a better way to do this..
+#         Spouse1 &lt;- Spouses[match(df$Member, Members)]
+#         Spouse2 &lt;- Spouses[match(df$Gift_to, Members)]
+#         Affiliated &lt;- T %in% (Spouse1 == Spouse2)
+#       }
+#     # Otherwise just produce whatever pairing comes out from a single sampling  
+#     } else { 
+#       m &lt;- sample(Members)
+#       df &lt;- data.frame(Member = m,
+#                        Gift_to = c(tail(m, n = 1), m[seq(length(m)-1)]))
+#     }
+#     
+#     # spit out the pairs
+#     return(df)
+#     
+#   }
+#   
+#   
+#   # Download a zip file with each pair 
+#   output$download &lt;- downloadHandler(
+#     
+#     # Name of the download
+#     filename = function() {&quot;SecretSantaPairs.zip&quot;},
+#     
+#     # Prep the zip file 
+#     content = function(file) {    
+#       #Pairing
+#       df &lt;- xmaspairs(Members = unlist(strsplit(gsub(&quot; &quot;, &quot;&quot;, input$Members, fixed=T), &quot;,&quot;)), 
+#                       Spouses = unlist(strsplit(gsub(&quot; &quot;, &quot;&quot;, input$Spouses, fixed=T), &quot;,&quot;)))
+#       # Write files per person indicating to whom they have to gift
+#       owd &lt;- setwd(tempdir()) # temporary dir to store the files
+#       on.exit(setwd(owd))
+#       files &lt;- list()      
+#       lapply(seq(nrow(df)), function(i) {
+#         write.table(paste(&quot;Your secret santa is: &quot;, df[i, 2], &quot;!&quot;, sep = &quot;&quot;), 
+#                     file = paste(df[i,1],&quot;.txt&quot;, sep = &quot;&quot;),
+#                     row.names = F, 
+#                     col.names = F)})
+#       zip(file, paste(unlist(strsplit(gsub(&quot; &quot;, &quot;&quot;, input$Members, fixed=T), &quot;,&quot;)), &quot;.txt&quot;, sep = &quot;&quot;)) # and zip
+#     }
+#     
+#   )
+#   
+#   
+# }
+#
+#
+#   # render the resulting table 
+#   output$view &lt;- renderTable({
+#     
+#       # Produce pairings to display
+#       xmaspairs(Members = unlist(strsplit(gsub(&quot; &quot;, &quot;&quot;, input$Members, fixed=T), &quot;,&quot;)), 
+#                 Spouses = unlist(strsplit(gsub(&quot; &quot;, &quot;&quot;, input$Spouses, fixed=T), &quot;,&quot;)),
+#                 Secret = input$Secret)
+#     
+#   })</code></pre>
+<p>You probably already saw that the <code>server</code> function works with input and output, as we just discussed. The next thing you’ll see is a shortened version of the <code>xmaspairs</code> function, but without the ability to download files. Why is that? Well, Shiny comes with a handy widget to download files, and this saves us the pain of asking the user to write down a local path that the app might not have access to. The way this works is that you’ll store what to return to the <code>ui</code> in an <code>outputs</code> list. First we define <code>outputs$download</code> (this is the “download” that gets passed onto <code>downloadButton</code> in the <code>ui</code> above). This widget requires you to define the <code>filename</code> (“SecretSantaPairs.zip”) and the <code>content</code>. Within <code>content</code> you can write whatever code will generate the information that you want the user to download. All I did here was to run the file-writing part of my original function separately from creating the pairs, storing the files on a temporary directory, and compressing them into a single zip file that will be downloaded (this is because <code>downloadButton</code> can only handle one file at a time). Note that <code>xmaspairs</code> takes in the <code>ui</code> values contained within the <code>inputs</code> list (with the IDs that we defined above as the variable names). This is a cleaner way to cue the user to produce a secret listing.</p>
+<p>At the end of server you’ll find <code>renderTable</code> being stored within <code>output$view</code> (yes, the “view” that’s used in the <code>ui</code>). This will show a table with the pairings according to the conditions specified. This will always appear (even if we click the download button), but note that since pressing the button generates an independent list, the user is still technically blinded from knowing who got who.</p>
+<p>Ok, now that we set up our interacting <code>server</code> and <code>ui</code> we can put them together. All you need to do is run</p>
+<pre class="r"><code># library(shiny)
+# shinyApp(ui = ui, server = server) </code></pre>
+<p>This will open a new window with your app! This will also give you the option to publish you app to <a href="https://www.shinyapps.io">shinyapps.io</a> by clicking ‘publish’ on your pop-up window. Of course this requires registering for an account there, but otherwise Shiny makes it seemless to upload your app so you can share it with everyone!</p>
+</div>
+<div id="closing" class="section level2">
+<h2>Closing</h2>
+<p>There are enough great tutorials on how to build Shiny apps, but I hope this will be useful for someone. If anything, there is one thing I would like whoever reads this to know: <em>You don’t need an extravagant project to try something new.</em> If you would like to play with the code, it’s available on <a href="https://github.com/ctoroserey/SS_GeneratR">my GitHub site</a>.</p>
+<iframe src="https://ctoroserey.shinyapps.io/SecretSantaGeneratR/">
+</iframe>
+</div>
