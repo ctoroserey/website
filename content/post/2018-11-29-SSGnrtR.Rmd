@@ -18,7 +18,7 @@ draft: false
 ---
 
 
-## Why are you doing this, there are enough secret santa services?
+## Why are you doing this? There are enough secret santa services
 
 Last Christmas my wife was left giftless on my side of the family due to a faulty secret santa generator. In trying to earn brownie points the arrogant nerd in me thought he could do better, so I decided to program one in R (I'd rather know exactly what's going on in the background anyways). I also found it hard this year to find a service that prevented specific pairs of people from gifting each other. 
 
@@ -75,7 +75,7 @@ xmaspairs <- function(Members = 1, Spouses = 1, Secret = T) {
 
 Basically, the function takes in a mandatory character vector of members, an optional grouping vector (either numeric of string), and the choice of whether to hide the final pairings from everyone. The way it works is simple: shuffle the members, then create a new vector with everyone shifted by 1 position (this is the equivalent of randomly sitting people in a circle and telling them to gift the person to their right). 
 
-Now, if you wanted to prevent 2 members from gifting each other, all you do is feed a grouping vector into Spouses. So, let's say you have Mom, Dad, Cindy, you, and Dormamu the Destroyer on your members list, and of course you don't want your parents from gifting each other. Then all you have to do is create a vector like `c(Parent, Parent, 1, 2, Inmortal)` to feed to the function. This will force the function to iterate through combinations of gifters/receivers until the pairs don't share the same grouping characteristic. Note that since I use an equivalence, pretty much anything can be used as a grouping variable. If you don't care about this, just write NA or anything that doesn't match the length of the members list.
+Now, if you wanted to prevent 2 members from gifting each other, all you do is feed a grouping vector into Spouses. So, let's say you have Mom, Dad, Cindy, you, and Dormamu the Destroyer on your members list, and of course you don't want your parents gifting each other. Then all you have to do is create a vector like `c(Parent, Parent, 1, 2, Immortal)` to feed to the function. This will force the function to iterate through combinations of gifters/receivers until the pairs don't share the same grouping characteristic. Note that since I use an equivalence, pretty much anything can be used as a grouping variable. If you don't care about this, just write NA or anything that doesn't match the length of the members list.
 
 Finally, if you select `Secret = T` the function won't generate a dataframe. Instead, it will download a text file for each member on your current directory, indicating to whom they should gift. I know it would be easier to email people rather than having to send them their text files manually, but I was a bit lazy and didn't want to deal with SMTP setups.
 

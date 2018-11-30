@@ -18,7 +18,7 @@
       <guid>/post/ssgnrtr/</guid>
       <description>&lt;div id=&#34;TOC&#34;&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#why-are-you-doing-this-there-are-enough-secret-santa-services&#34;&gt;Why are you doing this, there are enough secret santa services?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#why-are-you-doing-this-there-are-enough-secret-santa-services&#34;&gt;Why are you doing this? There are enough secret santa services&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#so-how-does-it-work&#34;&gt;So, how does it work?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#shiny-implementation&#34;&gt;Shiny implementation&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#closing&#34;&gt;Closing&lt;/a&gt;&lt;/li&gt;
@@ -26,7 +26,7 @@
 &lt;/div&gt;
 
 &lt;div id=&#34;why-are-you-doing-this-there-are-enough-secret-santa-services&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Why are you doing this, there are enough secret santa services?&lt;/h2&gt;
+&lt;h2&gt;Why are you doing this? There are enough secret santa services&lt;/h2&gt;
 &lt;p&gt;Last Christmas my wife was left giftless on my side of the family due to a faulty secret santa generator. In trying to earn brownie points the arrogant nerd in me thought he could do better, so I decided to program one in R (I’d rather know exactly what’s going on in the background anyways). I also found it hard this year to find a service that prevented specific pairs of people from gifting each other.&lt;/p&gt;
 &lt;p&gt;But beyond my petty personal reasons, a friend suggested that this would be a good opportunity to learn how to build Shiny apps. So I’ll use this post to explain the basics of the code, and how you can turn it into a Shiny app (disclaimer: this being my first Shiny app means that the setup is crude, so I definitely recommend checking out the great official examples that Shiny provides).&lt;/p&gt;
 &lt;/div&gt;
@@ -75,7 +75,7 @@
   }
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Basically, the function takes in a mandatory character vector of members, an optional grouping vector (either numeric of string), and the choice of whether to hide the final pairings from everyone. The way it works is simple: shuffle the members, then create a new vector with everyone shifted by 1 position (this is the equivalent of randomly sitting people in a circle and telling them to gift the person to their right).&lt;/p&gt;
-&lt;p&gt;Now, if you wanted to prevent 2 members from gifting each other, all you do is feed a grouping vector into Spouses. So, let’s say you have Mom, Dad, Cindy, you, and Dormamu the Destroyer on your members list, and of course you don’t want your parents from gifting each other. Then all you have to do is create a vector like &lt;code&gt;c(Parent, Parent, 1, 2, Inmortal)&lt;/code&gt; to feed to the function. This will force the function to iterate through combinations of gifters/receivers until the pairs don’t share the same grouping characteristic. Note that since I use an equivalence, pretty much anything can be used as a grouping variable. If you don’t care about this, just write NA or anything that doesn’t match the length of the members list.&lt;/p&gt;
+&lt;p&gt;Now, if you wanted to prevent 2 members from gifting each other, all you do is feed a grouping vector into Spouses. So, let’s say you have Mom, Dad, Cindy, you, and Dormamu the Destroyer on your members list, and of course you don’t want your parents gifting each other. Then all you have to do is create a vector like &lt;code&gt;c(Parent, Parent, 1, 2, Immortal)&lt;/code&gt; to feed to the function. This will force the function to iterate through combinations of gifters/receivers until the pairs don’t share the same grouping characteristic. Note that since I use an equivalence, pretty much anything can be used as a grouping variable. If you don’t care about this, just write NA or anything that doesn’t match the length of the members list.&lt;/p&gt;
 &lt;p&gt;Finally, if you select &lt;code&gt;Secret = T&lt;/code&gt; the function won’t generate a dataframe. Instead, it will download a text file for each member on your current directory, indicating to whom they should gift. I know it would be easier to email people rather than having to send them their text files manually, but I was a bit lazy and didn’t want to deal with SMTP setups.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;shiny-implementation&#34; class=&#34;section level2&#34;&gt;
