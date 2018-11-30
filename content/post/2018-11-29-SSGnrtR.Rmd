@@ -24,6 +24,8 @@ Last Christmas my wife was left giftless on my side of the family due to a fault
 
 But beyond my petty personal reasons, a friend suggested that this would be a good opportunity to learn how to build Shiny apps. So I'll use this post to explain the basics of the code, and how you can turn it into a Shiny app (disclaimer: this being my first Shiny app means that the setup is crude, so I definitely recommend checking out the great official examples that Shiny provides). 
 
+*Update 11/30/18: of course I found [this blog post](https://blog.revolutionanalytics.com/2017/11/how-to-generate-a-secret-santa-list-with-r.html) the day after I posted mine, which shows that the script and idea had been mostly done before by a combination of coders. Even some of the language that I have here ended up being too similar to what David writes, unfortunately. Even more, [Tristan Mahr already solved the problem of pair constraints](https://www.tjmahr.com/secret-santa-graph-traversal/) through a graph implementation that, while too busy for my taste and to implement in Shiny, made for a pretty cool post. Still, I'll keep this up since there are some novel elements to the way I went about it (that I know of, at least), and I couldn't find another Shiny app that did the trick.*
+
 ## So, how does it work?
 
 The setup is simple. Let's look at the function:
