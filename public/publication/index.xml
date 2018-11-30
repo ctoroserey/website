@@ -2,31 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Claudio Toro-Serey</title>
-    <link>/publication/</link>
+    <link>https://ctoroserey.netlify.com/publication/</link>
     <description>Recent content in Publications on Claudio Toro-Serey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0500</lastBuildDate>
-    
-	<atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/publication/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Characterizing information flux within the distributed pediatric expressive language network: a core region mapped through fMRI-constrained MEG effective connectivity analyses</title>
-      <link>/publication/kadis/</link>
+      <link>https://ctoroserey.netlify.com/publication/kadis/</link>
       <pubDate>Fri, 01 Jul 2016 00:00:00 -0400</pubDate>
       
-      <guid>/publication/kadis/</guid>
+      <guid>https://ctoroserey.netlify.com/publication/kadis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Increased Resting-State Functional Connectivity in the Cingulo-Opercular Cognitive-Control Network after Intervention in Children with Reading Difficulties</title>
-      <link>/publication/horowitzkraus/</link>
+      <link>https://ctoroserey.netlify.com/publication/horowitzkraus/</link>
       <pubDate>Wed, 01 Jul 2015 00:00:00 -0400</pubDate>
       
-      <guid>/publication/horowitzkraus/</guid>
+      <guid>https://ctoroserey.netlify.com/publication/horowitzkraus/</guid>
       <description></description>
     </item>
     

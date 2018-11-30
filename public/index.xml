@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Claudio Toro-Serey on Claudio Toro-Serey</title>
-    <link>/</link>
+    <link>https://ctoroserey.netlify.com/</link>
     <description>Recent content in Claudio Toro-Serey on Claudio Toro-Serey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Secret Santa Generator Shiny App</title>
-      <link>/post/ssgnrtr/</link>
+      <link>https://ctoroserey.netlify.com/post/ssgnrtr/</link>
       <pubDate>Thu, 29 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/ssgnrtr/</guid>
+      <guid>https://ctoroserey.netlify.com/post/ssgnrtr/</guid>
       <description>&lt;div id=&#34;TOC&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#why-are-you-doing-this-there-are-enough-secret-santa-services&#34;&gt;Why are you doing this? There are enough secret santa services&lt;/a&gt;&lt;/li&gt;
@@ -29,6 +29,7 @@
 &lt;h2&gt;Why are you doing this? There are enough secret santa services&lt;/h2&gt;
 &lt;p&gt;Last Christmas my wife was left giftless on my side of the family due to a faulty secret santa generator. In trying to earn brownie points the arrogant nerd in me thought he could do better, so I decided to program one in R (I’d rather know exactly what’s going on in the background anyways). I also found it hard this year to find a service that prevented specific pairs of people from gifting each other.&lt;/p&gt;
 &lt;p&gt;But beyond my petty personal reasons, a friend suggested that this would be a good opportunity to learn how to build Shiny apps. So I’ll use this post to explain the basics of the code, and how you can turn it into a Shiny app (disclaimer: this being my first Shiny app means that the setup is crude, so I definitely recommend checking out the great official examples that Shiny provides).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update 11/30/18: of course I found &lt;a href=&#34;https://blog.revolutionanalytics.com/2017/11/how-to-generate-a-secret-santa-list-with-r.html&#34;&gt;this blog post&lt;/a&gt; the day after I posted mine, which shows that the script and idea had been mostly done before by a combination of coders. Even some of the language that I have here ended up being too similar to what David writes, unfortunately. Even more, &lt;a href=&#34;https://www.tjmahr.com/secret-santa-graph-traversal/&#34;&gt;Tristan Mahr already solved the problem of pair constraints&lt;/a&gt; through a graph implementation that, while too busy for my taste and to implement in Shiny, made for a pretty cool post. Still, I’ll keep this up since there are some novel elements to the way I went about it (that I know of, at least), and I couldn’t find another Shiny app that did the trick.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;so-how-does-it-work&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;So, how does it work?&lt;/h2&gt;
@@ -241,11 +242,11 @@
     
     <item>
       <title>Cluster comparisons with ARI</title>
-      <link>/post/ari/</link>
+      <link>https://ctoroserey.netlify.com/post/ari/</link>
       <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/ari/</guid>
-      <description>&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+      <guid>https://ctoroserey.netlify.com/post/ari/</guid>
+      <description>&lt;script src=&#34;https://ctoroserey.netlify.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
 
 &lt;div id=&#34;TOC&#34;&gt;
 &lt;ul&gt;
@@ -479,7 +480,7 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
   geom_line() +
   scale_color_discrete(name = &amp;quot;Method&amp;quot;) +
   theme_classic()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2018-09-26-ARI_files/figure-html/Compute-1.svg&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ctoroserey.netlify.com/post/2018-09-26-ARI_files/figure-html/Compute-1.svg&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;So, progressively switching the affiliations of the original vector has the expected negative linear trend on EQ, as the vectors become increasingly dissimilar. On the other hand, RI heavily penalises initial clustering disagreements, but notice that once the differences pass 50% the vectors are deemed increasingly similar. This parabolic function is a result of node pairs once again being grouped in the same/different clusters once direct differences pass chance levels (think back to the first example, and how inverting the values still maintains the underlying relationships). Finally, we can see that ARI drops to 0 when the vector differences reach this chance level. In accord with its definition, positive ARI values thus denote agreements above those expected by chance&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;closing&#34; class=&#34;section level2&#34;&gt;
@@ -498,19 +499,19 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
     
     <item>
       <title>Characterizing information flux within the distributed pediatric expressive language network: a core region mapped through fMRI-constrained MEG effective connectivity analyses</title>
-      <link>/publication/kadis/</link>
+      <link>https://ctoroserey.netlify.com/publication/kadis/</link>
       <pubDate>Fri, 01 Jul 2016 00:00:00 -0400</pubDate>
       
-      <guid>/publication/kadis/</guid>
+      <guid>https://ctoroserey.netlify.com/publication/kadis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deep Learning</title>
-      <link>/project/deep-learning/</link>
+      <link>https://ctoroserey.netlify.com/project/deep-learning/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>/project/deep-learning/</guid>
+      <guid>https://ctoroserey.netlify.com/project/deep-learning/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
@@ -525,19 +526,19 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
     
     <item>
       <title>External Project</title>
-      <link>/project/example-external-project/</link>
+      <link>https://ctoroserey.netlify.com/project/example-external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>/project/example-external-project/</guid>
+      <guid>https://ctoroserey.netlify.com/project/example-external-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A short introduction</title>
-      <link>/post/getting-started/</link>
+      <link>https://ctoroserey.netlify.com/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>/post/getting-started/</guid>
+      <guid>https://ctoroserey.netlify.com/post/getting-started/</guid>
       <description>&lt;p&gt;In a way, this is just a post to baptise the website. What I plan to do here from now on is to share snippets of what I&amp;rsquo;ve learned, read, or listened to lately (with a small dose of personal experiences), in hopes to both consolidate my knowledge and potentially help others. In a way, the picture of Boston in the header just represents that the overarching theme will be anything that has happened since I moved here for grad school (so yes, learning, reading, and listening to music mostly).&lt;/p&gt;
 
 &lt;p&gt;Nothing too serious or big, just fun.&lt;/p&gt;
@@ -546,10 +547,10 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
     
     <item>
       <title>Increased Resting-State Functional Connectivity in the Cingulo-Opercular Cognitive-Control Network after Intervention in Children with Reading Difficulties</title>
-      <link>/publication/horowitzkraus/</link>
+      <link>https://ctoroserey.netlify.com/publication/horowitzkraus/</link>
       <pubDate>Wed, 01 Jul 2015 00:00:00 -0400</pubDate>
       
-      <guid>/publication/horowitzkraus/</guid>
+      <guid>https://ctoroserey.netlify.com/publication/horowitzkraus/</guid>
       <description></description>
     </item>
     
