@@ -29,7 +29,7 @@ But my math problem really stemmed from something quite simple: wanting to under
 
 Learning about this brings about the other half of this post's title: vector/matrix operations. If you Google the equation that solves for multiple regression, you're hit in the face with this element of linear algebra that psych students like me probably forgot about (well, you can bypass this by doing gradient descent, but that's a different post). As it turns out, understanding matrix notation is necessary once you get into more complex and niche tools that you might use in your research, and vectorizing problems might make you a better coder too (especially to avoid slow for-loops in R).
 
-This post is aimed for math-deficient psych students like me who want a basic introduction to both of these things without having to jump across tutorials. I hope to eventually turn this into a series of approachable tutorials for other statistical tools.
+All of this motivated me to write the post I wish I had found during my first year of grad school. Here I'll try to build the intuition behind a linear model from the understanding of matrix operations. This post is aimed for math-deficient psych students like me who want a basic introduction to both of these things without having to jump across tutorials. I hope to eventually turn this into a series of approachable tutorials for other statistical tools.
 
 ## Vector and matrix mutiplication
 
