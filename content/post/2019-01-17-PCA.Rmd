@@ -1,0 +1,36 @@
+---
+  title: "Understanding the math behind PCA"
+author: "CTS"
+date: '2019-1-17'
+slug: PCA
+categories: []
+tags: ['Math', 'Statistics']
+output:
+  blogdown::html_page:
+  toc: true
+fig_width: 6
+fig.height: 4
+dev: "svg"
+header:
+  caption: ''
+image: ''
+draft: true 
+---
+
+# trying to understand PCA and eigendecomposition in general
+
+# matrix nxp of 5 observations for 3 predictors
+X <- matrix(rep(seq(5),3),5,3) * matrix(rnorm(5*3),5,3)
+
+# putative vector of weights
+w <- matrix(c(4, 8, 2), ncol = 3)
+
+# technically, PCA multiplies 
+
+# turn into symmetric and produce the eigen values/vectors
+X2 <- t(X) %*% X
+evecs <- eigen(X2)
+
+# demonstration of the correspondance between eigenvalue and eigenvectors 
+X2 %*% evecs$vectors[,3]
+evecs$values[3] * evecs$vectors[,3]
