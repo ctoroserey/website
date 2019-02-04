@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>/post/diagexp/</loc>
+      <lastmod>2019-02-04T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/ssgnrtr/</loc>
       <lastmod>2018-11-29T00:00:00+00:00</lastmod>
     </url>
@@ -145,6 +154,7 @@
     <url>
     
       <loc>/tags/economics/</loc>
+      <lastmod>2019-02-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -155,14 +165,6 @@
     
       <loc>/tags/math/</loc>
       <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/post/diagexp/</loc>
     </url>
     
   
@@ -191,7 +193,7 @@
     <url>
     
       <loc>/tags/r/</loc>
-      <lastmod>2018-11-29T00:00:00+00:00</lastmod>
+      <lastmod>2019-02-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -201,6 +203,7 @@
     <url>
     
       <loc>/tags/shiny/</loc>
+      <lastmod>2019-02-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

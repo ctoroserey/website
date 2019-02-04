@@ -11,6 +11,22 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Modeling Diagnostic Expectations</title>
+      <link>/post/diagexp/</link>
+      <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/diagexp/</guid>
+      <description>&lt;p&gt;The biggest appeal of behavioral economics is its promise of practically regularizing the rational expectations imposed by traditional economics. Since the 70s psychology has catalogued increasing amounts of biases and circumstancial heterogeneities that go against the expectation of rationality in decision making. However, in my short years studying it, it seems like these discoveries are seldom applied to complex real-life economic environments (Nudge being a good example of this). That’s what attracted me to ‘A Crisis of Beliefs’, a book by Nicola Gennaioli and Andrei Shleifer that was published last year.&lt;/p&gt;
+&lt;p&gt;In this book, G&amp;amp;S apply the representativeness heuristic to model the optimistic expectations of bankers and real estate investors in the years prior to the 2008 recession, and suggest that these distorted beliefs are partially to blame for the ensuing financial crisis. In contrast with Rational Expectations from pure economics, the authors call their ‘human friendly’ model Diagnostic Expectations. I’m not too familiar with traditional economics, but I found the book very readable, instructive, and enjoyable. Actually, I liked their model and explanations so much that I decided to create a &lt;a href=&#34;https://ctoroserey.shinyapps.io/DiagnosticExp/&#34;&gt;Shiny App that lets you interact with the economic factors that they propose&lt;/a&gt;. In general, I’m a big fan of dynamically visualizing models, as static figures can sometimes fail to convey all potentially interesting parameterizations. In this case, I think the app allows you to experience all the relevant scenarios from the book.&lt;/p&gt;
+&lt;p&gt;A failry detailed (but still simplistic) explanation of the model components can be found in the Shiny app, so I won’t repeat it here. Instead, I’ll just leave a snippet of how the app works.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/img/diag_exp.gif&#34; alt=&#34;My picture&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;My picture&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Secret Santa Generator Shiny App</title>
       <link>/post/ssgnrtr/</link>
       <pubDate>Thu, 29 Nov 2018 00:00:00 +0000</pubDate>
@@ -552,22 +568,6 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
       
       <guid>/publication/horowitzkraus/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Modeling Diagnostic Expectations</title>
-      <link>/post/diagexp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/diagexp/</guid>
-      <description>&lt;p&gt;The biggest appeal of behavioral economics is its promise of practically regularizing the rational expectations imposed by traditional economics. Since the 70s psychology has catalogued increasing amounts of biases and circumstancial heterogeneities that go against the expectation of rationality in decision making. However, in my short years studying it, it seems like these discoveries are seldom applied to complex real-life economic environments (Nudge being a good example of this). That’s what attracted me to ‘A Crisis of Beliefs’, a book by Nicola Gennaioli and Andrei Shleifer that was published last year.&lt;/p&gt;
-&lt;p&gt;In this book, G&amp;amp;S apply the representativeness heuristic to model the optimistic expectations of bankers and real estate investors in the years prior to the 2008 recession, and suggest that these distorted beliefs are partially to blame for the ensuing financial crisis. In contrast with Rational Expectations from pure economics, the authors call their ‘human friendly’ model Diagnostic Expectations. I’m not too familiar with traditional economics, but I found the book very readable, instructive, and enjoyable. Actually, I liked their model and explanations so much that I decided to create a &lt;a href=&#34;https://ctoroserey.shinyapps.io/DiagnosticExp/&#34;&gt;Shiny App that lets you interact with the economic factors that they propose&lt;/a&gt;. In general, I’m a big fan of dynamically visualizing models, as static figures can sometimes fail to convey all potentially interesting parameterizations. In this case, I think the app allows you to experience all the relevant scenarios from the book.&lt;/p&gt;
-&lt;p&gt;A failry detailed (but still simplistic) explanation of the model components can be found in the Shiny app, so I won’t repeat it here. Instead, I’ll just leave a snippet of how the app works.&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/img/diag_exp.gif&#34; alt=&#34;My picture&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;My picture&lt;/p&gt;
-&lt;/div&gt;
-</description>
     </item>
     
     <item>

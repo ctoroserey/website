@@ -7,6 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Mon, 04 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/economics/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +15,7 @@
     <item>
       <title>Modeling Diagnostic Expectations</title>
       <link>/post/diagexp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/diagexp/</guid>
       <description>The biggest appeal of behavioral economics is its promise of practically regularizing the rational expectations imposed by traditional economics. Since the 70s psychology has catalogued increasing amounts of biases and circumstancial heterogeneities that go against the expectation of rationality in decision making. However, in my short years studying it, it seems like these discoveries are seldom applied to complex real-life economic environments (Nudge being a good example of this). That’s what attracted me to ‘A Crisis of Beliefs’, a book by Nicola Gennaioli and Andrei Shleifer that was published last year.</description>

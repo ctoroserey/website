@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 29 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Modeling Diagnostic Expectations</title>
+      <link>/post/diagexp/</link>
+      <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/diagexp/</guid>
+      <description>The biggest appeal of behavioral economics is its promise of practically regularizing the rational expectations imposed by traditional economics. Since the 70s psychology has catalogued increasing amounts of biases and circumstancial heterogeneities that go against the expectation of rationality in decision making. However, in my short years studying it, it seems like these discoveries are seldom applied to complex real-life economic environments (Nudge being a good example of this). That’s what attracted me to ‘A Crisis of Beliefs’, a book by Nicola Gennaioli and Andrei Shleifer that was published last year.</description>
+    </item>
     
     <item>
       <title>Secret Santa Generator Shiny App</title>
@@ -19,15 +28,6 @@
       
       <guid>/post/ssgnrtr/</guid>
       <description>Why are you doing this? There are enough secret santa services So, how does it work? Shiny implementation Closing   Why are you doing this? There are enough secret santa services Last Christmas my wife was left giftless on my side of the family due to a faulty secret santa generator. In trying to earn brownie points the arrogant nerd in me thought he could do better, so I decided to program one in R (I’d rather know exactly what’s going on in the background anyways).</description>
-    </item>
-    
-    <item>
-      <title>Modeling Diagnostic Expectations</title>
-      <link>/post/diagexp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/diagexp/</guid>
-      <description>The biggest appeal of behavioral economics is its promise of practically regularizing the rational expectations imposed by traditional economics. Since the 70s psychology has catalogued increasing amounts of biases and circumstancial heterogeneities that go against the expectation of rationality in decision making. However, in my short years studying it, it seems like these discoveries are seldom applied to complex real-life economic environments (Nudge being a good example of this). That’s what attracted me to ‘A Crisis of Beliefs’, a book by Nicola Gennaioli and Andrei Shleifer that was published last year.</description>
     </item>
     
   </channel>

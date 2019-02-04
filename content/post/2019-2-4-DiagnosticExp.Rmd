@@ -1,7 +1,7 @@
 ---
 title: "Modeling Diagnostic Expectations"
 author: "CTS"
-date: '2019-2-4'
+date: '2019-02-04'
 slug: DiagExp
 categories: []
 tags: ['R', 'Shiny', 'Economics']
