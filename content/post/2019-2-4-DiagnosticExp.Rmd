@@ -24,7 +24,11 @@ In this book, G&S apply the representativeness heuristic to model the optimistic
 
 A failry detailed (but still simplistic) explanation of the model components can be found in the Shiny app, so I won't repeat it here. Instead, I'll just leave a snippet of how the app works.
 
-![My picture](/img/diag_exp.gif)
+![](/img/diag_exp.gif)
+
+The authors are clear about a number of shortcomings in their environmental setup. For example, there is no account for house price fluctuation, and no account for what a participant's theta should be given the context (among others). These are all interesting prospective avenues to examine. 
+
+Eventually I might expand this blog post to mention some aspects of the model that weren't clear or well addressed to me. For example, the discount of future returns is linear, which goes against the hyperbolic devaluation we're used to in behavioral economics. It is also unclear why actors have heterogenous risk attitudes. Given the same environment all participants should be similarly risk-averse or prone. This dichotomy could be a function of a participant's perspective. For example, under prospect theory, investors might see debt purchasing in the realm of gains, while bankers understand it as potential losses (thus explaining their risk-insensitivity), or perhaps a case of weighting gains and losses in a way that produces these effects.
 
 
 

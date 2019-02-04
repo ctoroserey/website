@@ -20,9 +20,11 @@
 &lt;p&gt;In this book, G&amp;amp;S apply the representativeness heuristic to model the optimistic expectations of bankers and real estate investors in the years prior to the 2008 recession, and suggest that these distorted beliefs are partially to blame for the ensuing financial crisis. In contrast with Rational Expectations from pure economics, the authors call their ‘human friendly’ model Diagnostic Expectations. I’m not too familiar with traditional economics, but I found the book very readable, instructive, and enjoyable. Actually, I liked their model and explanations so much that I decided to create a &lt;a href=&#34;https://ctoroserey.shinyapps.io/DiagnosticExp/&#34;&gt;Shiny App that lets you interact with the economic factors that they propose&lt;/a&gt;. In general, I’m a big fan of dynamically visualizing models, as static figures can sometimes fail to convey all potentially interesting parameterizations. In this case, I think the app allows you to experience all the relevant scenarios from the book.&lt;/p&gt;
 &lt;p&gt;A failry detailed (but still simplistic) explanation of the model components can be found in the Shiny app, so I won’t repeat it here. Instead, I’ll just leave a snippet of how the app works.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/img/diag_exp.gif&#34; alt=&#34;My picture&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;My picture&lt;/p&gt;
+&lt;img src=&#34;/img/diag_exp.gif&#34; /&gt;
+
 &lt;/div&gt;
+&lt;p&gt;The authors are clear about a number of shortcomings in their environmental setup. For example, there is no account for house price fluctuation, and no account for what a participant’s theta should be given the context (among others). These are all interesting prospective avenues to examine.&lt;/p&gt;
+&lt;p&gt;Eventually I might expand this blog post to mention some aspects of the model that weren’t clear or well addressed to me. For example, the discount of future returns is linear, which goes against the hyperbolic devaluation we’re used to in behavioral economics. It is also unclear why actors have heterogenous risk attitudes. Given the same environment all participants should be similarly risk-averse or prone. This dichotomy could be a function of a participant’s perspective. For example, under prospect theory, investors might see debt purchasing in the realm of gains, while bankers understand it as potential losses (thus explaining their risk-insensitivity), or perhaps a case of weighting gains and losses in a way that produces these effects.&lt;/p&gt;
 </description>
     </item>
     
