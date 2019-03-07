@@ -3,7 +3,7 @@ title = "Characterizing information flux within the distributed pediatric expres
 date = 2016-07-01T00:00:00
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = ["DS Kadis", "A Dimitrijevic", "C Toro-Serey", "ML Smith", "SK Holland"]
+authors = ["DS Kadis", "A Dimitrijevic", "**C Toro-Serey**", "ML Smith", "SK Holland"]
 
 # Publication type.
 # Legend:

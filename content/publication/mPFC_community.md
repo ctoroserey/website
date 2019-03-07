@@ -1,9 +1,9 @@
 +++
-title = "Increased Resting-State Functional Connectivity in the Cingulo-Opercular Cognitive-Control Network after Intervention in Children with Reading Difficulties"
-date = 2015-07-01T00:00:00
+title = "Individual heterogeneity in the functional topography of the medial prefrontal cortex"
+date = "2018-07-01T00:00:00"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = ["T Horowitz-Kraus", "**C Toro-Serey**", "M DiFrancesco"]
+authors = ["**C Toro-Serey**", "S Tobyne", "JT McGuire"]
 
 # Publication type.
 # Legend:
@@ -18,7 +18,7 @@ publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
 publication = ""
-publication_short = "In *PLoS One*"
+publication_short = ""
 
 # Abstract and optional shortened version.
 abstract = ""
@@ -32,10 +32,10 @@ selected = true
 # Projects (optional).
 #   Associate this publication with one or more of your projects.
 #   Simply enter the filename (excluding '.md') of your project file in `content/project/`.
-# projects = ["example-external-project"]
+# projects = []
 
 # Links (optional).
-url_pdf = "http://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0133762&type=printable"
+url_pdf = ""
 url_preprint = ""
 url_code = ""
 url_dataset = ""
@@ -53,13 +53,13 @@ url_source = ""
 math = true
 
 # Does the content use source code highlighting?
-highlight = true
+highlight = false
 
 # Featured image
 # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
 [header]
-image = "headers/bubbles-wide.jpg"
-caption = "My caption :smile:"
+image = ""
+caption = ""
 
 +++
 

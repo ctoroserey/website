@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Claudio Toro-Serey on Claudio Toro-Serey</title>
-    <link>/</link>
+    <link>https://ctoroserey.netlify.com/</link>
     <description>Recent content in Claudio Toro-Serey on Claudio Toro-Serey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,15 +12,15 @@
     
     <item>
       <title>Modeling Diagnostic Expectations</title>
-      <link>/post/diagexp/</link>
+      <link>https://ctoroserey.netlify.com/post/diagexp/</link>
       <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/diagexp/</guid>
+      <guid>https://ctoroserey.netlify.com/post/diagexp/</guid>
       <description>&lt;p&gt;The biggest appeal of behavioral economics is its promise of practically regularizing the rational expectations imposed by traditional economics. Since the 70s psychology has catalogued increasing amounts of biases and circumstancial heterogeneities that go against the expectation of rationality in decision making. However, in my short years studying it, it seems like these discoveries are seldom applied to complex real-life economic environments (Nudge being a good example of this). That’s what attracted me to ‘A Crisis of Beliefs’, a book by Nicola Gennaioli and Andrei Shleifer that was published last year.&lt;/p&gt;
 &lt;p&gt;In this book, G&amp;amp;S apply the representativeness heuristic to model the optimistic expectations of bankers and real estate investors in the years prior to the 2008 recession, and suggest that these distorted beliefs are partially to blame for the ensuing financial crisis. In contrast with Rational Expectations from pure economics, the authors call their ‘human friendly’ model Diagnostic Expectations. I’m not too familiar with traditional economics, but I found the book very readable, instructive, and enjoyable. Actually, I liked their model and explanations so much that I decided to create a &lt;a href=&#34;https://ctoroserey.shinyapps.io/DiagnosticExp/&#34;&gt;Shiny App that lets you interact with the economic factors that they propose&lt;/a&gt;. In general, I’m a big fan of dynamically visualizing models, as static figures can sometimes fail to convey all potentially interesting parameterizations. In this case, I think the app allows you to experience all the relevant scenarios from the book.&lt;/p&gt;
 &lt;p&gt;A failry detailed (but still simplistic) explanation of the model components can be found in the Shiny app, so I won’t repeat it here. Instead, I’ll just leave a snippet of how the app works.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/img/diag_exp.gif&#34; /&gt;
+&lt;img src=&#34;https://ctoroserey.netlify.com/img/diag_exp.gif&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;The authors are clear about a number of shortcomings in their environmental setup. For example, there is no account for house price fluctuation, and no account for what a participant’s theta should be given the context (among others). These are all interesting prospective avenues to examine.&lt;/p&gt;
@@ -30,10 +30,10 @@
     
     <item>
       <title>Secret Santa Generator Shiny App</title>
-      <link>/post/ssgnrtr/</link>
+      <link>https://ctoroserey.netlify.com/post/ssgnrtr/</link>
       <pubDate>Thu, 29 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/ssgnrtr/</guid>
+      <guid>https://ctoroserey.netlify.com/post/ssgnrtr/</guid>
       <description>&lt;div id=&#34;TOC&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#why-are-you-doing-this-there-are-enough-secret-santa-services&#34;&gt;Why are you doing this? There are enough secret santa services&lt;/a&gt;&lt;/li&gt;
@@ -260,11 +260,11 @@
     
     <item>
       <title>Cluster comparisons with ARI</title>
-      <link>/post/ari/</link>
+      <link>https://ctoroserey.netlify.com/post/ari/</link>
       <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/ari/</guid>
-      <description>&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+      <guid>https://ctoroserey.netlify.com/post/ari/</guid>
+      <description>&lt;script src=&#34;https://ctoroserey.netlify.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
 
 &lt;div id=&#34;TOC&#34;&gt;
 &lt;ul&gt;
@@ -498,7 +498,7 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
   geom_line() +
   scale_color_discrete(name = &amp;quot;Method&amp;quot;) +
   theme_classic()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2018-09-26-ARI_files/figure-html/Compute-1.svg&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ctoroserey.netlify.com/post/2018-09-26-ARI_files/figure-html/Compute-1.svg&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;So, progressively switching the affiliations of the original vector has the expected negative linear trend on EQ, as the vectors become increasingly dissimilar. On the other hand, RI heavily penalises initial clustering disagreements, but notice that once the differences pass 50% the vectors are deemed increasingly similar. This parabolic function is a result of node pairs once again being grouped in the same/different clusters once direct differences pass chance levels (think back to the first example, and how inverting the values still maintains the underlying relationships). Finally, we can see that ARI drops to 0 when the vector differences reach this chance level. In accord with its definition, positive ARI values thus denote agreements above those expected by chance&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;closing&#34; class=&#34;section level2&#34;&gt;
@@ -516,20 +516,29 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
     </item>
     
     <item>
+      <title>Individual heterogeneity in the functional topography of the medial prefrontal cortex</title>
+      <link>https://ctoroserey.netlify.com/publication/mpfc_community/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ctoroserey.netlify.com/publication/mpfc_community/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Characterizing information flux within the distributed pediatric expressive language network: a core region mapped through fMRI-constrained MEG effective connectivity analyses</title>
-      <link>/publication/kadis/</link>
+      <link>https://ctoroserey.netlify.com/publication/kadis/</link>
       <pubDate>Fri, 01 Jul 2016 00:00:00 -0400</pubDate>
       
-      <guid>/publication/kadis/</guid>
+      <guid>https://ctoroserey.netlify.com/publication/kadis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deep Learning</title>
-      <link>/project/deep-learning/</link>
+      <link>https://ctoroserey.netlify.com/project/deep-learning/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>/project/deep-learning/</guid>
+      <guid>https://ctoroserey.netlify.com/project/deep-learning/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
@@ -544,19 +553,19 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
     
     <item>
       <title>External Project</title>
-      <link>/project/example-external-project/</link>
+      <link>https://ctoroserey.netlify.com/project/example-external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>/project/example-external-project/</guid>
+      <guid>https://ctoroserey.netlify.com/project/example-external-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A short introduction</title>
-      <link>/post/getting-started/</link>
+      <link>https://ctoroserey.netlify.com/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>/post/getting-started/</guid>
+      <guid>https://ctoroserey.netlify.com/post/getting-started/</guid>
       <description>&lt;p&gt;In a way, this is just a post to baptise the website. What I plan to do here from now on is to share snippets of what I&amp;rsquo;ve learned, read, or listened to lately (with a small dose of personal experiences), in hopes to both consolidate my knowledge and potentially help others. In a way, the picture of Boston in the header just represents that the overarching theme will be anything that has happened since I moved here for grad school (so yes, learning, reading, and listening to music mostly).&lt;/p&gt;
 
 &lt;p&gt;Nothing too serious or big, just fun.&lt;/p&gt;
@@ -565,39 +574,11 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
     
     <item>
       <title>Increased Resting-State Functional Connectivity in the Cingulo-Opercular Cognitive-Control Network after Intervention in Children with Reading Difficulties</title>
-      <link>/publication/horowitzkraus/</link>
+      <link>https://ctoroserey.netlify.com/publication/horowitzkraus/</link>
       <pubDate>Wed, 01 Jul 2015 00:00:00 -0400</pubDate>
       
-      <guid>/publication/horowitzkraus/</guid>
+      <guid>https://ctoroserey.netlify.com/publication/horowitzkraus/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Vector Operations and Linear Models</title>
-      <link>/post/lmmath/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/lmmath/</guid>
-      <description>&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#vector-and-matrix-mutiplication&#34;&gt;Vector and matrix mutiplication&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;As a psychology student I (unfortunately) wasn’t told to take any math courses during my undergrad, and by the time I was starting my Ph.D. I had forgotten most of the math I learned in high school. Well, unlike what I was told in undergrad, psychological research has become quite mathy, and its interaction with cognitive and computational neuroscience means that you are very likely to run into the linear algebra and calculus that your teenager self swore would never become useful. I have thus had to reacquaint myself with math in order to understand the behavioral, neural, and network modeling I read about and use in my own work.&lt;/p&gt;
-&lt;p&gt;But my math problem really stemmed from something quite simple: wanting to understand the mathematical components behind multiple regression. Sure, running and interpreting a linear model doesn’t require math proficiency (many psych students are taught how to click their way through ANOVAs, after all), but knowing what goes on under the algebraic hood has two big benefits:&lt;/p&gt;
-&lt;p&gt;1.- Understanding the model’s limitations&lt;/p&gt;
-&lt;p&gt;2.- Preparing you for more complex statistics and machine learning algorithms that rely on similar intuitions&lt;/p&gt;
-&lt;p&gt;Learning about this brings about the other half of this post’s title: vector/matrix operations. If you Google the equation that solves for multiple regression, you’re hit in the face with this element of linear algebra that psych students like me probably forgot about (well, you can bypass this by doing gradient descent, but that’s a different post). As it turns out, understanding matrix notation is necessary once you get into more complex and niche tools that you might use in your research, and vectorizing problems might make you a better coder too (especially to avoid slow for-loops in R).&lt;/p&gt;
-&lt;p&gt;All of this motivated me to write the post I wish I had found during my first year of grad school. Here I’ll try to build the intuition behind a linear model from the understanding of matrix operations. This post is aimed for math-deficient psych students like me who want a basic introduction to both of these things without having to jump across tutorials. I hope to eventually turn this into a series of approachable tutorials for other statistical tools.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;vector-and-matrix-mutiplication&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Vector and matrix mutiplication&lt;/h2&gt;
-&lt;/div&gt;
-</description>
     </item>
     
   </channel>
