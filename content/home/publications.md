@@ -5,7 +5,7 @@ weight: 20
 ---
 
 ## In Prep 
-**Toro-Serey, C**, Tobyne, S.M., &  McGuire, J.T. (in prep). Individual heterogeneity in the functional topography of the medial prefrontal cortex.
+**Toro-Serey, C**, Tobyne, S.M., &  McGuire, J.T. (in prep). Individual heterogeneity in the functional topography of the default-mode network in medial prefrontal cortex.
 
 ## Accepted
 
