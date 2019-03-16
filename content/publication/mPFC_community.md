@@ -1,5 +1,5 @@
 +++
-title = "Individual heterogeneity in the functional topography of the medial prefrontal cortex"
+title = "Individual heterogeneity in the functional topography of the default-mode network in medial prefrontal cortex"
 date = "2018-07-01T00:00:00"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
