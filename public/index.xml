@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Claudio Toro-Serey on Claudio Toro-Serey</title>
-    <link>https://ctoroserey.netlify.com/</link>
+    <link>/</link>
     <description>Recent content in Claudio Toro-Serey on Claudio Toro-Serey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,16 +11,62 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>The one with my first hackathon, cortical parcellations, and algorithm evaluation.</title>
+      <link>/post/hackathon2018/</link>
+      <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hackathon2018/</guid>
+      <description>&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#so-you-signed-up-for-your-first-hackathon&#34;&gt;So you signed up for your first hackathon…&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ok-ok-but-what-did-you-actually-work-on&#34;&gt;Ok ok, but what did you actually work on?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#just-a-tad-more&#34;&gt;Just a tad more&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;so-you-signed-up-for-your-first-hackathon&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;So you signed up for your first hackathon…&lt;/h2&gt;
+&lt;p&gt;About a year ago I was (luckily) invited to attend Neurohackademy at the University of Washington, Seattle. This was my first time even hearing about hackathons in neuroimaging, so I was definitely excited to check it out. The format of the 2-week event was perfect for me: one week of broad introductions to tools and perspectives that we were suppose to implement during the second week in collectively-idealized projects. While excited, the part of me perennially afflicted by the imposter syndrome never stopped asking &lt;strong&gt;“what could I possibly contribute to projects that other people can’t already do?”&lt;/strong&gt; Turns out not that much. But I also learned that hackathons are as much about learning as they are about contributing, and even small contributions are wellcomed. So I’m writing this short post for those who, like me, might be nervous about the prospect of their first hackathon.&lt;/p&gt;
+&lt;p&gt;Let’s get something out of the way: the core idea of a hackathon is appealing to people who are heavily invested in open, community driven scientific projects and tools. This, in my opinion, has two comforting consequences: (1) those around you will (most likely) be more into collaboration than competition; and (2) anyone who has worked in open science knows that projects seldom reach perfection (just go and look at the ‘Issues’ section of any open repo you admire). This coarsely translates into: &lt;strong&gt;you don’t have to prove yourself to anyone, and it’s ok if the projects you dig into are not at their ideal stage by the end of the hackathon.&lt;/strong&gt; Hopefully that takes some pressure off your shoulders.&lt;/p&gt;
+&lt;p&gt;You might still be wondering whether your level of skill will match the requirements of the project(s) you affiliate with. After all, many of those around you &lt;em&gt;will&lt;/em&gt; have extensive knowledge of things like GitHub, open-source programing languages, continuous integration, notebook implementation (e.g. Jupyter), package development, environment sharing tools, community guidelines, etc. Knowing that the collective knowledge of a room is miles ahead of mine has always been a reliable depressor for me. What if these experienced people expect basic expertise? Well, let me tell you about some of the things I (and other newbies) did for the first time during Neurohackademy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;I issued my first pull request. I literally just added a file to &lt;a href=&#34;https://github.com/HBClab/NiBetaSeries&#34;&gt;NiBetaSeries&lt;/a&gt;, with James Kent patiently guiding me through the process. Before then I had just used GitHub to keep track of my own projects.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Python dominated the hackathon. I did not dominate Python. I was just getting used to R at that time, and I didn’t even know what a ‘class’ object was. Heck, I had never even loaded a custom package locally before someone at NH showed me how to.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Opened and edited a Jupyter notebook.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;My main group almost broke a repository, and Kirstie Whitaker spent a good couple of hours helping us fix it.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Looked at C++ code (yes, looked. I didn’t even try to touch it).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Etc. A lot of etc.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Many of these are what many would consider “basic knowledge”, yet plenty of such first encounters occurred. What’s more, it’s possible that some of these first encounters will be about things you &lt;em&gt;do&lt;/em&gt; know about! As a personal example, someone in a different group had a question about R that I helped tackle to some degree. Super simple, I know, but hackathons are all about helping each other in both big and small ways. Every bit counts when a bunch of people stuck in a room are trying to push science forward. I guess what I’m trying to convery here is: &lt;strong&gt;as long as you come in with the right collaborating (and respectful) attitude, both you and others will get something out of this experience.&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ok-ok-but-what-did-you-actually-work-on&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Ok ok, but what did you actually work on?&lt;/h2&gt;
+&lt;p&gt;Maybe describing my experience will make all of this more tangible.&lt;/p&gt;
+&lt;p&gt;The main project I plugged myself into was already kind of in the oven before NH. Michael Notter had been working on a Python tool to parcellate a cortical surface (or a region within it) into &lt;em&gt;n&lt;/em&gt; equally-sized regions. He called it the &lt;a href=&#34;https://github.com/miykael/parcellation_fragmenter&#34;&gt;“parcellation fragmenter”&lt;/a&gt;. I liked this project because I had recently been learning about clustering algorithms for my own work, and there were talks about implementing one of my favorite ones into the clustering catalogue (spectral partitioning). Here’s an example of what this looks like for different surface shapes and densities:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/surface_fragments.png&#34; /&gt; Not only did I love the look of those fragmented brains, I also thought I could help with the addition of spectral partitioning. Well, that wasn’t the case. Kristian Eschenburg had it under control from the get-go, and he implemented much of the code and technical reframing of the package. Luckily for me, both him and Michael were happy to guide me through tractable issues and testing that I could do, which helped me learn Python better. Even though the work seemed inconsequential, it did help to some extent: I found a pair of hiccups in the creation of distances between cortical vertices (super important for any clustering algorithm), among other tiny contributions.&lt;/p&gt;
+&lt;p&gt;Even though I felt wellcomed to the project and I loved learning, I felt bad for not being able to contribute more substantially. At this point something clicked: I was trying to add content where someone else’s expertise worked better, but I wasn’t trying to help the project in new ways that I knew I was capable of. That’s when I proposed something very simple to Michael and Kristian: what if we benchmark the algorithms you are implementing here?&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/img/cluster_comparison2.png&#34; /&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;just-a-tad-more&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Just a tad more&lt;/h2&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Modeling Diagnostic Expectations</title>
-      <link>https://ctoroserey.netlify.com/post/diagexp/</link>
+      <link>/post/diagexp/</link>
       <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ctoroserey.netlify.com/post/diagexp/</guid>
+      <guid>/post/diagexp/</guid>
       <description>&lt;p&gt;The biggest appeal of behavioral economics is its promise of practically regularizing the rational expectations imposed by traditional economics. Since the 70s psychology has catalogued increasing amounts of biases and circumstancial heterogeneities that go against the expectation of rationality in decision making. However, in my short years studying it, it seems like these discoveries are seldom applied to complex real-life economic environments (Nudge being a good example of this). That’s what attracted me to ‘A Crisis of Beliefs’, a book by Nicola Gennaioli and Andrei Shleifer that was published last year.&lt;/p&gt;
 &lt;p&gt;In this book, G&amp;amp;S apply the representativeness heuristic to model the optimistic expectations of bankers and real estate investors in the years prior to the 2008 recession, and suggest that these distorted beliefs are partially to blame for the ensuing financial crisis. In contrast with Rational Expectations from pure economics, the authors call their ‘human friendly’ model Diagnostic Expectations. I’m not too familiar with traditional economics, but I found the book very readable, instructive, and enjoyable. Actually, I liked their model and explanations so much that I decided to create a &lt;a href=&#34;https://ctoroserey.shinyapps.io/DiagnosticExp/&#34;&gt;Shiny App that lets you interact with the economic factors that they propose&lt;/a&gt;. In general, I’m a big fan of dynamically visualizing models, as static figures can sometimes fail to convey all potentially interesting parameterizations. In this case, I think the app allows you to experience all the relevant scenarios from the book.&lt;/p&gt;
 &lt;p&gt;A failry detailed (but still simplistic) explanation of the model components can be found in the Shiny app, so I won’t repeat it here. Instead, I’ll just leave a snippet of how the app works.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://ctoroserey.netlify.com/img/diag_exp.gif&#34; /&gt;
+&lt;img src=&#34;/img/diag_exp.gif&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;The authors are clear about a number of shortcomings in their environmental setup. For example, there is no account for house price fluctuation, and no account for what a participant’s theta should be given the context (among others). These are all interesting prospective avenues to examine.&lt;/p&gt;
@@ -29,11 +75,39 @@
     </item>
     
     <item>
+      <title>Vector Operations and Linear Models</title>
+      <link>/post/lmmath/</link>
+      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/lmmath/</guid>
+      <description>&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#vector-and-matrix-mutiplication&#34;&gt;Vector and matrix mutiplication&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;As a psychology student I (unfortunately) wasn’t told to take any math courses during my undergrad, and by the time I was starting my Ph.D. I had forgotten most of the math I learned in high school. Well, unlike what I was told in undergrad, psychological research has become quite mathy, and its interaction with cognitive and computational neuroscience means that you are very likely to run into the linear algebra and calculus that your teenager self swore would never become useful. I have thus had to reacquaint myself with math in order to understand the behavioral, neural, and network modeling I read about and use in my own work.&lt;/p&gt;
+&lt;p&gt;But my math problem really stemmed from something quite simple: wanting to understand the mathematical components behind multiple regression. Sure, running and interpreting a linear model doesn’t require math proficiency (many psych students are taught how to click their way through ANOVAs, after all), but knowing what goes on under the algebraic hood has two big benefits:&lt;/p&gt;
+&lt;p&gt;1.- Understanding the model’s limitations&lt;/p&gt;
+&lt;p&gt;2.- Preparing you for more complex statistics and machine learning algorithms that rely on similar intuitions&lt;/p&gt;
+&lt;p&gt;Learning about this brings about the other half of this post’s title: vector/matrix operations. If you Google the equation that solves for multiple regression, you’re hit in the face with this element of linear algebra that psych students like me probably forgot about (well, you can bypass this by doing gradient descent, but that’s a different post). As it turns out, understanding matrix notation is necessary once you get into more complex and niche tools that you might use in your research, and vectorizing problems might make you a better coder too (especially to avoid slow for-loops in R).&lt;/p&gt;
+&lt;p&gt;All of this motivated me to write the post I wish I had found during my first year of grad school. Here I’ll try to build the intuition behind a linear model from the understanding of matrix operations. This post is aimed for math-deficient psych students like me who want a basic introduction to both of these things without having to jump across tutorials. I hope to eventually turn this into a series of approachable tutorials for other statistical tools.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;vector-and-matrix-mutiplication&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Vector and matrix mutiplication&lt;/h2&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Secret Santa Generator Shiny App</title>
-      <link>https://ctoroserey.netlify.com/post/ssgnrtr/</link>
+      <link>/post/ssgnrtr/</link>
       <pubDate>Thu, 29 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ctoroserey.netlify.com/post/ssgnrtr/</guid>
+      <guid>/post/ssgnrtr/</guid>
       <description>&lt;div id=&#34;TOC&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#why-are-you-doing-this-there-are-enough-secret-santa-services&#34;&gt;Why are you doing this? There are enough secret santa services&lt;/a&gt;&lt;/li&gt;
@@ -260,11 +334,11 @@
     
     <item>
       <title>Cluster comparisons with ARI</title>
-      <link>https://ctoroserey.netlify.com/post/ari/</link>
+      <link>/post/ari/</link>
       <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ctoroserey.netlify.com/post/ari/</guid>
-      <description>&lt;script src=&#34;https://ctoroserey.netlify.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+      <guid>/post/ari/</guid>
+      <description>&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
 
 &lt;div id=&#34;TOC&#34;&gt;
 &lt;ul&gt;
@@ -498,7 +572,7 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
   geom_line() +
   scale_color_discrete(name = &amp;quot;Method&amp;quot;) +
   theme_classic()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://ctoroserey.netlify.com/post/2018-09-26-ARI_files/figure-html/Compute-1.svg&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2018-09-26-ARI_files/figure-html/Compute-1.svg&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;So, progressively switching the affiliations of the original vector has the expected negative linear trend on EQ, as the vectors become increasingly dissimilar. On the other hand, RI heavily penalises initial clustering disagreements, but notice that once the differences pass 50% the vectors are deemed increasingly similar. This parabolic function is a result of node pairs once again being grouped in the same/different clusters once direct differences pass chance levels (think back to the first example, and how inverting the values still maintains the underlying relationships). Finally, we can see that ARI drops to 0 when the vector differences reach this chance level. In accord with its definition, positive ARI values thus denote agreements above those expected by chance&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;closing&#34; class=&#34;section level2&#34;&gt;
@@ -516,29 +590,11 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
     </item>
     
     <item>
-      <title>Individual heterogeneity in the functional topography of the medial prefrontal cortex</title>
-      <link>https://ctoroserey.netlify.com/publication/mpfc_community/</link>
-      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ctoroserey.netlify.com/publication/mpfc_community/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Characterizing information flux within the distributed pediatric expressive language network: a core region mapped through fMRI-constrained MEG effective connectivity analyses</title>
-      <link>https://ctoroserey.netlify.com/publication/kadis/</link>
-      <pubDate>Fri, 01 Jul 2016 00:00:00 -0400</pubDate>
-      
-      <guid>https://ctoroserey.netlify.com/publication/kadis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Deep Learning</title>
-      <link>https://ctoroserey.netlify.com/project/deep-learning/</link>
+      <link>/project/deep-learning/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>https://ctoroserey.netlify.com/project/deep-learning/</guid>
+      <guid>/project/deep-learning/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
@@ -553,32 +609,23 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
     
     <item>
       <title>External Project</title>
-      <link>https://ctoroserey.netlify.com/project/example-external-project/</link>
+      <link>/project/example-external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>https://ctoroserey.netlify.com/project/example-external-project/</guid>
+      <guid>/project/example-external-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A short introduction</title>
-      <link>https://ctoroserey.netlify.com/post/getting-started/</link>
+      <link>/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>https://ctoroserey.netlify.com/post/getting-started/</guid>
+      <guid>/post/getting-started/</guid>
       <description>&lt;p&gt;In a way, this is just a post to baptise the website. What I plan to do here from now on is to share snippets of what I&amp;rsquo;ve learned, read, or listened to lately (with a small dose of personal experiences), in hopes to both consolidate my knowledge and potentially help others. In a way, the picture of Boston in the header just represents that the overarching theme will be anything that has happened since I moved here for grad school (so yes, learning, reading, and listening to music mostly).&lt;/p&gt;
 
 &lt;p&gt;Nothing too serious or big, just fun.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Increased Resting-State Functional Connectivity in the Cingulo-Opercular Cognitive-Control Network after Intervention in Children with Reading Difficulties</title>
-      <link>https://ctoroserey.netlify.com/publication/horowitzkraus/</link>
-      <pubDate>Wed, 01 Jul 2015 00:00:00 -0400</pubDate>
-      
-      <guid>https://ctoroserey.netlify.com/publication/horowitzkraus/</guid>
-      <description></description>
     </item>
     
   </channel>

@@ -1,0 +1,63 @@
+---
+title: "The one with my first hackathon, cortical parcellations, and algorithm evaluation."
+author: "CTS"
+date: '2019-05-10'
+slug: hackathon2018
+categories: []
+tags: []
+output:
+  blogdown::html_page:
+    toc: true
+    fig_width: 6
+    fig.height: 4
+    dev: "svg"
+header:
+  caption: ''
+  image: ''
+draft: true 
+---
+
+
+## So you signed up for your first hackathon...
+
+About a year ago I was (luckily) invited to attend Neurohackademy at the University of Washington, Seattle. This was my first time even hearing about hackathons in neuroimaging, so I was definitely excited to check it out. The format of the 2-week event was perfect for me: one week of broad introductions to tools and perspectives that we were suppose to implement during the second week in collectively-idealized projects. While excited, the part of me perennially afflicted by the imposter syndrome never stopped asking **"what could I possibly contribute to projects that other people can't already do?"** Turns out not that much. But I also learned that hackathons are as much about learning as they are about contributing, and even small contributions are wellcomed. So I'm writing this short post for those who, like me, might be nervous about the prospect of their first hackathon.
+
+Let's get something out of the way: the core idea of a hackathon is appealing to people who are heavily invested in open, community driven scientific projects and tools. This, in my opinion, has two comforting consequences: (1) those around you will (most likely) be more into collaboration than competition; and (2) anyone who has worked in open science knows that projects seldom reach perfection (just go and look at the 'Issues' section of any open repo you admire). This coarsely translates into: **you don't have to prove yourself to anyone, and it's ok if the projects you dig into are not at their ideal stage by the end of the hackathon.** Hopefully that takes some pressure off your shoulders.
+
+You might still be wondering whether your level of skill will match the requirements of the project(s) you affiliate with. After all, many of those around you *will* have extensive knowledge of things like GitHub, open-source programing languages, continuous integration, notebook implementation (e.g. Jupyter), package development, environment sharing tools, community guidelines, etc. Knowing that the collective knowledge of a room is miles ahead of mine has always been a reliable depressor for me. What if these experienced people expect basic expertise? Well, let me tell you about some of the things I (and other newbies) did for the first time during Neurohackademy:
+
+- I issued my first pull request. I literally just added a file to [NiBetaSeries](https://github.com/HBClab/NiBetaSeries), with James Kent patiently guiding me through the process. Before then I had just used GitHub to keep track of my own projects.
+
+- Python dominated the hackathon. I did not dominate Python. I was just getting used to R at that time, and I didn't even know what a 'class' object was. Heck, I had never even loaded a custom package locally before someone at NH showed me how to.
+
+- Opened and edited a Jupyter notebook.
+
+- My main group almost broke a repository, and Kirstie Whitaker spent a good couple of hours helping us fix it.
+
+- Looked at C++ code (yes, looked. I didn't even try to touch it).
+
+- Etc. A lot of etc.
+
+Many of these are what many would consider "basic knowledge", yet plenty of such first encounters occurred. What's more, it's possible that some of these first encounters will be about things you *do* know about! As a personal example, someone in a different group had a question about R that I helped tackle to some degree. Super simple, I know, but hackathons are all about helping each other in both big and small ways. Every bit counts when a bunch of people stuck in a room are trying to push science forward. I guess what I'm trying to convery here is: **as long as you come in with the right collaborating (and respectful) attitude, both you and others will get something out of this experience.**
+
+## Ok ok, but what did you actually work on?
+
+Maybe describing my experience will make all of this more tangible.
+
+The main project I plugged myself into was already kind of in the oven before NH. Michael Notter had been working on a Python tool to parcellate a cortical surface (or a region within it) into *n* equally-sized regions. He called it the ["parcellation fragmenter"](https://github.com/miykael/parcellation_fragmenter). I liked this project because I had recently been learning about clustering algorithms for my own work, and there were talks about implementing one of my favorite ones into the clustering catalogue (spectral partitioning). Here's an example of what this looks like for different surface shapes and densities:
+
+![](/img/surface_fragments.png)
+Not only did I love the look of those fragmented brains, I also thought I could help with the addition of spectral partitioning. Well, that wasn't the case. Kristian Eschenburg had it under control from the get-go, and he implemented much of the code and technical reframing of the package. Luckily for me, both him and Michael were happy to guide me through tractable issues and testing that I could do, which helped me learn Python better. Even though the work seemed inconsequential, it did help to some extent: I found a pair of hiccups in the creation of distances between cortical vertices (super important for any clustering algorithm), among other tiny contributions.
+
+Even though I felt wellcomed to the project and I loved learning, I felt bad for not being able to contribute more substantially. At this point something clicked: I was trying to add content where someone else's expertise worked better, but I wasn't trying to help the project in new ways that I knew I was capable of. That's when I proposed something very simple to Michael and Kristian: what if we benchmark the algorithms you are implementing here?  
+
+![](/img/cluster_comparison2.png)
+
+## Just a tad more
+
+
+
+
+
+
+
