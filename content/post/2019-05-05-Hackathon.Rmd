@@ -1,5 +1,5 @@
 ---
-title: "The one with my first hackathon, cortical parcellations, and algorithm evaluation."
+title: "The one with my first hackathon and cortical parcellations."
 author: "CTS"
 date: '2019-05-05'
 slug: hackathon2018
