@@ -15,4 +15,4 @@ Horowitz-Kraus, T., **Toro Serey, C.**, & Di Francesco, M. (2015). Increased res
 
 ## Peer-Reviewed Conference Papers
 
-**Toro Serey, C.**, Bright, I.M., Wyble, B., Howard, M.W. (accepted). Rapid Presentation Rate Negatively Impacts the Contiguity Effect in Free Recall. *Proceedings of the 41st Annual Meeting of the Cognitive Science Society*
+**Toro Serey, C.**, Bright, I.M., Wyble, B.P., & Howard, M.W. (accepted). Rapid Presentation Rate Negatively Impacts the Contiguity Effect in Free Recall. *Proceedings of the 41st Annual Meeting of the Cognitive Science Society*
