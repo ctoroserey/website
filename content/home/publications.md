@@ -9,10 +9,10 @@ weight: 20
 
 ## Accepted
 
-Kadis, D., Dimitrijevic, A., **Toro Serey, C.**, & Holland, S.K. (2016). Characterizing information flux within the distributed pediatric expressive language network – a core region mapped through fMRI-constrained MEG effective connectivity analyses. *Brain Connectivity*, 6(1)
+Kadis, D., Dimitrijevic, A., **Toro Serey, C.**, & Holland, S.K. (2016). Characterizing information flux within the distributed pediatric expressive language network – a core region mapped through fMRI-constrained MEG effective connectivity analyses. *Brain Connectivity*, 6(1). DOI: [10.1089/brain.2015.0374](https://www.liebertpub.com/doi/10.1089/brain.2015.0374)
 
-Horowitz-Kraus, T., **Toro Serey, C.**, & Di Francesco, M. (2015). Increased resting-state functional connectivity in the cingulo-opercular cognitive-control network after intervention in children with reading difficulties. *PLoS ONE*, 10(7)
+Horowitz-Kraus, T., **Toro Serey, C.**, & Di Francesco, M. (2015). Increased resting-state functional connectivity in the cingulo-opercular cognitive-control network after intervention in children with reading difficulties. *PLoS ONE*, 10(7). DOI: [10.1371/journal.pone.0133762](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0133762)
 
 ## Peer-Reviewed Conference Papers
 
-**Toro Serey, C.**, Bright, I.M., Wyble, B.P., & Howard, M.W. (accepted). Rapid Presentation Rate Negatively Impacts the Contiguity Effect in Free Recall. *Proceedings of the 41st Annual Meeting of the Cognitive Science Society*
+**Toro Serey, C.**, Bright, I.M., Wyble, B.P., & Howard, M.W. (accepted). Rapid Presentation Rate Negatively Impacts the Contiguity Effect in Free Recall. *Proceedings of the 41st Annual Meeting of the Cognitive Science Society* ([psyArxiv](https://psyarxiv.com/qb5sx))
