@@ -5,7 +5,7 @@ weight: 20
 ---
 
 ## In Prep 
-**Toro-Serey, C**, Tobyne, S.M., &  McGuire, J.T. (in prep). Individual heterogeneity in the functional network topography of the default network in medial prefrontal cortex. ([bioRxiv](https://www.biorxiv.org/content/10.1101/651117v1))
+**Toro-Serey, C**, Tobyne, S.M., &  McGuire, J.T. (under review). Individual heterogeneity in the functional network topography of the default network in medial prefrontal cortex. ([bioRxiv](https://www.biorxiv.org/content/10.1101/651117v2))
 
 ## Accepted
 
