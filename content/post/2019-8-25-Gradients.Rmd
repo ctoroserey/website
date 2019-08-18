@@ -1,0 +1,46 @@
+---
+title: "Vector Operations and Linear Models"
+author: "CTS"
+date: '2019-01-15'
+slug: LMMath
+categories: []
+tags: ['Math', 'Statistics']
+output:
+  blogdown::html_page:
+    toc: true
+    fig_width: 6
+    fig.height: 4
+    dev: "svg"
+header:
+  caption: ''
+  image: ''
+draft: true 
+---
+
+## Introduction
+
+I went to OHBM for the first time this year.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
