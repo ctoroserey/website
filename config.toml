@@ -65,7 +65,7 @@ enableGitInfo = false
   organizations = [ { name = "Boston University", url = "https://sites.bu.edu/cdlab/" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-  avatar = "avatar2.png"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  avatar = "2019-08-182.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "ctoro@bu.edu"
   address = "677 Beacon St., Boston, MA"
   #office_hours = "Monday 10:00 to 13:00 or email for appointment"
