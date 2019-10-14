@@ -23,6 +23,11 @@ weight = 5
   year = ""
 
 [[education.courses]]
+  course = "MA in Psychology"
+  institution = "Boston University"
+  year = 2019
+
+[[education.courses]]
   course = "BSc in Psychology"
   institution = "Northern Kentucky University"
   year = 2013
