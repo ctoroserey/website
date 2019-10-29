@@ -7,7 +7,7 @@ weight: 20
 
 ## Accepted
 
-**Toro-Serey, C.**, Tobyne, S.M., & McGuire, J.T. (2020) Spectral partitioning identifies individual heterogeneity in the functional network topography of ventral and anterior medial prefrontal cortex. NeuroImage, 205, https://doi.org/10.1016/j.neuroimage.2019.116305
+**Toro-Serey, C.**, Tobyne, S.M., & McGuire, J.T. (2020) Spectral partitioning identifies individual heterogeneity in the functional network topography of ventral and anterior medial prefrontal cortex. *NeuroImage*, 205, https://doi.org/10.1016/j.neuroimage.2019.116305
 
 Kadis, D., Dimitrijevic, A., **Toro Serey, C.**, & Holland, S.K. (2016). Characterizing information flux within the distributed pediatric expressive language network – a core region mapped through fMRI-constrained MEG effective connectivity analyses. *Brain Connectivity*, 6(1). DOI: [10.1089/brain.2015.0374](https://www.liebertpub.com/doi/10.1089/brain.2015.0374)
 
