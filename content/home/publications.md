@@ -15,4 +15,6 @@ Horowitz-Kraus, T., **Toro Serey, C.**, & Di Francesco, M. (2015). Increased res
 
 ## Peer-Reviewed Conference Papers
 
-**Toro Serey, C.**, Bright, I.M., Wyble, B.P., & Howard, M.W. (accepted). Rapid Presentation Rate Negatively Impacts the Contiguity Effect in Free Recall. *Proceedings of the 41st Annual Meeting of the Cognitive Science Society* ([psyArxiv](https://psyarxiv.com/qb5sx))
+**Toro Serey, C.**, Bright, I.M., Wyble, B.P., & Howard, M.W. (2019). Rapid Presentation Rate Negatively Impacts the Contiguity Effect in Free Recall. *Proceedings of the 41st Annual Meeting of the Cognitive Science Society* ([psyArxiv](https://psyarxiv.com/qb5sx))
+
+Barnes-Davis, M.E., Merhar, S.L., Laue, C., **Toro Serey, C.**, Holland, S.K., & Kadis, D.S. (2017). Extremely preterm children exhibit increased interhemispheric language connectivity in fMRI and MEG. *Paper presented at the Annual meeting of the Organization for Human Brain Mapping (OHBM)*, Vancouver, Canada.
