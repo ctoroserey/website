@@ -5,7 +5,7 @@ weight: 20
 ---
 
 
-## Accepted
+## Published
 
 **Toro-Serey, C.**, Tobyne, S.M., & McGuire, J.T. (2020) Spectral partitioning identifies individual heterogeneity in the functional network topography of ventral and anterior medial prefrontal cortex. *NeuroImage*, 205, https://doi.org/10.1016/j.neuroimage.2019.116305
 
