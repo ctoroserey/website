@@ -7,6 +7,8 @@ weight: 20
 
 ## Published
 
+Botvinik-Nezer, R., Holzmeister, F., Camerer, C., Dreber, A., Huber, J., Johannesson, M., ... **Toro-Serey, C.**, … & Schonberg, T. (2020). Variability in the analysis of a single neuroimaging dataset by many teams. *Nature*, https://doi.org/10.1038/s41586-020-2314-9
+
 **Toro-Serey, C.**, Tobyne, S.M., & McGuire, J.T. (2020) Spectral partitioning identifies individual heterogeneity in the functional network topography of ventral and anterior medial prefrontal cortex. *NeuroImage*, 205, https://doi.org/10.1016/j.neuroimage.2019.116305
 
 Kadis, D., Dimitrijevic, A., **Toro Serey, C.**, & Holland, S.K. (2016). Characterizing information flux within the distributed pediatric expressive language network – a core region mapped through fMRI-constrained MEG effective connectivity analyses. *Brain Connectivity*, 6(1). DOI: [10.1089/brain.2015.0374](https://www.liebertpub.com/doi/10.1089/brain.2015.0374)
