@@ -252,7 +252,7 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
   scale_color_discrete(name = &quot;Method&quot;) +
   theme_classic()</code></pre>
 <p><img src="/post/2018-09-26-ARI_files/figure-html/Compute-1.svg" width="576" /></p>
-<p>So, progressively switching the affiliations of the original vector has the expected negative linear trend on EQ, as the vectors become increasingly dissimilar. On the other hand, RI heavily penalises initial clustering disagreements, but notice that once the differences pass 50% the vectors are deemed increasingly similar. This parabolic function is a result of node pairs once again being grouped in the same/different clusters once direct differences pass chance levels (think back to the first example, and how inverting the values still maintains the underlying relationships). Finally, we can see that ARI drops to 0 when the vector differences reach this chance level. In accord with its definition, positive ARI values thus denote agreements above those expected by chance<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
+<p>So, progressively switching the affiliations of the original vector has the expected negative linear trend on EQ, as the vectors become increasingly dissimilar. On the other hand, RI heavily penalises initial clustering disagreements, but notice that once the differences pass 50% the vectors are deemed increasingly similar. This parabolic function is a result of node pairs once again being grouped in the same/different clusters once direct differences pass chance levels (think back to the first example, and how inverting the values still maintains the underlying relationships). Finally, we can see that ARI drops to 0 when the vector differences reach this chance level. In accord with its definition, positive ARI values thus denote agreements above those expected by chance<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
 </div>
 <div id="closing" class="section level2">
 <h2>Closing</h2>
@@ -262,6 +262,6 @@ ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) +
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>If you are interested in getting the statistical significance of this deviation from chance, see Fortunato &amp; Hric (2016) who discuss the computation of Z-scores based on permutations. I might expand this post in the future to show how this works.<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>If you are interested in getting the statistical significance of this deviation from chance, see Fortunato &amp; Hric (2016) who discuss the computation of Z-scores based on permutations. I might expand this post in the future to show how this works.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </div>

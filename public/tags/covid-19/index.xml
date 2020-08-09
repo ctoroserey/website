@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>COVID-19 on Claudio Toro-Serey</title>
+    <link>/tags/covid-19/</link>
+    <description>Recent content in COVID-19 on Claudio Toro-Serey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sun, 09 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/covid-19/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How can a highly accurate COVID test be wrong half of the time?</title>
+      <link>/post/covid/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/covid/</guid>
+      <description>The developing confusion of overly-informed people What’s the problem? Considering base rates. Visualizing the issue Closing   The developing confusion of overly-informed people Science is often mistakenly touted as an undeniable collection of facts. But the availability of information about COVID-19 has introduced people to the inevitable uncertainty of scientific discovery. Those not familiar with the process have begun to use this feature as a reason to doubt science as a whole, but complex issues like a pandemic are full of complicated layers that scientists have to navigate and re-evaluate.</description>
+    </item>
+    
+  </channel>
+</rss>
