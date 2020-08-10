@@ -15,6 +15,7 @@ header:
   caption: ''
   image: ''
 draft: false 
+featuredImage: "img/p2.png"
 ---
 
 ## The developing confusion of overly-informed people
