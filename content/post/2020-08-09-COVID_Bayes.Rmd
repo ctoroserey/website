@@ -29,7 +29,7 @@ First, it’s important to know that there are two general types of tests: molec
 
 [Here is an accuracy table for a popular 15 minute test](https://pellecome.com/wp-content/uploads/2020/03/ClungeneIFU-Amended.pdf). Compared to the molecular gold standard, this shows that the antibody test correctly identified 67 out of 77 positive cases, and 89 out 90 negatives (the diagonal numbers from the table versus the totals at the bottom). So we have (67 + 89) out of (77 + 90) correct = 93%. Sweet, we’re done! Kind of.
 
-<img src = "/img/antibody_table.png" width = "400" height = "600">
+<img src = "/img/antibody_table.png" width = "500" height = "700">
 
 So, what’s the problem? Antibody tests can produce so many false positives because this calculation disregards base rates. [One of my daughter’s baby books portrays this issue pretty well](https://www.amazon.com/Bayesian-Probability-Babies-Chris-Ferrie/dp/1492680796/ref=sr_1_2?crid=17MJ4VSDO263V&dchild=1&keywords=bayesian+probability+for+babies&qid=1596993012&sprefix=bayesian+probability+%2Caps%2C156&sr=8-2). Let’s say that you’re at a party with sugar and chocolate chip cookies, and someone hands you a third of a cookie that has no chips. If you had to guess, you’d probably say they gave you a sugar cookie. But if you now consider that there are mostly chocolate cookies available, then you might guess that the piece came from a skinny chocolate chip cookie instead. **Knowing how many of each cookie there are (in other words, the base rate), should persuade you to update your belief of the probability.**
 
@@ -37,20 +37,20 @@ So, what’s the problem? Antibody tests can produce so many false positives bec
 
 Just like your initial guess of what cookie you were given, the sample the company used to calculate accuracy doesn’t consider how often the disease occurs in the wild. In fact, us as humans are pretty bad at considering this intuitively^[Handbook of Behavioral Economics - Foundations and Applications 1.(2018).Netherlands: Elsevier Science.]. This little cognitive hiccup is very prevalent, and I wrote in another post how it’s possible to explain the 2008 economic recession using it ([based on a book](https://ctoroserey.netlify.app/post/diagexp/)). In any case, it might be helpful to visualize the problem. The circles below depict the 77 positive cases and the 90 negative cases that the company identified to prove their test (using a molecular test).
 
-<img src = "/img/p1.png" width = "400" height = "600">
+<img src = "/img/p1.png" width = "500" height = "700">
 
 Now let’s see how the antibody test categorized them. True positive (TP) and true negative (TN) are the correctly-assigned cases that we used to calculate the accuracy. You can also see where the test went wrong: 10 people with COVID that were wrongly classified as negative (false negatives, FN) and the single negative case that was mistakenly told they had COVID (false positive, FP).
 
-<img src = "/img/p2.png" width = "400" height = "600">
+<img src = "/img/p2.png" width = "500" height = "700">
 
 That’s where we left off above. Visually, it looks like the test is doing well in keeping false positives at a minimum! (only 1%) Especially when compared to the number of true positives (87%). But here is where base rates come in. Even though COVID has spread a lot across the US, the percentage of the population that has it remains relatively low. Here in Boston, around our worst time during the pandemic, we knew about 10,000 or so people who actively had the disease on a given day ( [very rough estimate using data from 6/5/2020, when I first considered writing this post](https://dashboard.cityofboston.gov/t/Guest_Access_Enabled/views/COVID-19/Dashboard1?:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link&:isGuestRedirectFromVizportal=y&:embed=y) ). For a city of almost 700,000 people, that means that around 1.43% of our residents were truly COVID positive. Let’s stick to that number, as I think it remains a fair estimate (and this is a toy example anyways).
 What is clear is that the somewhat well-split sample the company used doesn’t represent this low percentage. Instead, let’s say we randomly picked 1,000 people on the street as our sample. At 1.43%, we can expect that only 14 of those people would be infected. Now, let’s run the antibody test again and group our people just like before. 
 
-<img src = "/img/p3.png" width = "400" height = "600">
+<img src = "/img/p3.png" width = "500" height = "700">
 
 Notice how different the case populations look. Since the test picks up 87% of truly infected people, we are left with 12 true positives. On the other hand, because the number of sampled people without the disease is so large (986), the 1% false positive rate results in 11 people being wrongly told they have the disease. Let’s isolate everyone who had a positive test. 
 
-<img src = "/img/p4.png" width = "400" height = "600">
+<img src = "/img/p4.png" width = "500" height = "700">
 
 Now you can see how much of a coin toss a positive result from this accurate test *can* be: **out of all our hypothetical people who were told they had a positive test, only 52% (12 out of 23) actually had the disease.** Hopefully you can see where the CDC was coming from, and how DeWine’s positive antibody test was later shown to be false using molecular methods (PCR). Base rates matter (if you've understood why and are on board, you might have just become a Bayesian statistician! *I might add the math behind this in the future*).
 
