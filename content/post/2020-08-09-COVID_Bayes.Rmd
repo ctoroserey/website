@@ -2,7 +2,7 @@
 title: "How can a highly accurate COVID test be wrong half of the time?"
 author: "CTS"
 date: '2020-08-09'
-slug: COVID
+slug: COVID_tests
 categories: []
 tags: ["R", "COVID-19", "Bayes"]
 output:
