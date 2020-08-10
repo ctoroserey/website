@@ -17,8 +17,7 @@
       
     
   
-  <meta name="description" content=" Introduction   Introduction I went to OHBM for the first time this year.
- ">
+  <meta name="description" content="Introduction Vector and matrix mutiplication   Introduction As a psychology student I (unfortunately) wasn’t told to take any math courses during my undergrad, and by the time I was starting my Ph.D. I had forgotten most of the math I learned in high school. Well, unlike what I was told in undergrad, psychological research has become quite mathy, and its interaction with cognitive and computational neuroscience means that you are very likely to run into the linear algebra and calculus that your teenager self swore would never become useful.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/lmmath/">
@@ -94,8 +93,7 @@
   <meta property="og:site_name" content="Claudio Toro-Serey">
   <meta property="og:url" content="/post/lmmath/">
   <meta property="og:title" content="Vector Operations and Linear Models | Claudio Toro-Serey">
-  <meta property="og:description" content=" Introduction   Introduction I went to OHBM for the first time this year.
- ">
+  <meta property="og:description" content="Introduction Vector and matrix mutiplication   Introduction As a psychology student I (unfortunately) wasn’t told to take any math courses during my undergrad, and by the time I was starting my Ph.D. I had forgotten most of the math I learned in high school. Well, unlike what I was told in undergrad, psychological research has become quite mathy, and its interaction with cognitive and computational neuroscience means that you are very likely to run into the linear algebra and calculus that your teenager self swore would never become useful.">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2019-01-15T00:00:00&#43;00:00">
@@ -246,7 +244,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 min read
+    2 min read
   </span>
   
 
@@ -309,12 +307,21 @@
       <div id="TOC">
 <ul>
 <li><a href="#introduction">Introduction</a></li>
+<li><a href="#vector-and-matrix-mutiplication">Vector and matrix mutiplication</a></li>
 </ul>
 </div>
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>I went to OHBM for the first time this year.</p>
+<p>As a psychology student I (unfortunately) wasn’t told to take any math courses during my undergrad, and by the time I was starting my Ph.D. I had forgotten most of the math I learned in high school. Well, unlike what I was told in undergrad, psychological research has become quite mathy, and its interaction with cognitive and computational neuroscience means that you are very likely to run into the linear algebra and calculus that your teenager self swore would never become useful. I have thus had to reacquaint myself with math in order to understand the behavioral, neural, and network modeling I read about and use in my own work.</p>
+<p>But my math problem really stemmed from something quite simple: wanting to understand the mathematical components behind multiple regression. Sure, running and interpreting a linear model doesn’t require math proficiency (many psych students are taught how to click their way through ANOVAs, after all), but knowing what goes on under the algebraic hood has two big benefits:</p>
+<p>1.- Understanding the model’s limitations</p>
+<p>2.- Preparing you for more complex statistics and machine learning algorithms that rely on similar intuitions</p>
+<p>Learning about this brings about the other half of this post’s title: vector/matrix operations. If you Google the equation that solves for multiple regression, you’re hit in the face with this element of linear algebra that psych students like me probably forgot about (well, you can bypass this by doing gradient descent, but that’s a different post). As it turns out, understanding matrix notation is necessary once you get into more complex and niche tools that you might use in your research, and vectorizing problems might make you a better coder too (especially to avoid slow for-loops in R).</p>
+<p>All of this motivated me to write the post I wish I had found during my first year of grad school. Here I’ll try to build the intuition behind a linear model from the understanding of matrix operations. This post is aimed for math-deficient psych students like me who want a basic introduction to both of these things without having to jump across tutorials. I hope to eventually turn this into a series of approachable tutorials for other statistical tools.</p>
+</div>
+<div id="vector-and-matrix-mutiplication" class="section level2">
+<h2>Vector and matrix mutiplication</h2>
 </div>
 
     </div>
