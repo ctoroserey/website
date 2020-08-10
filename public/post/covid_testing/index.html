@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.42.2" />
+  <meta name="author" content="Claudio Toro-Serey">
+
+  
+  
+  
+  
+    
+      
+    
+  
+  <meta name="description" content="The developing confusion of overly-informed people What’s the problem? Considering base rates. Visualizing the issue Closing   The developing confusion of overly-informed people Science is often mistakenly touted as an undeniable collection of facts. But the availability of information about COVID-19 has introduced people to the inevitable uncertainty of scientific discovery. Those not familiar with the process have begun to use this feature as a reason to doubt science as a whole, but complex issues like a pandemic are full of complicated layers that scientists have to navigate and re-evaluate.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/covid_testing/">
+
+  
+
+
+  
+
+  
+  
+  <meta name="theme-color" content="#4caf50">
+  
+  
+  
+  
+    
+  
+  
+    
+    
+      
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+      
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-126471557-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Claudio Toro-Serey">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Claudio Toro-Serey">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/covid_testing/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@kako_toro">
+  <meta property="twitter:creator" content="@kako_toro">
+  
+  <meta property="og:site_name" content="Claudio Toro-Serey">
+  <meta property="og:url" content="/post/covid_testing/">
+  <meta property="og:title" content="How can a highly accurate COVID test be wrong half of the time? | Claudio Toro-Serey">
+  <meta property="og:description" content="The developing confusion of overly-informed people What’s the problem? Considering base rates. Visualizing the issue Closing   The developing confusion of overly-informed people Science is often mistakenly touted as an undeniable collection of facts. But the availability of information about COVID-19 has introduced people to the inevitable uncertainty of scientific discovery. Those not familiar with the process have begun to use this feature as a reason to doubt science as a whole, but complex issues like a pandemic are full of complicated layers that scientists have to navigate and re-evaluate.">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-08-09T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-08-09T00:00:00&#43;00:00">
+  
+
+  
+  
+
+  <title>How can a highly accurate COVID test be wrong half of the time? | Claudio Toro-Serey</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Claudio Toro-Serey</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#publications">
+            
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#oscontributions">
+            
+            <span>OpenSci Contributions</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Blog Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">How can a highly accurate COVID test be wrong half of the time?</h1>
+
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2020-08-09 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
+      Aug 9, 2020
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Claudio Toro-Serey">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=How%20can%20a%20highly%20accurate%20COVID%20test%20be%20wrong%20half%20of%20the%20time%3f&amp;url=%2fpost%2fcovid_testing%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2fcovid_testing%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fcovid_testing%2f&amp;title=How%20can%20a%20highly%20accurate%20COVID%20test%20be%20wrong%20half%20of%20the%20time%3f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fcovid_testing%2f&amp;title=How%20can%20a%20highly%20accurate%20COVID%20test%20be%20wrong%20half%20of%20the%20time%3f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=How%20can%20a%20highly%20accurate%20COVID%20test%20be%20wrong%20half%20of%20the%20time%3f&amp;body=%2fpost%2fcovid_testing%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      <div id="TOC">
+<ul>
+<li><a href="#the-developing-confusion-of-overly-informed-people">The developing confusion of overly-informed people</a></li>
+<li><a href="#whats-the-problem-considering-base-rates.">What’s the problem? Considering base rates.</a></li>
+<li><a href="#visualizing-the-issue">Visualizing the issue</a></li>
+<li><a href="#closing">Closing</a></li>
+</ul>
+</div>
+
+<div id="the-developing-confusion-of-overly-informed-people" class="section level2">
+<h2>The developing confusion of overly-informed people</h2>
+<p>Science is often mistakenly touted as an undeniable collection of facts. But the availability of information about COVID-19 has introduced people to the inevitable uncertainty of scientific discovery. Those not familiar with the process have begun to use this feature as a reason to doubt science as a whole, but complex issues like a pandemic are full of complicated layers that scientists have to navigate and re-evaluate. What I want to do here is to give a (hopefully) intuitive example of one of these layers using a popular and sometimes counterintuitive topic: testing<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>There have been a number of confusing reports about testing accuracy in the past months. For example, <a href="https://www.politico.com/news/2020/08/08/ohio-gov-mike-dewine-negative-coronavirus-392718">Ohio’s Governor Mike DeWine tested negative after getting a positive test a couple of days earlier</a>. Some months ago the CDC announced that highly accurate (93%) tests can yield such false positives more than half of the time (<a href="https://www.cnn.com/2020/05/26/health/antibody-tests-cdc-coronavirus-wrong/index.html">1</a>, <a href="https://www.cdc.gov/coronavirus/2019-ncov/lab/resources/antibody-tests-guidelines.html">2</a>). So, how do we make sense of the fragility of highly accurate tests, and what can we trust?</p>
+</div>
+<div id="whats-the-problem-considering-base-rates." class="section level2">
+<h2>What’s the problem? Considering base rates.</h2>
+<p>First, it’s important to know that there are two general types of tests: <em>molecular</em> ones that identify whether you currently have the virus, and <em>antibody</em> ones that check if you’ve had it in the recent past. Molecular tests are slow, but produce very reliable results. Antibody tests are the fast ones you often get in drive-thru testing facilities, and that’s where things get tricky. We can look at a specific example to understand why.</p>
+<p>Below is an accuracy table for a popular 15 minute test (<a href="https://pellecome.com/wp-content/uploads/2020/03/ClungeneIFU-Amended.pdf">source</a>). Compared to the molecular gold standard, this shows that the antibody test correctly identified 67 out of 77 positive cases, and 89 out 90 negatives (the diagonal numbers from the table versus the totals at the bottom). So we have (67 + 89) out of (77 + 90) correct = 93%. We are often content with this number.</p>
+<p><img src = "/img/antibody_table.png" width = "500" height = "700"></p>
+<p>So, what’s the problem? Antibody tests can produce so many false positives because this calculation disregards base rates. <a href="https://www.amazon.com/Bayesian-Probability-Babies-Chris-Ferrie/dp/1492680796/ref=sr_1_2?crid=17MJ4VSDO263V&amp;dchild=1&amp;keywords=bayesian+probability+for+babies&amp;qid=1596993012&amp;sprefix=bayesian+probability+%2Caps%2C156&amp;sr=8-2">One of my daughter’s baby books portrays this issue pretty well</a>. Let’s say that you’re at a party where they’re serving sugar and chocolate chip cookies, and someone hands you a third of a cookie that has no chips. If you had to guess, you’d probably say they gave you a sugar cookie. But if you then realized that there most cookies are actually chocolate chip, then you might guess that the piece came from a chocolate chip cookie instead (one that just happened to have few chips in it). <strong>The point is: knowing how many of each cookie there are (in other words, the base rate), should persuade you to update your belief of the probability.</strong></p>
+</div>
+<div id="visualizing-the-issue" class="section level2">
+<h2>Visualizing the issue</h2>
+<p>Just like your initial guess of what cookie you were given, the sample the company used to calculate accuracy doesn’t consider how often the disease occurs in the wild. In fact, we humans are pretty bad at considering this intuitively<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. This little cognitive hiccup is very prevalent, and I wrote in another post how it’s possible to explain the 2008 economic recession using it (<a href="https://ctoroserey.netlify.app/post/diagexp/">based on a book</a>). In any case, it might be helpful to visualize the problem. The circles below depict the 77 positive cases and the 90 negative cases that the company identified to evaluate their antibody test (confirming them with a molecular test).</p>
+<p><img src = "/img/p1.png" width = "500" height = "700"></p>
+<p>Now let’s see how the antibody test categorized them below. True positive (TP) and true negative (TN) are the correctly-assigned cases that we used to calculate the accuracy. You can also see where the test went wrong: 10 people with COVID that were wrongly classified as negative (false negatives, FN) and the single negative case that was mistakenly told they had COVID (false positive, FP).</p>
+<p><img src = "/img/p2.png" width = "500" height = "700"></p>
+<p>That’s where we left off above. Visually, it looks like the test is doing well in keeping false positives at a minimum (only 1%), especially when compared to the number of true positives (87%)! But here is where base rates come in. Even though COVID has spread a lot across the US, the percentage of the population that has it remains relatively low. Here in Boston, around our worst time during the pandemic, we knew about 10,000 or so people who actively had the disease on a given day (<a href="https://dashboard.cityofboston.gov/t/Guest_Access_Enabled/views/COVID-19/Dashboard1?:showAppBanner=false&amp;:display_count=n&amp;:showVizHome=n&amp;:origin=viz_share_link&amp;:isGuestRedirectFromVizportal=y&amp;:embed=y">very rough estimate using data from 6/5/2020, when I first considered writing this post</a> ). For a city of almost 700,000 people, that means that around 1.43% of our residents were truly COVID positive. Let’s stick to that number, as I think it remains a fair estimate (and this is a toy example anyways). It’s that the somewhat well-split sample the company used doesn’t represent this low case percentage. Instead, let’s say we randomly picked 1,000 people from the streets of Boston as our sample. At 1.43%, we can expect that only 14 of those people would be infected. Now, let’s run the antibody test again and group our new sample just like before.</p>
+<p><img src = "/img/p3.png" width = "500" height = "700"></p>
+<p>Notice how different the case populations look. Since the test picks up 87% of truly infected people, we are left with 12 true positives. On the other hand, because the number of sampled people without the disease is so large (986), the 1% false positive rate results in 11 people being wrongly told they’re hosting the virus. Let’s isolate everyone who had a positive test result.</p>
+<p><img src = "/img/p4.png" width = "500" height = "700"></p>
+<p>Now you can see how much of a coin toss a positive result from this accurate test <em>can</em> be: <strong>out of all our hypothetical people who were told they had a positive test, only 52% (12 out of 23) actually had the disease.</strong> Hopefully you can see where the CDC was coming from, and how DeWine’s positive antibody test was later shown to be false using molecular methods (PCR). The moral of the statistical story is that base rates matter (if you’ve understood why and are on board, you might have just become a Bayesian statistician! <em>I might add the math behind this in the future</em>).</p>
+</div>
+<div id="closing" class="section level2">
+<h2>Closing</h2>
+<p>Of course this is a simplistic way of looking at things, and I’ve only looked at part of the issue. In reality, those who get tested are likely symptomatic (depending on your local testing policy), so the base rate changes. Still, this shortcoming of testing is observed across other diseases, which is why doctors get paid big bucks to properly diagnose us! What’s more, the issue of improper sampling is very important, and has been (purposefully?) used to <a href="https://www.politifact.com/factchecks/2020/may/07/facebook-posts/facebook-post-cites-doctors-widely-disputed-calcul/">misguide people into believing that COVID’s death rate is impossibly low</a>. Similarly, some states have mixed in antibody and molecular tests in their COVID reports, throwing the raliability of the case fatality rate out the window.</p>
+<p>Either way, the point here is to exemplify how even things that appear simple have hidden layers, and scientists have to deal with much harder ones than the testing situation (epidemiologists naturally account for these issues pretty well!). Mistakes are bound to happen, but that’s not necessarily out of incompetence or malice. It’s all just part of the process, and being flexible in the face of uncertainty is just what science (the honest type, at least) is supposed to be like.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>this is not my area of expertise, but the statistical nature of this problem is very similar to what I face for a living<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Handbook of Behavioral Economics - Foundations and Applications 1.(2018).Netherlands: Elsevier Science.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="btn btn-primary btn-outline" href="/tags/r/">R</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/covid-19/">COVID-19</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/bayes/">Bayes</a>
+  
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/post/diagexp/">Modeling Diagnostic Expectations</a></li>
+        
+        <li><a href="/post/ssgnrtr/">Secret Santa Generator Shiny App</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2018 &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+
