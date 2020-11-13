@@ -2,96 +2,702 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Claudio Toro-Serey</title>
-    <link>/post/</link>
+    <link>https://ctoroserey.netlify.com/post/</link>
     <description>Recent content in Posts on Claudio Toro-Serey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0500</lastBuildDate>
-    
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/post/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How can a highly accurate COVID test be wrong half of the time?</title>
-      <link>/post/covid_testing/</link>
+      <link>https://ctoroserey.netlify.com/post/covid_testing/</link>
       <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/covid_testing/</guid>
-      <description>The developing confusion of overly-informed people What’s the problem? Considering base rates. Visualizing the issue Closing   The developing confusion of overly-informed people Science is often mistakenly touted as an undeniable collection of facts. But the availability of information about COVID-19 has introduced people to the inevitable uncertainty of scientific discovery. Those not familiar with the process have begun to use this feature as a reason to doubt science as a whole, but complex issues like a pandemic are full of complicated layers that scientists have to navigate and re-evaluate.</description>
+      <guid>https://ctoroserey.netlify.com/post/covid_testing/</guid>
+      <description>&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#the-developing-confusion-of-overly-informed-people&#34;&gt;The developing confusion of overly-informed people&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#whats-the-problem-considering-base-rates.&#34;&gt;What’s the problem? Considering base rates.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#visualizing-the-issue&#34;&gt;Visualizing the issue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#closing&#34;&gt;Closing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;the-developing-confusion-of-overly-informed-people&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The developing confusion of overly-informed people&lt;/h2&gt;
+&lt;p&gt;Science is often mistakenly touted as an undeniable collection of facts. But the availability of information about COVID-19 has introduced people to the inevitable uncertainty of scientific discovery. Those not familiar with the process have begun to use this feature as a reason to doubt science as a whole, but complex issues like a pandemic are full of complicated layers that scientists have to navigate and re-evaluate. What I want to do here is to give a (hopefully) intuitive example of one of these layers using a popular and sometimes counterintuitive topic: testing&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There have been a number of confusing reports about testing accuracy in the past months. For example, &lt;a href=&#34;https://www.politico.com/news/2020/08/08/ohio-gov-mike-dewine-negative-coronavirus-392718&#34;&gt;Ohio’s Governor Mike DeWine tested negative after getting a positive test a couple of days earlier&lt;/a&gt;. Some months ago the CDC announced that highly accurate (93%) tests can yield such false positives more than half of the time (&lt;a href=&#34;https://www.cnn.com/2020/05/26/health/antibody-tests-cdc-coronavirus-wrong/index.html&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;https://www.cdc.gov/coronavirus/2019-ncov/lab/resources/antibody-tests-guidelines.html&#34;&gt;2&lt;/a&gt;). So, how do we make sense of the fragility of highly accurate tests, and what can we trust?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;whats-the-problem-considering-base-rates.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What’s the problem? Considering base rates.&lt;/h2&gt;
+&lt;p&gt;First, it’s important to know that there are two general types of tests: &lt;em&gt;molecular&lt;/em&gt; ones that identify whether you currently have the virus, and &lt;em&gt;antibody&lt;/em&gt; ones that check if you’ve had it in the recent past. Molecular tests are slow, but produce very reliable results. Antibody tests are the fast ones you often get in drive-thru testing facilities, and that’s where things get tricky. We can look at a specific example to understand why.&lt;/p&gt;
+&lt;p&gt;Below is an accuracy table for a popular 15 minute test (&lt;a href=&#34;https://pellecome.com/wp-content/uploads/2020/03/ClungeneIFU-Amended.pdf&#34;&gt;source&lt;/a&gt;). Compared to the molecular gold standard, this shows that the antibody test correctly identified 67 out of 77 positive cases, and 89 out 90 negatives (the diagonal numbers from the table versus the totals at the bottom). So we have (67 + 89) correct out of (77 + 90) = 93%. We are often content with this number.&lt;/p&gt;
+&lt;p&gt;&lt;img src = &#34;/img/antibody_table.png&#34; width = &#34;500&#34; height = &#34;700&#34;&gt;&lt;/p&gt;
+&lt;p&gt;So, what’s the problem? Antibody tests can produce so many false positives because this calculation disregards base rates. &lt;a href=&#34;https://www.amazon.com/Bayesian-Probability-Babies-Chris-Ferrie/dp/1492680796/ref=sr_1_2?crid=17MJ4VSDO263V&amp;amp;dchild=1&amp;amp;keywords=bayesian+probability+for+babies&amp;amp;qid=1596993012&amp;amp;sprefix=bayesian+probability+%2Caps%2C156&amp;amp;sr=8-2&#34;&gt;One of my daughter’s baby books portrays this issue pretty well&lt;/a&gt;. Let’s say that you’re at a party where they’re serving sugar and chocolate chip cookies, and someone hands you a third of a cookie that has no chips. If you had to guess, you’d probably say they gave you a sugar cookie. But if you then realized that most cookies are actually chocolate chip, then you might guess that the piece came from a chocolate chip cookie instead (one that just happened to have few chips in it). &lt;strong&gt;The point is: knowing how many of each cookie there are (in other words, the base rate), should persuade you to update your belief of the probability.&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;visualizing-the-issue&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Visualizing the issue&lt;/h2&gt;
+&lt;p&gt;Just like your initial guess of what cookie you were given, the sample the company used to calculate accuracy doesn’t consider how often the disease occurs in the wild. In fact, we humans are pretty bad at considering this intuitively&lt;a href=&#34;#fn2&#34; class=&#34;footnote-ref&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;. This little cognitive hiccup is very prevalent, and I wrote in another post how it’s possible to explain the 2008 economic recession using it (&lt;a href=&#34;https://ctoroserey.netlify.app/post/diagexp/&#34;&gt;based on a book&lt;/a&gt;). In any case, it might be helpful to visualize the problem. The circles below depict the 77 positive cases and the 90 negative cases that the company identified to evaluate their antibody test (confirming them with a molecular test).&lt;/p&gt;
+&lt;p&gt;&lt;img src = &#34;/img/p1.png&#34; width = &#34;500&#34; height = &#34;700&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now let’s see how the antibody test categorized them below. True positive (TP) and true negative (TN) are the correctly-assigned cases that we used to calculate the accuracy. You can also see where the test went wrong: 10 people with COVID that were wrongly classified as negative (false negatives, FN) and the single negative case that was mistakenly told they had COVID (false positive, FP).&lt;/p&gt;
+&lt;p&gt;&lt;img src = &#34;/img/p2.png&#34; width = &#34;500&#34; height = &#34;700&#34;&gt;&lt;/p&gt;
+&lt;p&gt;That’s where we left off above. Visually, it looks like the test is doing well in keeping false positives at a minimum (only 1%), especially when compared to the number of true positives (87%)! But here is where base rates come in. Even though COVID has spread a lot across the US, the percentage of the population that has it remains relatively low. Here in Boston, around our worst time during the pandemic, we knew about 10,000 or so people who actively had the disease on a given day (&lt;a href=&#34;https://dashboard.cityofboston.gov/t/Guest_Access_Enabled/views/COVID-19/Dashboard1?:showAppBanner=false&amp;amp;:display_count=n&amp;amp;:showVizHome=n&amp;amp;:origin=viz_share_link&amp;amp;:isGuestRedirectFromVizportal=y&amp;amp;:embed=y&#34;&gt;very rough estimate using data from 6/5/2020, when I first considered writing this post&lt;/a&gt; ). For a city of almost 700,000 people, that means that around 1.43% of our residents were truly COVID positive. Let’s stick to that number, as I think it remains a fair estimate (and this is a toy example anyways). It’s clear that the somewhat well-split sample the company used doesn’t represent this low case percentage. Instead, let’s say we randomly picked 1,000 people from the streets of Boston as our sample. At 1.43%, we can expect that only 14 of those people would be infected. Now, let’s run the antibody test again and group our new sample just like before.&lt;/p&gt;
+&lt;p&gt;&lt;img src = &#34;/img/p3.png&#34; width = &#34;500&#34; height = &#34;700&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Notice how different the case populations look. Since the test picks up 87% of truly infected people, we are left with 12 true positives. On the other hand, because the number of sampled people without the disease is so large (986), the 1% false positive rate results in 11 people being wrongly told they’re hosting the virus. Let’s isolate everyone who had a positive test result.&lt;/p&gt;
+&lt;p&gt;&lt;img src = &#34;/img/p4.png&#34; width = &#34;500&#34; height = &#34;700&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now you can see how much of a coin toss a positive result from this accurate test &lt;em&gt;can&lt;/em&gt; be: &lt;strong&gt;out of all our hypothetical people who were told they had a positive test, only 52% (12 out of 23) actually had the disease.&lt;/strong&gt; Hopefully you can see where the CDC was coming from, and how DeWine’s positive antibody test was later shown to be false using molecular methods (PCR). The moral of the statistical story is that base rates matter (if you’ve understood why and are on board, you might have just become a Bayesian statistician! &lt;em&gt;I might add the math behind this in the future&lt;/em&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;closing&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Closing&lt;/h2&gt;
+&lt;p&gt;Of course this is a simplistic way of looking at things, and I’ve only looked at part of the issue. In reality, those who get tested are likely symptomatic (depending on your local testing policy), so the base rate changes. Still, this shortcoming of testing is observed across other diseases, which is why doctors get paid big bucks to properly diagnose us! What’s more, the issue of improper sampling is very important, and has been (purposefully?) used to &lt;a href=&#34;https://www.politifact.com/factchecks/2020/may/07/facebook-posts/facebook-post-cites-doctors-widely-disputed-calcul/&#34;&gt;misguide people into believing that COVID’s death rate is impossibly low&lt;/a&gt;. Similarly, some states have mixed in antibody and molecular tests in their COVID reports, throwing the raliability of the case fatality rate out the window.&lt;/p&gt;
+&lt;p&gt;Either way, the point here is to exemplify how even things that appear simple have hidden layers, and scientists have to deal with much harder ones than the testing situation (epidemiologists naturally account for these issues pretty well!). Mistakes are bound to happen, but that’s not necessarily out of incompetence or malice. It’s all just part of the process, and being flexible in the face of uncertainty is just what science (the honest type, at least) is supposed to be like.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;this is not my area of expertise, but the statistical nature of this problem is very similar to what I face for a living&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;Handbook of Behavioral Economics - Foundations and Applications 1.(2018).Netherlands: Elsevier Science.&lt;a href=&#34;#fnref2&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Quals prep 1: DDM, Foraging, and Temporal Difference models</title>
-      <link>/post/quals1/</link>
+      <link>https://ctoroserey.netlify.com/post/quals1/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/quals1/</guid>
-      <description>A bit of background The Essay References   A bit of background I’m finally at the point of my PhD candidacy exam. The way it works in my department at BU is straightforward: you and 3 professors come up with a list of 75 papers (divided into 3 topics, each pertaining to their expertise and related to your research). The exam is to write two essay responses for each set of 25 papers within 2 hours (closed-book, obviously).</description>
+      <guid>https://ctoroserey.netlify.com/post/quals1/</guid>
+      <description>&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#a-bit-of-background&#34;&gt;A bit of background&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-essay&#34;&gt;The Essay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;a-bit-of-background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A bit of background&lt;/h2&gt;
+&lt;p&gt;I’m finally at the point of my PhD candidacy exam. The way it works in my department at BU is straightforward: you and 3 professors come up with a list of 75 papers (divided into 3 topics, each pertaining to their expertise and related to your research). The exam is to write two essay responses for each set of 25 papers within 2 hours (closed-book, obviously). In order to prepare, I decided to write practice essays that connect all the papers within each corpus. I’m posting them here in case I want to refer to some ideas in the future. I don’t expect anyone to read these, but just to cover my back: 1) these were written by memory and within a time limit, so they merely work as poorly-written and heavily constrained introductions to each topic; and 2) English is my second language, and it takes me multiple drafts to write something presentable. Sorry for the crudeness and potential mistakes.&lt;/p&gt;
+&lt;p&gt;These blog posts will broadly encompass my research interests:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Computational models of decision making&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Behavioral and Neuroeconomics, with a focus on delay and effort discounting&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MRI-based functional connectivity and individualized functional brain mapping&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This first blog post is about evidence accumulation problems, foraging environments, and model based behavior (RL and temporal difference in particular). These blog posts will assume some level of familiarity with the literature.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-essay&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Essay&lt;/h2&gt;
+&lt;p&gt;One of the most common experimental scenarios in the decision making literature is the “two alternative forced choice” (TAFC). As its name implies, participants engaged in TAFC are given two options with distinct values (economic decisions) or amounts of evidence (perceptual decisions), and their job is to select their preferred economic option or the alternative that is perceptually stronger. It is easy to relate to this type of choice, as we are often faced with alternatives that demand perceptual discrimination after evaluation of the available evidence.&lt;/p&gt;
+&lt;p&gt;Under the umbrella of TAFC, questions regarding evidence accumulation during perceptual decision making have been addressed in two overarching ways (Bogacz et al, 2006). On one hand, Drift Diffusion Models (DDM) propose that a single evidence trace is produced by the difference in the strength of the alternatives. Evidence accumulation models like the DDM are helpful in providing parameterized summaries of different aspects of behavior, such as thresholds that govern how quickly a decision is reached, or any initial biases towards one option (Bogacz et al, 2006; Krajbich and Rangel, 2011). Expansions to this basic relative model can take the form of single parameters (e.g. lambda) that control the degree of conservative or impulsive accumulation. Other forms include units inhibiting each other, inhibiting sequential competitors, or a combination of recurrent excitation versus feedback inhibition (i.e. pooled inhibition. See figure below, in part taken from Bogacz and colleagues). Contrasting this relative view are absolute (or race) models, in which independent accumulators track evidence without much direct interaction among them. Relative models whose units actively inhibit each other can be shown to reduce to simple DDM both when accuracy and response speed are demanded (Bogacz et al 2006).&lt;/p&gt;
+&lt;p&gt;&lt;img src = &#34;/img/bogacz.png&#34; width = &#34;400&#34; height = &#34;600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A limitation of traditional DDM is that model features (trace, threshold, bias, and lambda) are often inferred from response times, limiting our ability to zone in on what drives idiosyncrasies in evidence accumulation. To address this, Brunton et al (2013) created a translatable task in which animals and humans track discrete perceptual pulses presented at different rates per option (rather than following a continuous perceptual signal). Paired with a model that included a lambda term similar to O-U models (Bogacz et al., 2006), Brunton and colleagues found that the accumulation process in both species is noiseless (i.e. has perfect memory), and that noise in evidence tracking comes from sensory signals.&lt;/p&gt;
+&lt;p&gt;This type of DDM-style accumulation process finds neuroscientific support in the work of Roitman and Shadlen (2002). They recorded neuronal population activity in lateral intraparietal area (LIP) as rhesus monkeys completed a motion coherence task (directing their gaze towards the side where the highest percentage of dots were moving). They found that when most dots moved in the direction processed by the recorded hemisphere, neuronal activity steadily increased until a threshold was met. Notably, the higher the coherence (i.e. the stronger the evidence), the quicker the activity reached the threshold, even though post-threshold activity always followed the same activity rate. Moreover, coherence in the opposite direction produced mirroring inhibition in the recorded site. These dynamics resemble the relative accumulation process modeled by the DDM, particularly the mutual inhibition between competing processes (Bogacz et al, 2006). However, these results relied on surverying population dynamics, limiting our ability to argue that individual cells are tuned for DDM-style accumulation. To address this issue, Scott et al (2017) used calcium imaging to record individual neurons from the frontal orienting fields (FOF) and posterior parietal cortex (PPC). By taking advantage of the pulsatile TAFC design (Brunton et al., 2013), they showed that individual neurons have distinctive peak and spread of activity, and only show the canonical accumulator pattern when serially convolved with each other. Their findings give stronger evidence to absolute (i.e. race) models than the relative models covered so far, even though they showed weak mutual inhibition among neurons.&lt;/p&gt;
+&lt;p&gt;We can look at the idea of weakly-coupled inhibitors from a different perspective: divisive normalization (Louie, Khaw, and Glimcher 2013). This idea takes form after early perceptual processes where active neurons promote their information by also inhibiting their neighbors. When thinking of economic decisions, the authors propose that the value of each option is divided (normalized) by the aggregate value of the remaining options. This allows us to consider choices with multiple options, and introduces interesting effects (although Krajbich and Rangel (2011) have successfully expanded the DDM to trinary decisions by incorporating the value added by merely fixating on an item and reducing the question to a next-best comparison). For example, introducing a distractor item in a TAFC paradigm reduces the relative value of the original choices, but once the third item increases enough in value, the originally highest-valued option is boosted even more. This is seen in human and primate experiments, and reproduced by the mutual-inhibitor-like divisive normalization model. In fact, the model can be expanded to encompass multiple-trial valuation by pairing two pooled-inhibition populations, such that a slower population modulates the activity of the faster one across trials (Zimmerman, Glimcher, &amp;amp; Louie, 2018). This model successfully replicated animal and human findings showing that the range of values across trials determines the strength of the decision (embodied by the steeper sigmoidal describing the probabilities of choice). As mentioned above, the type of pooled inhibition with recurrent excitation configuration can be reduced to DDM (Bogacz et al, 2006). These findings seem at odds with the absolute models supported by findings from Scott et al (2017), which can also account for across-trial choice behavior. More work will be needed to align precise neuronal recordings with these behaviorally predictive models.&lt;/p&gt;
+&lt;p&gt;While many decisions involve a direct comparison among all the currently available options, we often face foraging-style, single-option sequential decisions with no immediate alternative outcomes. Foraging is an evolutionary pervasive behavior, and can manifest itself in simple ways, like when we decide to switch to a new job once we find that our current work is yielding diminishing gains. Traditional experimental and modeling work in foraging has focused on animal feeding patterns, and can be broadly divided into two. First, patch-style foraging in which an animal engaged in a depleting environment has to choose when to leave it in hopes for a richer one. And second, diet choice, in which the decision maker selects whether to engage with the current prey or search for a better alternative (note how the decision being emphasized is to leave in patches, but engage in prey selection). Unlike the more descriptive focus of accumulation models, foraging models tend to be normative. One of the first and most popular of these models is the “Marginal Value Theorem” (MVT; Charnov, 1976; Constantino &amp;amp; Daw, 2015), which states that animals should leave the current patch as soon as the instantaneous rate of gains falls below the habitat rate. The figure below shows Charnov’s original hypothetical derivation of the maximal rate of a habitat (solid line), and the peak of the earning rates for two patches. The tangent parallel to the solid line shows the point at which each patch yields a maximal rate of gains, after which animals should leave. This, of course, requires knowledge of the average reward depletion in the habitat. In terms of prey selection, Krebs et al (1977) established that animals facing poor environments (i.e. where profitable prey are rare) should be unselective, but as profitable prey become more common they should solely select them, despite what the relative rate of less profitable prey is. In both cases, the animal’s behavior should be governed by the opportunity cost of time (OC) incurred in persisting or engaging with their current environment.&lt;/p&gt;
+&lt;p&gt;&lt;img src = &#34;/img/charnov.png&#34; width = &#34;400&#34; height = &#34;600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Thinking about the environmental earning rate has important implications for TAFC as well, as the optimality of binary choices about the future often depends on what we can obtain from the environment while waiting (i.e. OC; Fawcett et al, 2012). For instance, selecting a smaller amount earned in a shorter period of time (compared to a larger-longer option) could be a long-term strategy to exit the trial in search for a more profitable one, rather than an impulsive preference for immediate rewards. However, a limitation of canonical foraging models is their focus on time as the most relevant guide of choice. Against this intuition, some work has shown that rats will overharvest areas with long delays that yield less than the OC, even when multiple timing environments are designed so that only the shortest trials should be accepted (Wikenheiser et al, 2013). This type of overharvesting is also seen in humans (Constantino &amp;amp; Daw, 2015; Davidson &amp;amp; Hady, 2019), and birds (Krebs et al., 1977), opening the door to many potential explanations of this phenomenon. Wikenheiser and colleagues attributed this unnecessary persistence to an aversion to rejecting, which was successfully added as a parameter to the canonical prey selection model. Curiously, rejection aversion positively correlated with OC, counterintuitively suggesting that rats are less selective when it pays to be so. Another theory that aims to account for this is called the “energy budget rule” (Krebs &amp;amp; Kacelnik, 1984), which emphasizes that choices depend on hunger and energy intake, not mere maximization of food acquisition rate. This becomes more important as the time horizon (i.e. the estimated foraging time; Fawcett et al., 2012) and satiety evolve during foraging, as seeking better alternatives actually becomes costlier than engaging with whatever is currently presented to them.&lt;/p&gt;
+&lt;p&gt;A similar explanation comes from Niv et al (2007). They argue that while phasic dopamine has been attributed to action selection and learning (see Schultz et al., 1997), tonic levels can be linked to the vigor of responses. This net dopamine concentration is said to reflect the opportunity cost of the environment, such that higher OC produces more vigorous responding. This vigor allows the animal to take advantage of the rich environment. Therefore, if the animal is full or an expected amount of reward has been achieved, all subsequent rewards lose attractiveness and the subjective OC decreases. This can produce overharvesting by increasing the relative cost of searching instead of sticking to the available patch or prey. Shifts in reference points over time have been observed in rats faced with gambles disclosed through pulses (Constantinople, Piet, &amp;amp; Brody, 2019), such that prospect-theoretic nonlinearities in subjective value flatten and low values become losses as experience recalibrates the reference point.&lt;/p&gt;
+&lt;p&gt;Regardless of their precise mechanism, a core weakness of traditional foraging models is their assumption that animals have full knowledge of the richness of their environments (Charnov, 1976, Krebs et al., 1977). An alternative view posits that instead of focusing on the constant present, animals and humans should base their choices on the near future (McNamara, 1982). In short, McNamara’s idea was that animals and humans should estimate the potential of a patch to yield sufficient payment in the near future. While these “potential functions” allow flexibility under uncertainty by being informed by any environmental priors and taking diverse functional forms, they were initially vaguely defined (as admitted by McNamara himself). However, a recent model more precisely addressed the problem of uncertainty by combining elements from drift-like evidence accumulation and MVT rules (Davidson &amp;amp; Hady, 2019). This “Foraging Drift Diffusion Model” (FDDM) treats time within a patch as an evidence accumulation process, and can be parameterized similar to DDM models described above (e.g. Bogacz et al., 2006; Brunton et al., 2013). The authors show that by controlling the rate and direction of the accumulation process, as well as the location of the threshold, they can model behaviors that include counting for preys, waiting until certain amount of time has passed, or extending persistance as new preys are encountered. The various accumulation behaviors presented can be at least partially reproduced by tweaking the parameter lambda in traditional DDM (leak vs perfect memory in Brunton et al., 2013; O-U models in Bogacz et al., 2006). Incorporating evidence acumulation models into foraging scenarios is not new, as Calhoun et al (2014) have demonstrated that the precise information-maximizing foraging pattern of C. Elegans (e.g. center-surround systematic investigation based on short turns, with sudden patch exiting) can be efficiently computed using DDM and very few interneurons (although it is worth remembering that single neurons are unlikely to compute the evidence trace by themselves, per Scott et al., 2017).&lt;/p&gt;
+&lt;p&gt;While both current and future-oriented processes can explain patch foraging behavior, a way to determine which one is actually used is to probe how subjects learn the statistics of the environment. Constantino &amp;amp; Daw (2015) looked into this question by comparing the performance of MVT against temporal difference (TD) learning algorithms in predictable and stochastic environments in humans.&lt;/p&gt;
+&lt;p&gt;TD algorithms fall under the reinforcement learning (RL) category, but unlike state-outcome pairings of traditional RL, they learn pairings based on the predictive outcome of neighboring states (Sutton 1988). Updating states based on expected consecutive ones provides flexibility and efficiency to the algorithm, depending on how far the discounting eligibility trace reaches (these discounted traces, paramaterized by lambda, embody how far out in time a state’s predictive power reaches). Alternative, more efficient models rely on mapping spatial transitions that allow quick updating of reward distributions (see successor representations, explained by Gershman 2018). TD-lambda models have been informative in explaining neuroscientific phenomena. For example, dopaminergic neurons become active when unexpected rewards occur, and slowly transition their activity to stimuli that reliably predict these rewards over time (and reduce their firing when learned expected rewards are omitted). Schultz et al (1997) noted that these reward prediction error dynamics resemble the slow transitions from outcome to early predictors produced by TD (see figure below, from their paper). O’Doherty et al (2003) similarly showed that the BOLD-fMRI response in human orbitofrontal cortex (OFC) and striatum during classical conditioning learning (unconditional to conditional stimuli transitions) can be modeled using TD-based RL predictors. Interestingly, OFC has been observed to track the confidence rats have in their perceptual evidence accumulation decisions (Lak et al., 2014), and supports higher order, model-based processes required for decisions involving multiple steps in the future (Miller, Botvinick, &amp;amp; Brody, 2017) (engaging in model-based behavior also depends on locus coeruleus activity to ACC, per Tervo et al., 2014).&lt;/p&gt;
+&lt;p&gt;&lt;img src = &#34;/img/schultz.png&#34; width = &#34;400&#34; height = &#34;600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;These neuroscientific results indirectly connect TD-lambda learning to evidence-accumulating and future-oriented factors that were suggested above to participate in foraging decisions (McNamara, 1982; Calhoun et al., 2014; Davidson &amp;amp; Hady, 2019), providing support to their use as foragers learn the statistics of the environment. However, what Constantino &amp;amp; Daw (2015) found was that humans learn these statistics in line with MVT estimates instead. This means that the instantaneous rate of rewards governs choices even in stochastic environments, going beyond the predictions of Charnov’s normative model.&lt;/p&gt;
+&lt;p&gt;Collectively, these findings show that even if computational models can be combined to explain various decision making scenarios, there are unique benefits afforded to each. Unfortunately the literature explained here is limited to a very small corpus, and other available lines of thought might be able to explain the gaps seen here. Regardless, future work might yet be able to further mix these lines of evidence in a way that can flexibly explain choice-related observations ranging from neural to behavioral.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;Bogacz, R. (2006). The physics of optimal decision making: A formal analysis of models of performance in two-alternative forced choice tasks, Psychological Review, 113(4), 700-765&lt;/p&gt;
+&lt;p&gt;Brunton, B. W., Botvinick, M., &amp;amp; Brody, C. D. (2013). Rats and Humans Can Optimally Accumulate Evidence for Decision-Making. 340(April), 95–99.&lt;/p&gt;
+&lt;p&gt;Calhoun, A. J., Chalasani, S. H., &amp;amp; Sharpee, T. O. (2014). Maximally informative foraging by Caenorhabditis elegans. eLife, 2014(3), 1–13. &lt;a href=&#34;https://doi.org/10.7554/eLife.04220.001&#34; class=&#34;uri&#34;&gt;https://doi.org/10.7554/eLife.04220.001&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Charnov, E. L. (1978). Optimal foraging, the marginal value theorem. Theoretical Population Biology, 752(4), 739–752.&lt;/p&gt;
+&lt;p&gt;Constantino, S. M., &amp;amp; Daw, N. D. (2015). Learning the opportunity cost of time in a patch-foraging task. Cognitive, Affective &amp;amp; Behavioral Neuroscience, 15(4), 837–853. &lt;a href=&#34;https://doi.org/10.3758/s13415-015-0350-y&#34; class=&#34;uri&#34;&gt;https://doi.org/10.3758/s13415-015-0350-y&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Constantinople, C. M., Piet, A. T., &amp;amp; Brody, C. D. (2019). An Analysis of Decision under Risk in Rats. Current Biology, 29(12), 2066–2074.e5. &lt;a href=&#34;https://doi.org/10.1016/j.cub.2019.05.013&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1016/j.cub.2019.05.013&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Davidson, J. D., &amp;amp; El Hady, A. (2019). Foraging as an evidence accumulation process. PLOSComputational Biology, 15(7), e1007060. &lt;a href=&#34;https://doi.org/10.1371/journal.pcbi.1007060&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1371/journal.pcbi.1007060&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Fawcett, T. W., McNamara, J. M., &amp;amp; Houston, A. I. (2012). When is it adaptive to be patient? A general framework for evaluating delayed rewards. Behavioural Processes, 89(2), 128–136. &lt;a href=&#34;https://doi.org/10.1016/j.beproc.2011.08.015&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1016/j.beproc.2011.08.015&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Gershman, S. J. (2018). The successor representation: Its computational logic and neural substrates. Journal of Neuroscience, 38(33), 7193–7200. &lt;a href=&#34;https://doi.org/10.1523/JNEUROSCI.0151-18.2018&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1523/JNEUROSCI.0151-18.2018&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Krajbich, I., &amp;amp; Rangel, A. (2011). Multialternative drift-diffusion model predicts the relationship between visual fixations and choice in value-based decisions. Proceedings of the National Academy of Sciences of the United States of America, 108(33), 13852–13857. &lt;a href=&#34;https://doi.org/10.1073/pnas.1101328108&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1073/pnas.1101328108&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Krebs, B. Y. J. R., Erichsen, J. T., &amp;amp; Webber, M. I. (1977). Optimal prey selection in the great tit (Parsus major). Animal Behavior, 25(2), 30–38.&lt;/p&gt;
+&lt;p&gt;Krebs, J. R., &amp;amp; Kacelnik, A. (1984). Time Horizons of Foraging Animals. Annals of the New York Academy of Sciences, 423(1), 278–291. &lt;a href=&#34;https://doi.org/10.1111/j.1749-6632.1984.tb23437.x&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1111/j.1749-6632.1984.tb23437.x&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Lak, A., Costa, G. M., Romberg, E., Koulakov, A. A., Mainen, Z. F., &amp;amp; Kepecs, A. (2014). Orbitofrontal cortex is required for optimal waiting based on decision confidence. Neuron, 84(1), 190–201. &lt;a href=&#34;https://doi.org/10.1016/j.neuron.2014.08.039&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1016/j.neuron.2014.08.039&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Louie, K., Khaw, M. W., &amp;amp; Glimcher, P. W. (2013). Normalization is a general neural mechanism for context-dependent decision making. Proceedings of the National Academy of Sciences of the United States of America, 110(15), 6139–6144. &lt;a href=&#34;https://doi.org/10.1073/pnas.1217854110&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1073/pnas.1217854110&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;McNamara, J. (1982). Optimal patch use in a stochastic environment. Theoretical Population Biology, 21(2), 269–288. &lt;a href=&#34;https://doi.org/10.1016/0040-5809(82)90018-1&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1016/0040-5809(82)90018-1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Miller, K. J., Botvinick, M. M., &amp;amp; Brody, C. D. (2017). Dorsal hippocampus contributes to model-based planning. Nature Neuroscience, 20(9), 1269–1276. &lt;a href=&#34;https://doi.org/10.1038/nn.4613&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1038/nn.4613&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Niv, Y., Daw, N. D., Joel, D., &amp;amp; Dayan, P. (2007). Tonic dopamine: Opportunity costs and the control of response vigor. Psychopharmacology, 191(3), 507–520. &lt;a href=&#34;https://doi.org/10.1007/s00213-006-0502-4&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1007/s00213-006-0502-4&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;O’Doherty, J. P., Dayan, P., Friston, K., Critchley, H., &amp;amp; Dolan, R. J. (2003). Temporal Difference Models and Reward-Related Learning in the Human Brain John. Neuron, 28, 329–337. &lt;a href=&#34;https://doi.org/10.1016/S0896-6273(03)00169-7&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1016/S0896-6273(03)00169-7&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Roitman, J. D., &amp;amp; Shadlen, M. N. (2002). Response of neurons in the lateral intraparietal area during a combined visual discrimination reaction time task. Journal of Neuroscience, 22(21), 9475–9489.&lt;/p&gt;
+&lt;p&gt;Schultz, W., Dayan, P., &amp;amp; Montague, P. R. (1997). A neural substrate of prediction and reward. Science, 275(5306), 1593–1599.&lt;/p&gt;
+&lt;p&gt;Scott, B. B., Constantinople, C. M., Akrami, A., Hanks, T. D., Brody, C. D., &amp;amp; Tank, D. W. (2017). Fronto-parietal Cortical Circuits Encode Accumulated Evidence with a Diversity of Timescales. Neuron, 95(2), 385–398.e5. &lt;a href=&#34;https://doi.org/10.1016/j.neuron.2017.06.013&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1016/j.neuron.2017.06.013&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Sutton, R. S. (1988). Learning to Predict by the Methods of Temporal Differences. Machine Learning, 3(1), 9–44. &lt;a href=&#34;https://doi.org/10.1023/A:1022633531479&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1023/A:1022633531479&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Tervo, D.G., Proskurin, M., Manakov, M., Kabra, M., Vollmer, A., Branson, K., &amp;amp; Karpova, A. Y. (2014). Behavioral variability through stochastic choice and its gating by anterior cingulate cortex. Cell, 159(1), 21–32. &lt;a href=&#34;https://doi.org/10.1016/j.cell.2014.08.037&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1016/j.cell.2014.08.037&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Wikenheiser, A. M., Stephens, D. W., &amp;amp; Redish, A. D. (2013). Subjective costs drive overly patient foraging strategies in rats on an intertemporal foraging task. Proceedings of the National Academy of Sciences, 110(20), 8308–8313. &lt;a href=&#34;https://doi.org/10.1073/pnas.1220738110&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1073/pnas.1220738110&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Zimmermann, J., Glimcher, P. W., &amp;amp; Louie, K. (2018). Multiple timescales of normalized value coding underlie adaptive choice behavior. Nature Communications, 9(1), 1–11. &lt;a href=&#34;https://doi.org/10.1038/s41467-018-05507-8&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1038/s41467-018-05507-8&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>The one with my first hackathon and cortical parcellations.</title>
-      <link>/post/hackathoughts/</link>
+      <link>https://ctoroserey.netlify.com/post/hackathoughts/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/hackathoughts/</guid>
-      <description>So you signed up for your first hackathon… Ok ok, but what did you actually work on? Just a tad more   So you signed up for your first hackathon… About a year ago I was (luckily) invited to attend Neurohackademy at the University of Washington, Seattle. This was my first time even hearing about hackathons in neuroimaging, so I was definitely excited to check it out. The format of the 2-week event was perfect for me: one week of broad introductions to tools and perspectives that we were encouraged to implement during the second week in collectively-idealized projects.</description>
+      <guid>https://ctoroserey.netlify.com/post/hackathoughts/</guid>
+      <description>&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#so-you-signed-up-for-your-first-hackathon&#34;&gt;So you signed up for your first hackathon…&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ok-ok-but-what-did-you-actually-work-on&#34;&gt;Ok ok, but what did you actually work on?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#just-a-tad-more&#34;&gt;Just a tad more&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;so-you-signed-up-for-your-first-hackathon&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;So you signed up for your first hackathon…&lt;/h2&gt;
+&lt;p&gt;About a year ago I was (luckily) invited to attend Neurohackademy at the University of Washington, Seattle. This was my first time even hearing about hackathons in neuroimaging, so I was definitely excited to check it out. The format of the 2-week event was perfect for me: one week of broad introductions to tools and perspectives that we were encouraged to implement during the second week in collectively-idealized projects. While excited, the part of me perennially afflicted by the impostor syndrome never stopped asking &lt;strong&gt;“what could I possibly contribute to projects that other people can’t already do?”&lt;/strong&gt; Turns out not that much. But I also learned that hackathons are as much about learning as they are about contributing, and even small contributions are welcomed. So I’m writing this short post for those who, like me, might be nervous about the prospect of their first hackathon.&lt;/p&gt;
+&lt;p&gt;Let’s get something out of the way: the core idea of a hackathon is appealing to people who are heavily invested in open, community driven scientific projects and tools. This, in my opinion, has two comforting consequences: (1) those around you will (most likely) be more into collaboration than competition; and (2) anyone who has worked in open science knows that projects seldom reach perfection (just go and look at the ‘Issues’ section of any open repo you admire). This coarsely translates into: &lt;strong&gt;you don’t have to prove yourself to anyone, and it’s ok if the projects you dig into are not at their ideal stage by the end of the hackathon.&lt;/strong&gt; Hopefully that takes some pressure off your shoulders.&lt;/p&gt;
+&lt;p&gt;You might still be wondering whether your level of skill will match the requirements of the project(s) you affiliate with. After all, many of those around you &lt;em&gt;will&lt;/em&gt; have extensive knowledge of things like git, open-source programing languages, continuous integration, notebook implementation (e.g. Jupyter), package development, environment sharing tools, community guidelines, etc. Knowing that the collective knowledge of a room is miles ahead of mine has always been a reliable depressor for me (this makes living in Boston challenging at times). What if these experienced people expect basic expertise? Well, let me tell you about some of the things I (and other newbies) did for the first time during Neurohackademy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;I issued my first pull request. I literally just added a file to &lt;a href=&#34;https://github.com/HBClab/NiBetaSeries&#34;&gt;NiBetaSeries&lt;/a&gt;, with James Kent patiently guiding me through the process. Before then I had just used GitHub to keep track of my own projects.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Python dominated the hackathon. I did not dominate Python. I was just getting used to R at that time, and I didn’t even know what a ‘class’ object was. Heck, I had never even loaded a custom package locally before someone at NH showed me how to.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Opened and edited a Jupyter notebook.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;My main group almost broke a repository, and Kirstie Whitaker spent a charitable couple of hours helping us fix it.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Looked at C++ code (yes, looked. I didn’t even try to touch it).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Etc. A lot of etc.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Many of these are what many would consider “basic knowledge”, yet plenty of such first encounters occurred. What’s more, it’s possible that some of these first encounters will be about things you &lt;em&gt;do&lt;/em&gt; know about, and will be able to help others with! As a personal example, someone in a different group had a question about R that I helped tackle to some degree. Super simple, I know, but hackathons are all about helping each other in both big and small ways. Every bit counts when a bunch of people stuck in a room are trying to push science forward. I guess what I’m trying to convery here is: &lt;strong&gt;as long as you come in with the right collaborating (and respectful) attitude, both you and others will get something out of this experience.&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ok-ok-but-what-did-you-actually-work-on&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Ok ok, but what did you actually work on?&lt;/h2&gt;
+&lt;p&gt;Maybe describing my experience will make all of this more tangible.&lt;/p&gt;
+&lt;p&gt;The main project I plugged myself into was already kind of in the oven before NH. Michael Notter had been working on a Python tool to parcellate a cortical surface (or a region within it) into &lt;em&gt;n&lt;/em&gt; equally-sized regions. He called it the &lt;a href=&#34;https://github.com/miykael/parcellation_fragmenter&#34;&gt;“parcellation fragmenter”&lt;/a&gt;. I liked this project because I had recently been learning about clustering algorithms for my own work, and there were talks about implementing one of my favorite ones into the clustering catalogue (spectral partitioning). Here’s an example of what this looks like for different surface shapes and densities:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ctoroserey.netlify.com/img/surface_fragments.png&#34; /&gt;
+Not only did I love the look of those fragmented brains, I also thought I could help with the addition of spectral partitioning. Well, that wasn’t the case. Kristian Eschenburg had it under control from the get-go, and he implemented much of the code and technical reframing of the package. Luckily for me, both him and Michael were happy to guide me through tractable issues and testing that I could do, which helped me learn Python better. Even though the work seemed inconsequential, it did benefit the project to some extent: I found a pair of hiccups in the calculation of distances between cortical vertices (super important for any clustering algorithm), among other tiny fixes.&lt;/p&gt;
+&lt;p&gt;Even though I felt welcomed to the project and I loved learning, I also felt bad for not being able to contribute more substantially. At this point something clicked: &lt;strong&gt;I was trying to add content where someone else’s expertise worked better, but I wasn’t trying to help the project in new ways that I knew I was capable of&lt;/strong&gt;. That’s when I proposed something very simple to Michael and Kristian: what if we benchmark the algorithms you are implementing here? The idea was to add information on reliability and efficiency of the algorithms to help future users decide which clustering method to use. Fortunately they liked the idea, and all I had to do was produce the following three figures (and a short Jupyter notebook to display them along with their code):&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ctoroserey.netlify.com/img/cluster_comparison2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Just so you’re not left hanging, this is what they mean: &lt;em&gt;A&lt;/em&gt; shows how long it takes each algorithm to produce brain parcellations as a function of the desired number of clusters. &lt;em&gt;B&lt;/em&gt; and &lt;em&gt;C&lt;/em&gt;, on the other hand, tell you how similar partitions are if you re-run the code 10 times for parcellations of 10 and 100 clusters (i.e. how reliable each method is). The similarities were computed using the adjusted Rand Index, &lt;a href=&#34;https://ctoroserey.netlify.com/post/ari/&#34;&gt;which I’ve covered in an older post&lt;/a&gt;. Perhaps unsurprisingly, this shows that k-means is fast, but also highly variable (which can be helpful if you want many slight variations for a permutation, for example), whereas Ward is both relatively fast and highly stable across iterations. Spectral partitioning is not shown because it’s extra slow, but also extra stable.&lt;/p&gt;
+&lt;p&gt;So, what are the takeaways here? First, you can tell that a week of experience didn’t prevent me from making silly mistakes in Python, as I couldn’t quite get the order of the algorithms to match across the similarity matrices above. And second, that even something as straightforward as this can be a valued addition to a project, even if it doesn’t directly affect the way the package/tool/project works. As long as it’s relevant to the project and/or it helps you grow, then there is value in pursuing it (or at least proposing it).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;just-a-tad-more&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Just a tad more&lt;/h2&gt;
+&lt;p&gt;So yes, hackathons are more than just rushing to complete a project, as I thought they would be before I attended Neurohackademy. Sure, many great projects will be pretty polished (&lt;a href=&#34;https://github.com/miykael/atlasreader&#34;&gt;here’s an example&lt;/a&gt;), but likely not all will. They’re a great place to learn and gain confidence to continue helping the open community at large. You’ll probably learn tools like &lt;em&gt;git&lt;/em&gt; that will be great to implement in your own work. Beyond that, you’ll get to meet a diverse group of people that might become collaborators in the future, or that you’ll look forward to seeing at future conferences (or at least you’ll get new twitter friends). Keep in mind that this post is based on my one experience (plus other people’s anecdotes), but if you’re concerned about fitting in at your first hackathon (like I was), hopefully this short post can help you get rid of those thoughts.&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Modeling Diagnostic Expectations</title>
-      <link>/post/diagexp/</link>
+      <link>https://ctoroserey.netlify.com/post/diagexp/</link>
       <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/diagexp/</guid>
-      <description>The biggest appeal of behavioral economics is its promise of practically regularizing the rational expectations imposed by traditional economics. Since the 70s psychology has catalogued increasing amounts of biases and circumstancial heterogeneities that go against the expectation of rationality in decision making. However, in my short years studying it, it seems like these discoveries are seldom applied to complex real-life economic environments (Nudge being a good example of this). That’s what attracted me to ‘A Crisis of Beliefs’, a book by Nicola Gennaioli and Andrei Shleifer that was published last year.</description>
-    </item>
-    
-    <item>
-      <title>Vector Operations and Linear Models</title>
-      <link>/post/lmmath/</link>
-      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/lmmath/</guid>
-      <description>Introduction Vector and matrix mutiplication   Introduction As a psychology student I (unfortunately) wasn’t told to take any math courses during my undergrad, and by the time I was starting my Ph.D. I had forgotten most of the math I learned in high school. Well, unlike what I was told in undergrad, psychological research has become quite mathy, and its interaction with cognitive and computational neuroscience means that you are very likely to run into the linear algebra and calculus that your teenager self swore would never become useful.</description>
-    </item>
-    
-    <item>
-      <title>Vector Operations and Linear Models</title>
-      <link>/post/lmmath/</link>
-      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/lmmath/</guid>
-      <description> Introduction   Introduction I went to OHBM for the first time this year.
- </description>
+      <guid>https://ctoroserey.netlify.com/post/diagexp/</guid>
+      <description>&lt;p&gt;The biggest appeal of behavioral economics is its promise of practically regularizing the rational expectations imposed by traditional economics. Since the 70s psychology has catalogued increasing amounts of biases and circumstancial heterogeneities that go against the expectation of rationality in decision making. However, in my short years studying it, it seems like these discoveries are seldom applied to complex real-life economic environments (Nudge being a good example of this). That’s what attracted me to ‘A Crisis of Beliefs’, a book by Nicola Gennaioli and Andrei Shleifer that was published last year.&lt;/p&gt;
+&lt;p&gt;In this book, G&amp;amp;S apply the representativeness heuristic to model the optimistic expectations of bankers and real estate investors in the years prior to the 2008 recession, and suggest that these distorted beliefs are partially to blame for the ensuing financial crisis. In contrast with Rational Expectations from pure economics, the authors call their ‘human friendly’ model Diagnostic Expectations. I’m not too familiar with traditional economics, but I found the book very readable, instructive, and enjoyable. Actually, I liked their model and explanations so much that I decided to create a &lt;a href=&#34;https://ctoroserey.shinyapps.io/DiagnosticExp/&#34;&gt;Shiny App that lets you interact with the economic factors that they propose&lt;/a&gt;. In general, I’m a big fan of dynamically visualizing models, as static figures can sometimes fail to convey all potentially interesting parameterizations. In this case, I think the app allows you to experience all the relevant scenarios from the book.&lt;/p&gt;
+&lt;p&gt;A failry detailed (but still simplistic) explanation of the model components can be found in the Shiny app, so I won’t repeat it here. Instead, I’ll just leave a snippet of how the app works.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ctoroserey.netlify.com/img/diag_exp.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The authors are clear about a number of shortcomings in their environmental setup. For example, there is no account for house price fluctuation, and no account for what a participant’s theta should be given the context (among others). These are all interesting prospective avenues to examine.&lt;/p&gt;
+&lt;p&gt;Eventually I might expand this blog post to mention some aspects of the model that weren’t clear or well addressed to me. For example, the discount of future returns is linear, which goes against the hyperbolic devaluation we’re used to in behavioral economics. It is also unclear why actors have heterogenous risk attitudes. Given the same environment all participants should be similarly risk-averse or prone. This dichotomy could be a function of a participant’s perspective. For example, under prospect theory, investors might see debt purchasing in the realm of gains, while bankers understand it as potential losses (thus explaining their risk-insensitivity), or perhaps a case of weighting gains and losses in a way that produces these effects. But for now, I think the app is enough.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Secret Santa Generator Shiny App</title>
-      <link>/post/ssgnrtr/</link>
+      <link>https://ctoroserey.netlify.com/post/ssgnrtr/</link>
       <pubDate>Thu, 29 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/ssgnrtr/</guid>
-      <description>Why are you doing this? There are enough secret santa services So, how does it work? Shiny implementation Closing   Why are you doing this? There are enough secret santa services Last Christmas my wife was left giftless on my side of the family due to a faulty secret santa generator. In trying to earn brownie points the arrogant nerd in me thought he could do better, so I decided to program one in R (I’d rather know exactly what’s going on in the background anyways).</description>
+      <guid>https://ctoroserey.netlify.com/post/ssgnrtr/</guid>
+      <description>&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#why-are-you-doing-this-there-are-enough-secret-santa-services&#34;&gt;Why are you doing this? There are enough secret santa services&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#so-how-does-it-work&#34;&gt;So, how does it work?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#shiny-implementation&#34;&gt;Shiny implementation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#closing&#34;&gt;Closing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;why-are-you-doing-this-there-are-enough-secret-santa-services&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Why are you doing this? There are enough secret santa services&lt;/h2&gt;
+&lt;p&gt;Last Christmas my wife was left giftless on my side of the family due to a faulty secret santa generator. In trying to earn brownie points the arrogant nerd in me thought he could do better, so I decided to program one in R (I’d rather know exactly what’s going on in the background anyways). I also found it hard this year to find a service that prevented specific pairs of people from gifting each other.&lt;/p&gt;
+&lt;p&gt;But beyond my petty personal reasons, a friend suggested that this would be a good opportunity to learn how to build Shiny apps. So I’ll use this post to explain the basics of the code, and how you can turn it into a Shiny app (disclaimer: this being my first Shiny app means that the setup is crude, so I definitely recommend checking out the great official examples that Shiny provides).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update 11/30/18: of course I found &lt;a href=&#34;https://blog.revolutionanalytics.com/2017/11/how-to-generate-a-secret-santa-list-with-r.html&#34;&gt;this blog post&lt;/a&gt; the day after I posted mine, which shows that the script and idea had been mostly done before by a combination of coders. Even some of the language that I have here ended up being too similar to what David writes, unfortunately. Even more, &lt;a href=&#34;https://www.tjmahr.com/secret-santa-graph-traversal/&#34;&gt;Tristan Mahr already solved the problem of pair constraints&lt;/a&gt; through a graph implementation that, while too busy for my taste and to implement in Shiny, made for a pretty cool post. Still, I’ll keep this up since there are some novel elements to the way I went about it (that I know of, at least), and I couldn’t find another Shiny app that did the trick.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;so-how-does-it-work&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;So, how does it work?&lt;/h2&gt;
+&lt;p&gt;The setup is simple. Let’s look at the function:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;xmaspairs &amp;lt;- function(Members = 1, Spouses = 1, Secret = T) {
+  
+  # Make sure that members were provided..
+  if (length(Members) == 1) {stop(&amp;quot;No members indicated...&amp;quot;)}
+  
+  # If spouse pairing should be avoided..
+  if (length(Spouses) == length(Members)) {
+    
+    # Make sure that a single group isn&amp;#39;t more than 50% of the members
+    if(max(table(input$Spouses)) &amp;gt; length(input$Members)/2) {stop(&amp;quot;A group can&amp;#39;t be more than 50% of the total members...&amp;quot;)}
+    
+    # Iterate over possible pairings until no SOs are paired
+    Affiliated &amp;lt;- T
+    while (Affiliated) {
+      m &amp;lt;- sample(Members)
+      df &amp;lt;- data.frame(Member = m,
+                       Gift_to = c(tail(m, n = 1), m[seq(length(m)-1)])) # sure there&amp;#39;s a better way to do this..
+      Spouse1 &amp;lt;- Spouses[match(df$Member, Members)]
+      Spouse2 &amp;lt;- Spouses[match(df$Gift_to, Members)]
+      Affiliated &amp;lt;- T %in% (Spouse1 == Spouse2)
+    }
+  # Otherwise just produce whatever pairing comes out from a single sampling  
+  } else { 
+    m &amp;lt;- sample(Members)
+    df &amp;lt;- data.frame(Member = m,
+                     Pair = c(tail(m, n = 1), m[seq(length(m)-1)]))
+  }
+  
+  # If the person running it should be blinded to the pairs, create individual txt files
+  if (Secret) {
+    for (i in seq(nrow(df))) {
+      write.table(paste(&amp;quot;Your secret santa is: &amp;quot;, df[i, 2], &amp;quot;!&amp;quot;, sep = &amp;quot;&amp;quot;), 
+                  file = paste(df[i,1],&amp;quot;.txt&amp;quot;, sep = &amp;quot;&amp;quot;),
+                  row.names = F, 
+                  col.names = F)
+    }
+  # or for groups who don&amp;#39;t care about social subtleties
+  } else {
+    return(df)
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Basically, the function takes in a mandatory character vector of members, an optional grouping vector (either numeric of string), and the choice of whether to hide the final pairings from everyone. The way it works is simple: shuffle the members, then create a new vector with everyone shifted by 1 position (this is the equivalent of randomly sitting people in a circle and telling them to gift the person to their right).&lt;/p&gt;
+&lt;p&gt;Now, if you wanted to prevent 2 members from gifting each other, all you do is feed a grouping vector into Spouses. So, let’s say you have Mom, Dad, Cindy, you, and Dormamu the Destroyer on your members list, and of course you don’t want your parents gifting each other. Then all you have to do is create a vector like &lt;code&gt;c(Parent, Parent, 1, 2, Immortal)&lt;/code&gt; to feed to the function. This will force the function to iterate through combinations of gifters/receivers until the pairs don’t share the same grouping characteristic. Note that since I use an equivalence, pretty much anything can be used as a grouping variable. If you don’t care about this, just write NA or anything that doesn’t match the length of the members list.&lt;/p&gt;
+&lt;p&gt;Finally, if you select &lt;code&gt;Secret = T&lt;/code&gt; the function won’t generate a dataframe. Instead, it will download a text file for each member on your current directory, indicating to whom they should gift. I know it would be easier to email people rather than having to send them their text files manually, but I was a bit lazy and didn’t want to deal with SMTP setups.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;shiny-implementation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Shiny implementation&lt;/h2&gt;
+&lt;p&gt;It might be helfpul to get acquainted with how everything looks before digging into the code. You can go ahead and play with the app if you’d like, or check it out &lt;a href=&#34;https://ctoroserey.shinyapps.io/SecretSantaGeneratR/&#34;&gt;online&lt;/a&gt;.&lt;/p&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;900&#34; src=&#34;https://ctoroserey.shinyapps.io/SecretSantaGeneratR/&#34;&gt;
+&lt;/iframe&gt;
+&lt;p&gt;Alright then, how is it made?&lt;/p&gt;
+&lt;p&gt;The core of a Shiny app is way simpler than I expected. You have three components: a &lt;code&gt;ui&lt;/code&gt; to dictate the arrangement of elements, a &lt;code&gt;server&lt;/code&gt; to produce its contents, and a simple &lt;code&gt;shinyApp&lt;/code&gt; function that brings these two together.&lt;/p&gt;
+&lt;p&gt;This is what the &lt;code&gt;ui&lt;/code&gt; portion looks like:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ui &amp;lt;- fluidPage(
+#   
+#   titlePanel(&amp;quot;Secret Santa GeneratR&amp;quot;),
+# 
+#   p(&amp;quot;Welcome to yet another secret santa generator! The advantage of this one is that it gives you the option to keep the pairings secret or not, as well as avoiding pairs of people who should not gift each other! Perfect if you have inter-dimensional friends that can&amp;#39;t physically interact with each other.&amp;quot;),
+#   
+#   #Sidebar layout with input and output definitions ----
+#   sidebarLayout(
+# 
+#     # Sidebar panel for inputs ----
+#     sidebarPanel(
+# 
+#       # Input: Text for providing a caption ----
+#       textInput(inputId = &amp;quot;Members&amp;quot;,
+#                 label = &amp;quot;Group member names:&amp;quot;,
+#                 value = &amp;quot;A, B, C, D, E, F&amp;quot;),
+#       
+#       # Explanation of spouse matching
+#       p(&amp;quot;If you want to prevent specific pairs of people from gifting each other, write down some characteristic that pairs them below (in the order they&amp;#39;re written above). In the example below, A/B and C/D are part of &amp;#39;Couple&amp;#39; and &amp;#39;Couple2&amp;#39;, respectively, and won&amp;#39;t gift within couples; but E and F have their own group and can give/receive with anyone (note that the number of entries must match the number of members). Write &amp;#39;NA&amp;#39; if you don&amp;#39;t care about this.&amp;quot;),
+#       
+#       # Set pairs to avoid
+#       textInput(inputId = &amp;quot;Spouses&amp;quot;,
+#                 label = &amp;quot;Avoidance list:&amp;quot;,
+#                 value = &amp;quot;Couple, Couple, Couple2, Couple2, S1, S2&amp;quot;),
+#       
+#      # Apply changes
+#      submitButton(&amp;quot;Update List&amp;quot;),
+#      
+#      # Empty space
+#      p(),
+#
+#       # Note on making it secret
+#       p(&amp;quot;If you want to keep it secret, a file for each member will be created telling them who they should gift based on a new, unseen pairing. Just send each person their file!&amp;quot;),
+#       
+#       # and the respective download button for the zip file
+#       downloadButton(&amp;quot;download&amp;quot;, &amp;quot;Make Secret&amp;quot;)
+# 
+#     ),
+# 
+#     # Main panel for displaying outputs ----
+#     mainPanel(
+# 
+#       p(&amp;quot;Here are the current santa pairs. Note that if you click on &amp;#39;Make Secret&amp;#39; a completely new scheme will be produced that you won&amp;#39;t see here.&amp;quot;),
+#       
+#       # Output: HTML table with requested number of observations ----
+#       tableOutput(&amp;quot;view&amp;quot;)
+# 
+#     )
+#   )
+# )&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;All we are doing here is defining what goes up top (&lt;code&gt;titlePanel&lt;/code&gt; and the first paragraph &lt;code&gt;p&lt;/code&gt;), which user inputs to place in the sidebar (&lt;code&gt;sidebarPanel&lt;/code&gt; within &lt;code&gt;sidebarLayout&lt;/code&gt;), and what goes on the main area of the site (&lt;code&gt;mainPanel&lt;/code&gt; within &lt;code&gt;sidebarLayout&lt;/code&gt;). Things to note here: functions like &lt;code&gt;textInput&lt;/code&gt; ask the user for input, and you give them IDs so you can call the values in the &lt;code&gt;server&lt;/code&gt; portion (see next). Here I place default values just to give the user an example. On the other hand, &lt;code&gt;tableOutput&lt;/code&gt; and &lt;code&gt;downloadButton&lt;/code&gt; seem to be getting input from somewhere (here “view” and “download”). These are output variables generated by the server! So all that’s happening is that the &lt;code&gt;ui&lt;/code&gt; passes on inputs that are then processed and returned by the &lt;code&gt;server&lt;/code&gt; to be placed on the GUI. That’s it.&lt;/p&gt;
+&lt;p&gt;One last thing about &lt;code&gt;ui&lt;/code&gt; and Shiny in general: these widgets are reactive, meaning that they will update the output whenever any changes are made. This can be problematic, so we add a &lt;code&gt;submitButton&lt;/code&gt; called ‘Update List’ to apply the changes the user makes.&lt;/p&gt;
+&lt;p&gt;Next, what does the &lt;code&gt;server&lt;/code&gt; look like?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# server &amp;lt;- function(input, output){
+#   
+#   
+#   # Function that does the pairings
+#   xmaspairs &amp;lt;- function(Members = 1, Spouses = 1, Secret = T) {
+#     
+#     # This crude function will pair group members for secret santa
+#     # If your family would like to avoid pairing significant others,
+#     # define Spouses to be a vector of groupings (i.e. numeric).
+#     # The script will then iterate over pairings until no SOs are paired.
+#     
+#     # Perform the actual pairing
+#     # If spouse pairing should be avoided..
+#     if (length(Spouses) == length(Members)) {
+#       # Once this turns false, we are in business
+#       Affiliated &amp;lt;- T
+#       # Iterate over possible pairings until no SOs are paired
+#       while (Affiliated) {
+#         m &amp;lt;- sample(Members)
+#         df &amp;lt;- data.frame(Member = m,
+#                          Gift_to = c(tail(m, n = 1), m[seq(length(m)-1)])) # sure there&amp;#39;s a better way to do this..
+#         Spouse1 &amp;lt;- Spouses[match(df$Member, Members)]
+#         Spouse2 &amp;lt;- Spouses[match(df$Gift_to, Members)]
+#         Affiliated &amp;lt;- T %in% (Spouse1 == Spouse2)
+#       }
+#     # Otherwise just produce whatever pairing comes out from a single sampling  
+#     } else { 
+#       m &amp;lt;- sample(Members)
+#       df &amp;lt;- data.frame(Member = m,
+#                        Gift_to = c(tail(m, n = 1), m[seq(length(m)-1)]))
+#     }
+#     
+#     # spit out the pairs
+#     return(df)
+#     
+#   }
+#   
+#   
+#   # Download a zip file with each pair 
+#   output$download &amp;lt;- downloadHandler(
+#     
+#     # Name of the download
+#     filename = function() {&amp;quot;SecretSantaPairs.zip&amp;quot;},
+#     
+#     # Prep the zip file 
+#     content = function(file) { 
+#       # Parse the strings
+#       m &amp;lt;- unlist(strsplit(gsub(&amp;quot; &amp;quot;, &amp;quot;&amp;quot;, input$Members, fixed=T), &amp;quot;,&amp;quot;))
+#       s &amp;lt;- unlist(strsplit(gsub(&amp;quot; &amp;quot;, &amp;quot;&amp;quot;, input$Spouses, fixed=T), &amp;quot;,&amp;quot;))
+#       # Make sure the groupings don&amp;#39;t break the code by having a group be over 50% of members
+#       validate(need(try(max(table(s)) &amp;lt; length(m)/2), &amp;quot;A group can&amp;#39;t have more than 50% of the members&amp;quot;))
+#       #Pairing
+#       df &amp;lt;- xmaspairs(Members = m, 
+#                       Spouses = s)
+#       # Write files per person indicating to whom they have to gift
+#       owd &amp;lt;- setwd(tempdir()) # temporary dir to store the files
+#       on.exit(setwd(owd))
+#       files &amp;lt;- list()      
+#       lapply(seq(nrow(df)), function(i) {
+#         write.table(paste(&amp;quot;Your secret santa is: &amp;quot;, df[i, 2], &amp;quot;!&amp;quot;, sep = &amp;quot;&amp;quot;), 
+#                     file = paste(df[i,1],&amp;quot;.txt&amp;quot;, sep = &amp;quot;&amp;quot;),
+#                     row.names = F, 
+#                     col.names = F)})
+#       zip(file, paste(unlist(strsplit(gsub(&amp;quot; &amp;quot;, &amp;quot;&amp;quot;, input$Members, fixed=T), &amp;quot;,&amp;quot;)), &amp;quot;.txt&amp;quot;, sep = &amp;quot;&amp;quot;)) # and zip
+#     }
+#     
+#   )
+#   
+#   
+#     # render the resulting table 
+#   output$view &amp;lt;- renderTable({
+#     
+#       # Parse the strings
+#       m &amp;lt;- unlist(strsplit(gsub(&amp;quot; &amp;quot;, &amp;quot;&amp;quot;, input$Members, fixed=T), &amp;quot;,&amp;quot;))
+#       s &amp;lt;- unlist(strsplit(gsub(&amp;quot; &amp;quot;, &amp;quot;&amp;quot;, input$Spouses, fixed=T), &amp;quot;,&amp;quot;))
+#       # Make sure that enough members are entered
+#       validate(need(length(m) &amp;gt; 1, &amp;quot;Not enough members!&amp;quot;))
+#       # Make sure the groupings don&amp;#39;t break the code by having a group be over 50% of members
+#       validate(need(try(max(table(s)) &amp;lt;= length(m)/2), &amp;quot;A group can&amp;#39;t have more than 50% of the members&amp;quot;))
+#       # Produce pairings to display
+#       xmaspairs(Members = m, 
+#                 Spouses = s,
+#                 Secret = input$Secret)
+#     
+#   })
+# }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You probably already saw that the &lt;code&gt;server&lt;/code&gt; function works with input and output, as we just discussed. The next thing you’ll see is a shortened version of the &lt;code&gt;xmaspairs&lt;/code&gt; function, but without the ability to download files. Why is that? Well, Shiny comes with a handy widget to download files, and this saves us the pain of asking the user to write down a local path that the app might not have access to. The way this works is that you’ll store what to return to the &lt;code&gt;ui&lt;/code&gt; in an &lt;code&gt;outputs&lt;/code&gt; list. First we define &lt;code&gt;outputs$download&lt;/code&gt; (this is the “download” that gets passed onto &lt;code&gt;downloadButton&lt;/code&gt; in the &lt;code&gt;ui&lt;/code&gt; above). This widget requires you to define the &lt;code&gt;filename&lt;/code&gt; (“SecretSantaPairs.zip”) and the &lt;code&gt;content&lt;/code&gt;. Within &lt;code&gt;content&lt;/code&gt; you can write whatever code will generate the information that you want the user to download. All I did here was to run the file-writing part of my original function separately from creating the pairs, storing the files on a temporary directory, and compressing them into a single zip file that will be downloaded (this is because &lt;code&gt;downloadButton&lt;/code&gt; can only handle one file at a time). Note that &lt;code&gt;xmaspairs&lt;/code&gt; takes in the &lt;code&gt;ui&lt;/code&gt; values contained within the &lt;code&gt;inputs&lt;/code&gt; list (with the IDs that we defined above as the variable names). This is a cleaner way to cue the user to produce a secret listing.&lt;/p&gt;
+&lt;p&gt;At the end of server you’ll find &lt;code&gt;renderTable&lt;/code&gt; being stored within &lt;code&gt;output$view&lt;/code&gt; (yes, the “view” that’s used in the &lt;code&gt;ui&lt;/code&gt;). This will show a table with the pairings according to the conditions specified. This will always appear (even if we click the download button), but note that since pressing the button generates an independent list, the user is still technically blinded from knowing who got who. Also worth noting is that I used &lt;code&gt;validate(need())&lt;/code&gt; to send out an error message to the user if either not enough members were entered, or if too many members were grouped together. If you use R’s classic &lt;code&gt;stop&lt;/code&gt;, Shiny will throw an ugly crashing error once published.&lt;/p&gt;
+&lt;p&gt;Ok, now that we set up our interacting &lt;code&gt;server&lt;/code&gt; and &lt;code&gt;ui&lt;/code&gt; we can put them together. All you need to do is run&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# library(shiny)
+# shinyApp(ui = ui, server = server) &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will open a new window with your app! (normally you put all these elements within the same file: app.R) This will also give you the option to publish you app to &lt;a href=&#34;https://www.shinyapps.io&#34;&gt;shinyapps.io&lt;/a&gt; by clicking ‘publish’ on your pop-up window. Of course this requires registering for an account there, but otherwise Shiny makes it seemless to upload your app so you can share it with everyone!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;closing&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Closing&lt;/h2&gt;
+&lt;p&gt;There are enough great tutorials on how to build Shiny apps, but I hope this will be useful for someone. If anything, there is one thing I would like whoever reads this to know: &lt;em&gt;You don’t need an extravagant project to try something new.&lt;/em&gt; If you would like to play with the code, it’s available on &lt;a href=&#34;https://github.com/ctoroserey/SS_GeneratR&#34;&gt;my GitHub site&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Cluster comparisons with ARI</title>
-      <link>/post/ari/</link>
+      <link>https://ctoroserey.netlify.com/post/ari/</link>
       <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/ari/</guid>
-      <description>A bit of background The Rand Index The Adjusted Rand Index Closing   A bit of background A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato &amp;amp; Hric, 2016 for an initial survey), here I’ll give a superficial view on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage.</description>
+      <guid>https://ctoroserey.netlify.com/post/ari/</guid>
+      <description>&lt;script src=&#34;https://ctoroserey.netlify.com/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#a-bit-of-background&#34;&gt;A bit of background&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-rand-index&#34;&gt;The Rand Index&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-adjusted-rand-index&#34;&gt;The Adjusted Rand Index&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#closing&#34;&gt;Closing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;a-bit-of-background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A bit of background&lt;/h2&gt;
+&lt;p&gt;A common need for researchers that rely on clustering algorithms, such as the organization of networks into cohesive node communities, is to evaluate the similarity of the partitions produced. In my case this problem takes the form of comparing the distribution of brain networks across individuals. While many tools have been developed to tackle the challenge (see Fortunato &amp;amp; Hric, 2016 for an initial survey), here I’ll give a superficial view on the adjusted rand index (ARI), hoping to better understand its behavior and ideal case usage. Since I’m more familiar with the usage of this measure in networks, I’ll base my terminology on this framework.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-rand-index&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Rand Index&lt;/h2&gt;
+&lt;p&gt;The original Rand Index (RI) was introduced by William Rand in 1975, and it aimed to determine whether two clustering algorithms grouped every pair of nodes in a similar fashion. For example, it could be that nodes 3 and 25 from your network were grouped together in partitions from algorithms A and B, but separately by method C (you can probably already think of uses for this index in regards to examining the effects of experimental network perturbations in their organization). This agreement is computed by the following simple formula:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\frac{a + b}{a + b + c + d}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Where &lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt; is the number of pairs of nodes that were grouped together in both partitions, &lt;span class=&#34;math inline&#34;&gt;\(b\)&lt;/span&gt; is the number that were grouped separately, and &lt;span class=&#34;math inline&#34;&gt;\(c\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; denote the number grouped together (separately) in one partition, but separately (together) in the other. In short, the Rand Index just gives the proportion of nodes equally paired in both partitions.&lt;/p&gt;
+&lt;p&gt;At this point you might have already thought: what is the advantage of doing this instead of directly checking if the node labels are identical across partitions? (i.e. &lt;code&gt;partitionA == partitionB&lt;/code&gt;) For some of us the answer is not quite evident, which is what motivated me to write this post. To begin exploring this, let’s look at a toy example of two hypothetical binary clustering algorithms (A and B) applied to a small network (I will mainly focus on this type of classification for simplicity):&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Toy clusterings
+table &amp;lt;- data.frame(A = c(1,1,1,0,0),
+                    B = c(0,0,0,1,1))
+
+# Output table
+table %&amp;gt;% 
+  knitr::kable(&amp;quot;html&amp;quot;) %&amp;gt;%
+  kable_styling(full_width = FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+A
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+B
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Compute agreement (arandi comes from the package &amp;#39;mcclust&amp;#39;)
+EQ &amp;lt;- mean(table$A == table$B)
+RI &amp;lt;- arandi(table$A, table$B, adjust = F)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this case, a simple equivalence (EQ) would of course yield a value of 0, as none of the values match. On the other hand, RI yields a value of 1. This is because the relationship among all nodes remains unchanged across partitions. This portrays the first advantage of metrics like RI: &lt;em&gt;they evaluate the underlying relationship among your clustered nodes while being agnostic to the labeling system.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Now let’s tweak the clusters a bit, so that there is one rogue node that switches clusters.&lt;/p&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+A
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+B
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;In this case, checking the equivalence of the vectors yields 0.8, while the Rand Index gives 0.6. This is because RI doubles the dimensionality by considering the underlying interconnectedness of the nodes, such that the total number of pairwise combinations becomes &lt;code&gt;factorial(5) / (factorial(2) * factorial(5-2))&lt;/code&gt;, or 10. By changing the allegiance of a single node, we basically change the interaction of that node with the other four members, giving us an agreement level between partitions of &lt;code&gt;6/10&lt;/code&gt; (i.e., the RI value we got). To clarify this idea, let’s now suppose that cluster labels can be 0, 1, or 2, with the rogue node now being part of 2:&lt;/p&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+A
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+B
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;In this case, both the vector equivalence and RI give the same value (0.8). This is because the rogue node was originally tied to two others in cluster 0, whereas its unrelatedness to cluster 1 remains unchanged (unlike before, where it became part of it). This now gives a ratio of similarities of &lt;code&gt;8/10&lt;/code&gt;. Hopefully this provides a better sense of the advantages of RI over simple equivalence, especially once you increase both the number of nodes and clusters.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-adjusted-rand-index&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Adjusted Rand Index&lt;/h2&gt;
+&lt;p&gt;So far so good, but as researchers we always want to control for the possibility that our results are defined by chance! That’s where the adjustment to RI introduced by Hubert &amp;amp; Arabie (1985) comes in. The Adjusted Rand Index controls for the expected distribution of labels given by chance, and compares the original RI to this random model–while still guaranteeing that perfect clustering matches get a value of 1. &lt;a href=&#34;https://davetang.org/muse/2017/09/21/adjusted-rand-index/&#34;&gt;Others have already done a great job in explaining the mathematical nuances of the ARI&lt;/a&gt;, so I will instead focus on understanding how the three metrics (i.e. EQ, RI, and ARI) behave under similar circumstances.&lt;/p&gt;
+&lt;p&gt;Let’s say we have an original vector of 100 nodes classified as part of either cluster 1 or 0. I will progressively switch the allegiance of each node, and on each case I will estimate the agreement between the new vector and the original one. In other words, I will check the values given by these metrics as the modified vector slowly becomes more disimilar from the original one. The plot summarizes the results.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Produce a random vector with 100 binary classifications
+n &amp;lt;- 100
+v1 &amp;lt;- rbinom(n = n, size = 1, prob = 0.5)
+
+# Data frame to store evaluations
+evals &amp;lt;- data.frame(Diffs = seq(n),
+                    ARI = rep(0,n),
+                    RI = rep(0,n),
+                    EQ = rep(0,n))
+
+# Check the degree of agreement per metric for each incremental switch in affiliation
+for (i in seq(n)) {
+  
+  # Switch affiliation up to the ith node
+  ifelse(i &amp;lt; n, v2temp &amp;lt;- c((1 - v1[seq(i)]), v1[(i+1):n]), v2temp &amp;lt;- v1)
+  
+  # Evaluate
+  evals$ARI[i] &amp;lt;- arandi(v1,v2temp)
+  evals$RI[i] &amp;lt;- arandi(v1,v2temp, adjust = F)
+  evals$EQ[i] &amp;lt;- mean(v1 == v2temp)
+  
+}
+
+# Make the data.frame long instead of wide for ggplot
+evals &amp;lt;- melt(evals[seq(n-1),], id.vars = &amp;quot;Diffs&amp;quot;)
+
+# And plot
+ggplot(data = evals, aes(Diffs, value, group = variable, color = variable)) + 
+  geom_line() +
+  scale_color_discrete(name = &amp;quot;Method&amp;quot;) +
+  theme_classic()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ctoroserey.netlify.com/post/2018-09-26-ARI_files/figure-html/Compute-1.svg&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;So, progressively switching the affiliations of the original vector has the expected negative linear trend on EQ, as the vectors become increasingly dissimilar. On the other hand, RI heavily penalises initial clustering disagreements, but notice that once the differences pass 50% the vectors are deemed increasingly similar. This parabolic function is a result of node pairs once again being grouped in the same/different clusters once direct differences pass chance levels (think back to the first example, and how inverting the values still maintains the underlying relationships). Finally, we can see that ARI drops to 0 when the vector differences reach this chance level. In accord with its definition, positive ARI values thus denote agreements above those expected by chance&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;closing&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Closing&lt;/h2&gt;
+&lt;p&gt;As I said in the introduction, I use the ARI to check how similar the distribution of functional brain networks is across individuals. However, you could imagine using this metric as a way to evaluate the accuracy of neural nets as they are being trained (provided that you have the ground truth of what’s being clustered). It is also worth mentioning that the ARI is not the ultimate way to evaluate clusterings. As Fortunato &amp;amp; Hric (2016) discuss, metrics based on mutual information tend to be more robust (i.e. variation of information), and are also included in statistical packages (like mcclust for R, which I use here).&lt;/p&gt;
+&lt;p&gt;Regardless, I hope this can eventually be as useful for someone to read as it was for me to write it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;If you are interested in getting the statistical significance of this deviation from chance, see Fortunato &amp;amp; Hric (2016) who discuss the computation of Z-scores based on permutations. I might expand this post in the future to show how this works.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>A short introduction</title>
-      <link>/post/getting-started/</link>
+      <link>https://ctoroserey.netlify.com/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>/post/getting-started/</guid>
-      <description>In a way, this is just a post to baptise the website. What I plan to do here from now on is to share snippets of what I&amp;rsquo;ve learned, read, or listened to lately (with a small dose of personal experiences), in hopes to both consolidate my knowledge and potentially help others. In a way, the picture of Boston in the header just represents that the overarching theme will be anything that has happened since I moved here for grad school (so yes, learning, reading, and listening to music mostly).</description>
+      <guid>https://ctoroserey.netlify.com/post/getting-started/</guid>
+      <description>&lt;p&gt;In a way, this is just a post to baptise the website. What I plan to do here from now on is to share snippets of what I&amp;rsquo;ve learned, read, or listened to lately (with a small dose of personal experiences), in hopes to both consolidate my knowledge and potentially help others. In a way, the picture of Boston in the header just represents that the overarching theme will be anything that has happened since I moved here for grad school (so yes, learning, reading, and listening to music mostly).&lt;/p&gt;
+
+&lt;p&gt;Nothing too serious or big, just fun.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

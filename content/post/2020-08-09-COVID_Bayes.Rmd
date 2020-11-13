@@ -26,7 +26,7 @@ There have been a number of confusing reports about testing accuracy in the past
 
 ## What's the problem? Considering base rates.
 
-First, it’s important to know that there are [two general types of tests](https://www.fda.gov/consumers/consumer-updates/coronavirus-disease-2019-testing-basics): *diagnostic* ones that identify whether you currently have the virus, and *antibody* ones that check if you’ve had it in the recent past. Diagnostic tests like PCR are slow, but produce very reliable results. Antibody and diagnostic antigen tests are the fast ones you often get in drive-thru testing facilities, and that’s where things get tricky. We can look at a specific antibody example to understand why.
+First, it’s important to know that there are [two general types](https://www.fda.gov/consumers/consumer-updates/coronavirus-disease-2019-testing-basics) of tests: *diagnostic* ones that identify whether you currently have the virus, and *antibody* ones that check if you’ve had it in the recent past. Diagnostic tests like PCR are slow, but produce very reliable results. Antibody and diagnostic antigen tests are the fast ones you often get in drive-thru testing facilities, and that’s where things get tricky. We can look at a specific antibody example to understand why.
 
 Below is an accuracy table for a popular 15 minute test ([source](https://pellecome.com/wp-content/uploads/2020/03/ClungeneIFU-Amended.pdf)). Compared to the molecular gold standard, this shows that the antibody test correctly identified 67 out of 77 positive cases, and 89 out 90 negatives (the diagonal numbers from the table versus the totals at the bottom). So we have (67 + 89) correct out of (77 + 90) = 93% accuracy. We are often content when we see this high number.
 

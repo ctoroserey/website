@@ -5,7 +5,7 @@
     
     <url>
     
-      <loc>/post/covid_testing/</loc>
+      <loc>https://ctoroserey.netlify.com/post/covid_testing/</loc>
       <lastmod>2020-08-09T00:00:00+00:00</lastmod>
     </url>
     
@@ -14,7 +14,7 @@
     
     <url>
     
-      <loc>/post/quals1/</loc>
+      <loc>https://ctoroserey.netlify.com/post/quals1/</loc>
       <lastmod>2020-02-23T00:00:00+00:00</lastmod>
     </url>
     
@@ -23,7 +23,7 @@
     
     <url>
     
-      <loc>/post/hackathoughts/</loc>
+      <loc>https://ctoroserey.netlify.com/post/hackathoughts/</loc>
       <lastmod>2019-05-05T00:00:00+00:00</lastmod>
     </url>
     
@@ -32,7 +32,7 @@
     
     <url>
     
-      <loc>/post/diagexp/</loc>
+      <loc>https://ctoroserey.netlify.com/post/diagexp/</loc>
       <lastmod>2019-02-04T00:00:00+00:00</lastmod>
     </url>
     
@@ -41,25 +41,7 @@
     
     <url>
     
-      <loc>/post/lmmath/</loc>
-      <lastmod>2019-01-15T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/post/lmmath/</loc>
-      <lastmod>2019-01-15T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/post/ssgnrtr/</loc>
+      <loc>https://ctoroserey.netlify.com/post/ssgnrtr/</loc>
       <lastmod>2018-11-29T00:00:00+00:00</lastmod>
     </url>
     
@@ -68,7 +50,7 @@
     
     <url>
     
-      <loc>/post/ari/</loc>
+      <loc>https://ctoroserey.netlify.com/post/ari/</loc>
       <lastmod>2018-09-26T00:00:00+00:00</lastmod>
     </url>
     
@@ -77,7 +59,7 @@
     
     <url>
     
-      <loc>/tags/academic/</loc>
+      <loc>https://ctoroserey.netlify.com/tags/academic/</loc>
       <lastmod>2017-01-01T00:00:00-05:00</lastmod>
     </url>
     
@@ -86,7 +68,7 @@
     
     <url>
     
-      <loc>/post/</loc>
+      <loc>https://ctoroserey.netlify.com/post/</loc>
       <lastmod>2017-01-01T00:00:00-05:00</lastmod>
     </url>
     
@@ -95,7 +77,7 @@
     
     <url>
     
-      <loc>/project/deep-learning/</loc>
+      <loc>https://ctoroserey.netlify.com/project/deep-learning/</loc>
       <lastmod>2016-04-27T00:00:00-04:00</lastmod>
     </url>
     
@@ -104,7 +86,7 @@
     
     <url>
     
-      <loc>/project/example-external-project/</loc>
+      <loc>https://ctoroserey.netlify.com/project/example-external-project/</loc>
       <lastmod>2016-04-27T00:00:00-04:00</lastmod>
     </url>
     
@@ -113,7 +95,7 @@
     
     <url>
     
-      <loc>/post/getting-started/</loc>
+      <loc>https://ctoroserey.netlify.com/post/getting-started/</loc>
       <lastmod>2018-01-13T00:00:00-05:00</lastmod>
     </url>
     
@@ -122,7 +104,7 @@
     
     <url>
     
-      <loc>/tags/bayes/</loc>
+      <loc>https://ctoroserey.netlify.com/tags/bayes/</loc>
       <lastmod>2020-08-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -132,7 +114,7 @@
     
     <url>
     
-      <loc>/tags/covid-19/</loc>
+      <loc>https://ctoroserey.netlify.com/tags/covid-19/</loc>
       <lastmod>2020-08-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -142,7 +124,7 @@
     
     <url>
     
-      <loc>/categories/</loc>
+      <loc>https://ctoroserey.netlify.com/categories/</loc>
       <priority>0</priority>
     </url>
     
@@ -151,7 +133,7 @@
     
     <url>
     
-      <loc>/</loc>
+      <loc>https://ctoroserey.netlify.com/</loc>
       <lastmod>2017-10-15T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
@@ -161,7 +143,7 @@
     
     <url>
     
-      <loc>/tags/deep-learning/</loc>
+      <loc>https://ctoroserey.netlify.com/tags/deep-learning/</loc>
       <lastmod>2016-04-27T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
@@ -171,7 +153,7 @@
     
     <url>
     
-      <loc>/tags/demo/</loc>
+      <loc>https://ctoroserey.netlify.com/tags/demo/</loc>
       <lastmod>2016-04-27T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
@@ -181,7 +163,7 @@
     
     <url>
     
-      <loc>/tags/economics/</loc>
+      <loc>https://ctoroserey.netlify.com/tags/economics/</loc>
       <lastmod>2019-02-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -191,17 +173,7 @@
     
     <url>
     
-      <loc>/tags/math/</loc>
-      <lastmod>2019-01-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/project/</loc>
+      <loc>https://ctoroserey.netlify.com/project/</loc>
       <lastmod>2016-04-27T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
@@ -211,7 +183,7 @@
     
     <url>
     
-      <loc>/publication_types/</loc>
+      <loc>https://ctoroserey.netlify.com/publication_types/</loc>
       <priority>0</priority>
     </url>
     
@@ -220,7 +192,7 @@
     
     <url>
     
-      <loc>/tags/r/</loc>
+      <loc>https://ctoroserey.netlify.com/tags/r/</loc>
       <lastmod>2020-08-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -230,7 +202,7 @@
     
     <url>
     
-      <loc>/tags/shiny/</loc>
+      <loc>https://ctoroserey.netlify.com/tags/shiny/</loc>
       <lastmod>2019-02-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -240,17 +212,7 @@
     
     <url>
     
-      <loc>/tags/statistics/</loc>
-      <lastmod>2019-01-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/</loc>
+      <loc>https://ctoroserey.netlify.com/tags/</loc>
       <lastmod>2017-01-01T00:00:00-05:00</lastmod>
       <priority>0</priority>
     </url>
