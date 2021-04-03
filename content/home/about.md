@@ -18,11 +18,16 @@ weight = 5
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD Candidate in Psychology (BBC)"
-  institution = "Boston University"
+  course = "Postdoctoral Research Fellow"
+  institution = "Harvard Medical School / McLean Hospital"
   year = ""
 
 [[education.courses]]
+  course = "PhD in Psychology"
+  institution = "Boston University"
+  year = 2021
+  
+  [[education.courses]]
   course = "MA in Psychology"
   institution = "Boston University"
   year = 2019
@@ -36,6 +41,6 @@ weight = 5
 
 # About me
 
-I am a Ph.D. candidate in the Cognition and Decision Lab at Boston University. My main academic interests lie in exploring the value-modulatory effects of effort and delay, and the brain networks that underlie these processes. Accessory to these goals is my interest in using graph theoretic tools to compute subject-specific functional brain networks. 
+I'm a Research Fellow at McLean Hospital and Harvard Medical School, working in the Haber Lab. My work involves aggregating brain data from non-human and human primates in order to understand how the brain generates the types of subjective value that we use to guide our choices. This endeavor mixes anatomical tracer and functional neuroimaging data that I analyze using graph theoretic and machine learning algorithms.
 
 {{% staticref "files/cv.pdf" %}}You can get a copy of my CV here{{% /staticref %}}.
