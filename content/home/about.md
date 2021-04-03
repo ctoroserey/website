@@ -18,11 +18,6 @@ weight = 5
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "Postdoctoral Research Fellow"
-  institution = "Harvard Medical School / McLean Hospital"
-  year = ""
-
-[[education.courses]]
   course = "PhD in Psychology"
   institution = "Boston University"
   year = 2021
