@@ -26,5 +26,5 @@ weight = 3
 
 
 
-Mostly simple thoughts about things that I've learned as a grad student.
+Mostly simple thoughts about things that I've learned in academia.
 
