@@ -4,11 +4,11 @@ comments: false
 weight: 20
 ---
 
-## Preprints
 
-**Toro-Serey, C.**, Kane, G., & McGuire, J. (2021, May 31). Apparent preferences for cognitive effort fade when multiple forms of effort and delay are interleaved in a foraging environment. https://doi.org/10.31234/osf.io/5ygwh
 
 ## Published
+
+**Toro-Serey, C.**, Kane, G., & McGuire, J. (2021). Choices favoring cognitive effort in a foraging environment decrease when multiple forms of effort and delay are interleaved. *Cognitive, Affective, & Behavioral Neuroscience*
 
 Botvinik-Nezer, R., Holzmeister, F., Camerer, C., Dreber, A., Huber, J., Johannesson, M., ... **Toro-Serey, C.**, … & Schonberg, T. (2020). Variability in the analysis of a single neuroimaging dataset by many teams. *Nature*, https://doi.org/10.1038/s41586-020-2314-9
 
@@ -23,3 +23,7 @@ Horowitz-Kraus, T., **Toro Serey, C.**, & Di Francesco, M. (2015). Increased res
 **Toro Serey, C.**, Bright, I.M., Wyble, B.P., & Howard, M.W. (2019). Rapid Presentation Rate Negatively Impacts the Contiguity Effect in Free Recall. *Proceedings of the 41st Annual Meeting of the Cognitive Science Society* ([psyArxiv](https://psyarxiv.com/qb5sx))
 
 Barnes-Davis, M.E., Merhar, S.L., Laue, C., **Toro Serey, C.**, Holland, S.K., & Kadis, D.S. (2017). Extremely preterm children exhibit increased interhemispheric language connectivity in fMRI and MEG. *Paper presented at the Annual meeting of the Organization for Human Brain Mapping (OHBM)*, Vancouver, Canada.
+
+## Thesis
+
+**Toro-Serey, C.** (2021). Individual variability in value-based decision making: Behavior, cognition, and functional brain topography. Department of Psychological and Brain Sciences, Boston University

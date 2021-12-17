@@ -13,6 +13,7 @@ weight = 5
     "Decision Making",
     "Brain Networks and Graph Theory",
     "Human Functional Neuroimaging",
+    "Neuroanatomy",
     "Open Science"
   ]
 
