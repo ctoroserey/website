@@ -46,7 +46,7 @@ enableGitInfo = false
 
 [params]
   # Short description
-  description = "This is Claudio Toro-Serey's website, a grad student blogging about stats, networks, decision making, etc."
+  description = "This is Claudio Toro-Serey's website, data and neuroscientist."
   
   # Color theme.
   #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, `1950s`, or `custom`.
@@ -58,16 +58,16 @@ enableGitInfo = false
 
   # Your details.
   name = "Claudio Toro-Serey"
-  role = "Postdoctoral Research Fellow"
+  role = "Data Scientist"
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-  organizations = [ { name = "Harvard Medical School / McLean Hospital", url = "https://scholar.harvard.edu/ctoroserey" } ]
+  organizations = [ { name = "Linus Health - Harvard Medical School", url = "https://scholar.harvard.edu/ctoroserey" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "avatar.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
-  email = "ctoroserey@mclean.harvard.edu"
-  address = "115 Mill St, Belmont, MA 02478"
+  email = "claudio.toro.serey@gmail.com"
+  address = ""
   #office_hours = "Monday 10:00 to 13:00 or email for appointment"
   #phone = "888 888 88 88"
   #skype = "echo123"
@@ -229,7 +229,7 @@ enableGitInfo = false
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:ctoroserey@mclean.harvard.edu"
+    link = "mailto:claudio.toro.serey@gmail.com"
 
   [[params.social]]
     icon = "twitter"

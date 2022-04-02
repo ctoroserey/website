@@ -37,6 +37,6 @@ weight = 5
 
 # About me
 
-I'm a Research Fellow at McLean Hospital and Harvard Medical School, working in the Haber Lab. My work involves aggregating brain data from non-human and human primates in order to understand how the brain generates the types of subjective value that we use to guide our choices. This endeavor mixes anatomical tracer and functional neuroimaging data that I analyze using graph theoretic and machine learning algorithms.
+I'm a Data Scientist at Linus Health. Before that I was a Research Fellow in Psychiatry at Harvard Medical School, working in the Haber Lab at McLean. My doctoral work looked into the sources of individual variability that can get in the way of pinpointing where economic judgments arise in the brain. I then stepped from neuroimaging to neuroanatomy to get a more in depth understanding of the brain's reward circuitry. When I'm not thinking about the brain, I am either taking care of my daughter or listening to/playing music.
 
 {{% staticref "files/cv.pdf" %}}You can get a copy of my CV here{{% /staticref %}}.
